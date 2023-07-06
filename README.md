@@ -7,7 +7,7 @@ Software suite developed to help audiologists in assessment of cochlear implant 
 Software is in intial development stage, requring a lot of features to stabilize and become a clinic ready program. Feel free to get in touch and start attending to couple issues. 
 
 ## Dependencies
-- Virtual Acoustics [http://virtualacoustics.org/]
+- Virtual Acoustics {http://virtualacoustics.org}
 - ZedGraph
 - Newtonsoft Json
 - TagLib
