@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="perSONA.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RESULTS_FOLDER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Selecione uma pasta antes de prosseguir</Value>
+    </Setting>
+    <Setting Name="SERIAL_KEY" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PTMGF-28VKB-2W934-482QH-98623</Value>
+    </Setting>
+    <Setting Name="DEMO_VERSION" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FIRST_USE_DATA" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2019-10-07</Value>
+    </Setting>
+    <Setting Name="FIRST_USE" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CALIBRATION_MODE" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="REPRODUCTION_MODE" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CALIBRATION_ID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ITERATOR" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SPEAKER_VOLUME" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="EARPHONE_VOLUME" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="EQUIPMENTS_TABLE_LOCATION" Type="System.String" Scope="User">
+      <Value Profile="(Default)">data/Equipments.xlsx</Value>
+    </Setting>
+    <Setting Name="CALIBRATED_AUDIOMETRY" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CALIBRATED_AUDIOMETRY_VALUES" Type="System.Double[]" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Logo" Type="System.Windows.Forms.ImageLayout" Scope="User">
+      <Value Profile="(Default)">Stretch</Value>
+    </Setting>
+    <Setting Name="DB_VERSION" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="CALIBRATED_SNR_EARPHONE" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CALIBRATED_SNR_2_SPEAKER" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CALIBRATED_SNR_8_SPEAKER" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
