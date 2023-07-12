@@ -289,7 +289,17 @@ namespace perSONA
         {
             double PCResolutionWidth = Screen.PrimaryScreen.Bounds.Width;
             double PCResolutionHeight = Screen.PrimaryScreen.Bounds.Height;
-
+          
+            
+            if (PCResolutionHeight>768) 
+            {
+                speechSentences.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left);
+            }
+            else
+            {
+                speechSentences.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left);
+            }
+           
             double formWidth = this.Size.Width;
             double formHeight = this.Size.Height;
 
