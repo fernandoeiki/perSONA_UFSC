@@ -410,7 +410,9 @@ namespace perSONA
 
             double powerSpeech = 0.25 * normalizationFactor;
             //A linha acima serve para 
-            double linRatio = Math.Pow(10.0, (snr / 10.0));
+            //double linRatio = Math.Pow(10.0, (snr / 10.0));
+            double linRatio = Math.Pow(10.0, (snr / 20.0));
+            // 13/07/23: mudamos de volta para double linRatio = Math.Pow(10.0, (snr /20.0));
             //A linha acima é utilizada para realizar o cálculo do valor do SNR atual que será utilizado na reprodução do som
             double powerNoise = powerSpeech / linRatio;
 
@@ -432,7 +434,12 @@ namespace perSONA
             //xSides, zFront, yHeight, speechSource));
             concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
             concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
-                       powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+
+                //powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+                //13/07/2023 foi alterado para 
+                //powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
+                powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
+
             concatText("Selected Noise: " + noiseFile);
             vA.SetSignalSourceBufferPlaybackAction(speechSound, "play");
             vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
@@ -470,7 +477,11 @@ namespace perSONA
             //Potência da fala fixa
 
             double powerSpeechFixed = 0.25 * normalizationFactor;
-            double linRatio = Math.Pow(10.0, (snr / 10.0));
+
+            //double linRatio = Math.Pow(10.0, (snr / 10.0));
+            //13/07/2023 foi alterado para linRatio = Math.Pow(10.0, (snr / 20.0));
+            double linRatio = Math.Pow(10.0, (snr / 20.0));
+
             double powerNoise = powerSpeechFixed / linRatio;
             double powerSpeech = powerSpeechFixed;
 
@@ -492,7 +503,11 @@ namespace perSONA
             //xSides, zFront, yHeight, speechSource));
             concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
             concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
-                       powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+
+                    //powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+                    //13/07/2023 foi alterado para 20 * Math.Log10(linRatio)
+                    powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
+
             concatText("Selected Noise: " + noiseFile);
             vA.SetSignalSourceBufferPlaybackAction(speechSound, "play");
             vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
@@ -530,7 +545,11 @@ namespace perSONA
             //Potência do ruído fixo
 
             double powerNoiseFixed = 0.25 * normalizationFactor; //Potencia ou Amplitude?
-            double linRatio = Math.Pow(10.0, (snr / 10.0));
+
+            //double linRatio = Math.Pow(10.0, (snr / 10.0));
+            //13/07/2023 alterado para  Math.Pow(10.0, (snr / 20.0));
+            double linRatio = Math.Pow(10.0, (snr / 20.0));
+
             double powerSpeech = linRatio * powerNoiseFixed;
             double powerNoise = powerNoiseFixed;
 
@@ -552,7 +571,11 @@ namespace perSONA
             //xSides, zFront, yHeight, speechSource));
             concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
             concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
-                       powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+
+            // powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+            // 13/07/2023 foi alterado para 20 * Math.Log10(linRatio)
+            powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
+
             concatText("Selected Noise: " + noiseFile);
             vA.SetSignalSourceBufferPlaybackAction(speechSound, "play");
             vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
