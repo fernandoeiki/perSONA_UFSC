@@ -153,9 +153,13 @@ namespace perSONA
                 var duration = file.Properties.Duration;            //Take duration
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
                 vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
-                Thread.Sleep(msecduration);      //Sleep fileduration milliseconds
 
-                vAInterface.stopScene(true, true);
+                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
+                Task.Run(() =>
+                {
+                    Thread.Sleep(msecduration); //sleep file duration
+                    vAInterface.stopScene(true, true);
+                });
             }
 
             else
@@ -191,9 +195,13 @@ namespace perSONA
                 var duration = file.Properties.Duration;            //Take duration
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
                 vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
-                Thread.Sleep(msecduration);      //Sleep fileduration milliseconds
 
-                vAInterface.stopScene(true, true);
+                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
+                Task.Run(() =>
+                {
+                    Thread.Sleep(msecduration); //sleep file duration
+                    vAInterface.stopScene(true, true);
+                });
             }
         }
 
