@@ -21,10 +21,10 @@
     <ROW Property="ARPPRODUCTICON" Value="icone_perSONA.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="LVA-UFSC"/>
-    <ROW Property="ProductCode" Value="1033:{4347A56F-5849-4891-AD32-76F32EA7E64B} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{DA6E757D-33B3-433A-928A-BE660FBD2C5B} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="perSONA-BETA"/>
-    <ROW Property="ProductVersion" Value="2.8.0.1" Options="32"/>
+    <ROW Property="ProductVersion" Value="2.8.1" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{2E351919-0754-48EA-9BCC-7450A9453229}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
