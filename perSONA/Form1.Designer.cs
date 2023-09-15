@@ -329,12 +329,12 @@ namespace perSONA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
+            this.listBox1.ItemHeight = 17;
             this.listBox1.Location = new System.Drawing.Point(5, 232);
             this.listBox1.Margin = new System.Windows.Forms.Padding(5);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(331, 164);
+            this.listBox1.Size = new System.Drawing.Size(331, 157);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -346,7 +346,7 @@ namespace perSONA
             this.textBox2.Location = new System.Drawing.Point(5, 409);
             this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(331, 27);
+            this.textBox2.Size = new System.Drawing.Size(331, 23);
             this.textBox2.TabIndex = 2;
             // 
             // UseSignal
@@ -552,7 +552,7 @@ namespace perSONA
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1116, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1116, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -566,7 +566,7 @@ namespace perSONA
             this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(131, 27);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(111, 23);
             this.settingsToolStripMenuItem.Text = "Configurações";
             // 
             // audioDatabaseEditorAreaToolStripMenuItem
@@ -574,7 +574,7 @@ namespace perSONA
             this.audioDatabaseEditorAreaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
             this.audioDatabaseEditorAreaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.audioDatabaseEditorAreaToolStripMenuItem.Name = "audioDatabaseEditorAreaToolStripMenuItem";
-            this.audioDatabaseEditorAreaToolStripMenuItem.Size = new System.Drawing.Size(437, 26);
+            this.audioDatabaseEditorAreaToolStripMenuItem.Size = new System.Drawing.Size(370, 22);
             this.audioDatabaseEditorAreaToolStripMenuItem.Text = "Área de edição de arquivos de áudio";
             this.audioDatabaseEditorAreaToolStripMenuItem.Click += new System.EventHandler(this.audioDatabaseEditorAreaToolStripMenuItem_Click);
             // 
@@ -583,7 +583,7 @@ namespace perSONA
             this.resultsFolderToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
             this.resultsFolderToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.resultsFolderToolStripMenuItem.Name = "resultsFolderToolStripMenuItem";
-            this.resultsFolderToolStripMenuItem.Size = new System.Drawing.Size(437, 26);
+            this.resultsFolderToolStripMenuItem.Size = new System.Drawing.Size(370, 22);
             this.resultsFolderToolStripMenuItem.Text = "Pasta destino dos resultados";
             this.resultsFolderToolStripMenuItem.Click += new System.EventHandler(this.resultsFolderToolStripMenuItem_Click);
             // 
@@ -592,7 +592,7 @@ namespace perSONA
             this.recalibrateAudiometry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
             this.recalibrateAudiometry.ForeColor = System.Drawing.Color.White;
             this.recalibrateAudiometry.Name = "recalibrateAudiometry";
-            this.recalibrateAudiometry.Size = new System.Drawing.Size(437, 26);
+            this.recalibrateAudiometry.Size = new System.Drawing.Size(370, 22);
             this.recalibrateAudiometry.Text = "Recalibrar audiômetro";
             this.recalibrateAudiometry.Click += new System.EventHandler(this.recalibrateAudiometry_Click);
             // 
@@ -601,7 +601,7 @@ namespace perSONA
             this.speechPerceptionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
             this.speechPerceptionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.speechPerceptionToolStripMenuItem.Name = "speechPerceptionToolStripMenuItem";
-            this.speechPerceptionToolStripMenuItem.Size = new System.Drawing.Size(437, 26);
+            this.speechPerceptionToolStripMenuItem.Size = new System.Drawing.Size(370, 22);
             this.speechPerceptionToolStripMenuItem.Text = "Recalibrar teste de percepção de fala no ruído";
             this.speechPerceptionToolStripMenuItem.Click += new System.EventHandler(this.speechPerceptionToolStripMenuItem_Click);
             // 
@@ -610,7 +610,7 @@ namespace perSONA
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(68, 27);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
             this.helpToolStripMenuItem.Text = "Ajuda";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -622,7 +622,7 @@ namespace perSONA
             this.calibrateToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calibrateToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.calibrateToolStripMenuItem.Name = "calibrateToolStripMenuItem";
-            this.calibrateToolStripMenuItem.Size = new System.Drawing.Size(104, 27);
+            this.calibrateToolStripMenuItem.Size = new System.Drawing.Size(84, 23);
             this.calibrateToolStripMenuItem.Text = "Calibração";
             // 
             // preliminaryTestToolStripMenuItem
@@ -631,7 +631,7 @@ namespace perSONA
             this.preliminaryTestToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.preliminaryTestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.preliminaryTestToolStripMenuItem.Name = "preliminaryTestToolStripMenuItem";
-            this.preliminaryTestToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.preliminaryTestToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.preliminaryTestToolStripMenuItem.Text = "Pré ensaio";
             this.preliminaryTestToolStripMenuItem.Click += new System.EventHandler(this.preliminaryTestToolStripMenuItem_Click);
             // 
@@ -641,7 +641,7 @@ namespace perSONA
             this.instrumentalToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.instrumentalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.instrumentalToolStripMenuItem.Name = "instrumentalToolStripMenuItem";
-            this.instrumentalToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.instrumentalToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.instrumentalToolStripMenuItem.Text = "Instrumental";
             this.instrumentalToolStripMenuItem.Click += new System.EventHandler(this.instrumentalToolStripMenuItem_Click);
             // 
@@ -650,7 +650,7 @@ namespace perSONA
             this.contactToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
-            this.contactToolStripMenuItem.Size = new System.Drawing.Size(86, 27);
+            this.contactToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
             this.contactToolStripMenuItem.Text = "Contato";
             this.contactToolStripMenuItem.Click += new System.EventHandler(this.contactToolStripMenuItem_Click);
             // 
@@ -672,11 +672,11 @@ namespace perSONA
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tableLayoutPanel4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage2.Size = new System.Drawing.Size(734, 669);
+            this.tabPage2.Size = new System.Drawing.Size(734, 672);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Área Clínica";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -739,11 +739,11 @@ namespace perSONA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.patientBox.FormattingEnabled = true;
-            this.patientBox.ItemHeight = 20;
+            this.patientBox.ItemHeight = 17;
             this.patientBox.Location = new System.Drawing.Point(5, 5);
             this.patientBox.Margin = new System.Windows.Forms.Padding(5);
             this.patientBox.Name = "patientBox";
-            this.patientBox.Size = new System.Drawing.Size(336, 144);
+            this.patientBox.Size = new System.Drawing.Size(336, 157);
             this.patientBox.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -855,11 +855,11 @@ namespace perSONA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.applicatorBox.FormattingEnabled = true;
-            this.applicatorBox.ItemHeight = 20;
+            this.applicatorBox.ItemHeight = 17;
             this.applicatorBox.Location = new System.Drawing.Point(5, 5);
             this.applicatorBox.Margin = new System.Windows.Forms.Padding(5);
             this.applicatorBox.Name = "applicatorBox";
-            this.applicatorBox.Size = new System.Drawing.Size(335, 144);
+            this.applicatorBox.Size = new System.Drawing.Size(335, 157);
             this.applicatorBox.TabIndex = 0;
             // 
             // tableLayoutPanel17
@@ -971,11 +971,11 @@ namespace perSONA
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.Controls.Add(this.tableLayoutPanel13);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Size = new System.Drawing.Size(734, 669);
+            this.tabPage1.Size = new System.Drawing.Size(734, 672);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Área de teste";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1176,12 +1176,12 @@ namespace perSONA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
+            this.listBox2.ItemHeight = 17;
             this.listBox2.Location = new System.Drawing.Point(5, 51);
             this.listBox2.Margin = new System.Windows.Forms.Padding(5);
             this.listBox2.Name = "listBox2";
             this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(331, 104);
+            this.listBox2.Size = new System.Drawing.Size(331, 106);
             this.listBox2.TabIndex = 1;
             // 
             // comboBox3
@@ -1193,7 +1193,7 @@ namespace perSONA
             this.comboBox3.Location = new System.Drawing.Point(5, 474);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(331, 28);
+            this.comboBox3.Size = new System.Drawing.Size(331, 25);
             this.comboBox3.TabIndex = 3;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
@@ -1413,7 +1413,7 @@ namespace perSONA
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1116, 742);
@@ -1426,7 +1426,7 @@ namespace perSONA
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "perSONA 2.8 BETA";
+            this.Text = "perSONA 2.8.2 BETA";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.panel1.ResumeLayout(false);
