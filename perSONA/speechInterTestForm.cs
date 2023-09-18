@@ -118,9 +118,12 @@ namespace perSONA
         }
 
 
+        private System.Timers.Timer delayTimer;
+
+
         private void playCurrentScene_Click(object sender, EventArgs e)
         {
-            if(test.SceeneLogic == "SpeechConstant")
+            if (test.SceeneLogic == "SpeechConstant")
             {
                 vA = vAInterface.getVa();
                 vA.Reset();
@@ -154,15 +157,19 @@ namespace perSONA
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
                 vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
 
-                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
-                Task.Run(() =>
+                delayTimer = new System.Timers.Timer(msecduration);
+                delayTimer.Elapsed += (senderTimer, eTimer) =>
                 {
-                    Thread.Sleep(msecduration); //sleep file duration
-                    vAInterface.stopScene(true, true);
-                });
+                    // Code to execute when the timer elapses
+                    delayTimer.Stop(); // Stop the timer
+                    vAInterface.stopScene(true, true); // Continue with the rest of your code
+                };
+
+                // Start the timer
+                delayTimer.Start();
             }
 
-            else
+            else if (test.SceeneLogic == "NoiseConstant")
             {
                 vA = vAInterface.getVa();
                 vA.Reset();
@@ -196,12 +203,65 @@ namespace perSONA
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
                 vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
 
-                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
-                Task.Run(() =>
+                delayTimer = new System.Timers.Timer(msecduration);
+                delayTimer.Elapsed += (senderTimer, eTimer) =>
                 {
-                    Thread.Sleep(msecduration); //sleep file duration
-                    vAInterface.stopScene(true, true);
-                });
+                    // Code to execute when the timer elapses
+                    delayTimer.Stop(); // Stop the timer
+                    vAInterface.stopScene(true, true); // Continue with the rest of your code
+                };
+
+                // Start the timer
+                delayTimer.Start();
+            }
+
+            //speechOnly sem sinal de ruído
+            else
+            {
+                vA = vAInterface.getVa();
+                vA.Reset();
+                int receiverId = vA.CreateSoundReceiver("Subject");
+
+                double xSides = 0;
+                double zFront = 0;
+                double yHeight = 1.7;
+
+                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
+                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
+                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
+
+                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
+                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
+                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
+                                         xSides, zFront, yHeight, receiverId));
+
+                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
+                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
+
+                string speechFile = currentFile;
+                vAInterface.concatText(speechFile);
+                vAInterface.concatText(
+                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+                vAInterface.playSceneSpeechOnly(test.RadiusSpeech, test.AngleSpeech, actualSNR);
+
+                TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
+                var duration = file.Properties.Duration;            //Take duration
+                int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
+                vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
+
+                delayTimer = new System.Timers.Timer(msecduration);
+                delayTimer.Elapsed += (senderTimer, eTimer) =>
+                {
+                    // Code to execute when the timer elapses
+                    delayTimer.Stop(); // Stop the timer
+                    vAInterface.stopScene(true, true); // Continue with the rest of your code
+                };
+
+                // Start the timer
+                delayTimer.Start();
+
+
             }
         }
 

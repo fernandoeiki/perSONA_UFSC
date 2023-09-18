@@ -83,7 +83,7 @@ namespace perSONA
             double radiusNoise = (double)noiseDistance.Value;
             double snr = (double)initialSnr.Value;
             string noiseFile = Path.Combine(noiseFolder, comboBox3.SelectedItem.ToString());
-            string sceeneLogic = checkLogic(noiseLogic.Checked);
+            string sceeneLogic = checkLogic();
             string procedureString = (string)comboBox1.SelectedItem;
 
             double[] presentingLogic = { double.Parse(procedureString.Split('-')[0]), double.Parse(procedureString.Split('-')[2]) };
@@ -109,6 +109,8 @@ namespace perSONA
             }
             this.Close();
         }
+
+        private System.Timers.Timer delayTimer;
 
         private void playSpeech_Click(object sender, EventArgs e)
         {
@@ -156,14 +158,17 @@ namespace perSONA
                 var duration = file.Properties.Duration;            //Take duration
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
                 vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
-                //Thread.Sleep(msecduration);      //Sleep fileduration milliseconds
 
-                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
-                Task.Run(() =>
+                delayTimer = new System.Timers.Timer(msecduration);
+                delayTimer.Elapsed += (senderTimer, eTimer) =>
                 {
-                    Thread.Sleep(msecduration); //sleep file durantion
-                    vAInterface.stopScene(true, true);
-                });
+                    // Code to execute when the timer elapses
+                    delayTimer.Stop(); // Stop the timer
+                    vAInterface.stopScene(true, true); // Continue with the rest of your code
+                };
+
+                // Start the timer
+                delayTimer.Start();
 
             }
 
@@ -181,13 +186,17 @@ namespace perSONA
                 var duration = file.Properties.Duration;            //Take duration
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
                 vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
-               
-                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
-                Task.Run(() =>
+
+                delayTimer = new System.Timers.Timer(msecduration);
+                delayTimer.Elapsed += (senderTimer, eTimer) =>
                 {
-                    Thread.Sleep(msecduration); //sleep file durantion
-                    vAInterface.stopScene(true, true);
-                });
+                    // Code to execute when the timer elapses
+                    delayTimer.Stop(); // Stop the timer
+                    vAInterface.stopScene(true, true); // Continue with the rest of your code
+                };
+
+                // Start the timer
+                delayTimer.Start();
             }
 
             else if (simulaFalaeRuido.Checked == true)
@@ -204,25 +213,32 @@ namespace perSONA
                 var duration = file.Properties.Duration;            //Take duration
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
                 vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
-               
-                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
-                Task.Run(() =>
+
+                delayTimer = new System.Timers.Timer(msecduration);
+                delayTimer.Elapsed += (senderTimer, eTimer) =>
                 {
-                    Thread.Sleep(msecduration); //sleep file durantion
-                    vAInterface.stopScene(true, true);
-                });
+                    // Code to execute when the timer elapses
+                    delayTimer.Stop(); // Stop the timer
+                    vAInterface.stopScene(true, true); // Continue with the rest of your code
+                };
+
+                // Start the timer
+                delayTimer.Start();
             }
         }
 
-        public string checkLogic(bool noise)
+        public string checkLogic()
         {
-            if(noise)
+            if(noiseLogic.Checked)
             {
                 return "NoiseConstant";
             }
-            else 
+            else if (speechLogic.Checked) 
             {
                 return "SpeechConstant";
+            }
+            else {
+                return "SpeechOnly";
             }
         }
 
@@ -350,29 +366,6 @@ namespace perSONA
             speechSentences.SelectedIndex = 0;
         }
 
-        private void noiseLogic_CheckedChanged(object sender, EventArgs e)
-        {
-            if(noiseLogic.Checked == true)
-            {
-                speechLogic.Checked = false;
-            }
-            else
-            {
-                speechLogic.Checked = true;
-            }
-        }
-
-        private void speechLogic_CheckedChanged(object sender, EventArgs e)
-        {
-            if(speechLogic.Checked == true)
-            {
-                noiseLogic.Checked = false;
-            }
-            else
-            {
-                noiseLogic.Checked = true;
-            }
-        }
 
         private void sceneLogic_Enter(object sender, EventArgs e)
         {
@@ -382,6 +375,24 @@ namespace perSONA
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void speechOnly_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox5.Text = "Potência de fala inicial [dB]";
+            groupBox10.Text = "Passo de Potência de fala [dB]";
+        }
+
+        private void speechLogic_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox5.Text = "SNR inicial [dB] ";
+            groupBox10.Text = "Passo de SNR [dB]";
+        }
+
+        private void noiseLogic_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox5.Text = "SNR inicial [dB] ";
+            groupBox10.Text = "Passo de SNR [dB]";
         }
     }
 }

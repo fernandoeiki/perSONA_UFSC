@@ -416,10 +416,6 @@ namespace perSONA
             //A linha acima é utilizada para realizar o cálculo do valor do SNR atual que será utilizado na reprodução do som
             double powerNoise = powerSpeech / linRatio;
 
-            if (snr >= 40)
-            {
-                powerNoise = 0;
-            }
 
             vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
             vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));
@@ -479,16 +475,14 @@ namespace perSONA
             double powerSpeechFixed = 0.25 * normalizationFactor;
 
             double linRatio = Math.Pow(10.0, (snr / 20.0));
+            
             //29/08/2023 foi alterado para linRatio = Math.Pow(10.0, (snr / 20.0));
             //double linRatio = Math.Pow(10.0, (snr / 20.0));
 
             double powerNoise = powerSpeechFixed / linRatio;
             double powerSpeech = powerSpeechFixed;
+            
 
-            if (snr >= 40)
-            {
-                powerNoise = 0;
-            }
 
             vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
             vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));
@@ -504,13 +498,17 @@ namespace perSONA
             concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
             concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
 
-                    powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+                    powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
                     //13/07/2023 foi alterado para 20 * Math.Log10(linRatio)
                     //powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
 
             concatText("Selected Noise: " + noiseFile);
             vA.SetSignalSourceBufferPlaybackAction(speechSound, "play");
             vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
+
+            Console.WriteLine("powernoise: " + powerNoise, Color.Green);
+            Console.WriteLine("powerspeech: " + powerSpeech, Color.Green);
+            Console.WriteLine("linratio: " + linRatio, Color.Green);
         }
 
         public void playSceneNoiseFixed(double radius, double angle, double snr)
@@ -553,10 +551,6 @@ namespace perSONA
             double powerSpeech = linRatio * powerNoiseFixed;
             double powerNoise = powerNoiseFixed;
 
-            if (snr >= 40)
-            {
-                powerNoise = 0;
-            }
 
             vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
             vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));
@@ -579,6 +573,69 @@ namespace perSONA
             concatText("Selected Noise: " + noiseFile);
             vA.SetSignalSourceBufferPlaybackAction(speechSound, "play");
             vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
+        }
+
+        public void playSceneSpeechOnly(double radius, double angle, double snr)
+        {
+            if (!cond4.Checked)
+            {
+                concatText(String.Format("Scene not ok. Signal: {0}, Noise {1}, Receiver: {2}",
+                                     cond1.Checked, cond2.Checked, cond3.Checked));
+            }
+
+            double[] radiusList = { radius, radius };
+            double[] angleList = { angle, 0 };
+
+            plotSceneGraph(zedGraphControl1, radiusList, angleList);
+
+            double xSides = radius * Math.Sin(angle / 180 * Math.PI);
+            double zFront = radius * Math.Cos(angle / 180 * Math.PI);
+            double yHeight = 1.7;
+
+            //double normalizationFactor = trackBar2.Value / 100.0;
+            double normalizationFactor;
+            if (Properties.Settings.Default.REPRODUCTION_MODE == "Earphone")
+            {
+                normalizationFactor = Properties.Settings.Default.EARPHONE_VOLUME / 100.0;
+            }
+            else
+            {
+                normalizationFactor = Properties.Settings.Default.SPEAKER_VOLUME / 100.0;
+            }
+
+            //Potência do ruído fixo
+
+            double powerNoiseFixed = 0.25 * normalizationFactor; //Potencia ou Amplitude?
+
+            double linRatio = Math.Pow(10.0, (snr / 20.0));
+            //29/08/2023 alterado para  Math.Pow(10.0, (snr / 20.0));
+            //double linRatio = Math.Pow(10.0, (snr / 20.0));
+
+            double powerSpeech = linRatio * powerNoiseFixed;
+            double powerNoise = 0;
+
+
+            vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
+            //vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));
+
+            vA.SetSoundSourceSoundPower(speechSource, powerSpeech);
+            vA.SetSoundSourceSignalSource(speechSource, speechSound);
+
+            //vA.SetSoundSourceSoundPower(noiseSource, powerNoise);
+            //vA.SetSoundSourceSignalSource(noiseSource, noiseSound);
+
+            //concatText(string.Format("Created Source: {3} at position: {0},{1},{2}, looking forward",
+            //xSides, zFront, yHeight, speechSource));
+            concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
+            concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
+
+             powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+            // 29/08/2023 foi alterado para 10 * Math.Log10(linRatio)
+            //powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
+
+            concatText("Selected Noise: " + noiseFile);
+            vA.SetSignalSourceBufferPlaybackAction(speechSound, "play");
+            //vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
         }
 
         public void playScene(double radius, bool speechON, string speechFile, double currentSpeechPower, double speechAngle, bool noiseON, string noiseFile, double noiseAngle, double currentNoisePower)
