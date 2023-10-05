@@ -15,7 +15,7 @@ Software is in intial development stage, requring a lot of features to stabilize
 
 ## Installer
 
-Currently version (1.4.1 BETA) installer can be downloaded at: http://bit.ly/personabeta141
+Currently version (2.8.4 BETA) installer can be downloaded at: http://bit.ly/personabeta141
 
 
 ## History
@@ -31,3 +31,4 @@ https://repositorio.ufsc.br/handle/123456789/215732
 - Madalena Pinheiro
 - Angelo
 - Stephan Paul
+- Fernando Uekubo
