@@ -9,6 +9,7 @@ namespace perSONA
     public class speechPerceptionTest
     {
         public double FinalPercentage { get; set; }
+        public double rightSenteces { get; set; }
         public string Label { get; set; }
         public double SignalToNoise { get; set; }
         public string SpeechFolder { get; set; }

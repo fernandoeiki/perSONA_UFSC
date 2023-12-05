@@ -36,7 +36,7 @@ namespace perSONA
 
         private int allCountCorrectWords;
         private int allCountWords;
-
+        private int RightSentences = 0;
         
 
         List<string> iteractiveResponseTime;
@@ -50,6 +50,7 @@ namespace perSONA
         {
             InitializeComponent();
             resizeScreen();
+            signalToNoiseArray = new double[] { actualSNR };
             patientLabel.Text = test.PatientName;
             applicatorLabel.Text = test.Applicator;
 
@@ -84,7 +85,7 @@ namespace perSONA
                 
                 string[] repeatedSentences = firstGroup.Take(1).ToArray();
 
-                string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).Take(3).ToArray();
+                string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).ToArray();
                 finalAudioList = remainingFiles.Concat(repeatedSentences).ToArray();
                 finalAudioList = finalAudioList.OrderBy(x => random.Next()).ToArray();
 
@@ -116,11 +117,12 @@ namespace perSONA
 
                 //detailsBox.AppendText(currentFile);
                 vAInterface.fillWords(currentFile, testWordsList);
+                updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
 
 
             }
 
-            
+
 
 
 
@@ -132,7 +134,7 @@ namespace perSONA
             textBox3.Text = string.Format("{0}", actualSNR);
 
             signalToNoiseArray = new double[] { actualSNR };
-            updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
+            
 
             iteractiveResponseTime = new List<string> { };
             iteractiveResponsePercentage = new List<string> { };
@@ -195,8 +197,15 @@ namespace perSONA
                 vAInterface.concatText(
                     string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
                 vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-                vAInterface.playSceneSpeechFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
 
+                if (test.TestOption == "azbio")
+                {
+                    vAInterface.playSceneAzbio(test.RadiusSpeech, test.AngleSpeech, actualSNR);
+                }
+                else
+                {
+                    vAInterface.playSceneSpeechFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
+                }
                 TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
                 var duration = file.Properties.Duration;            //Take duration
                 int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
@@ -373,8 +382,16 @@ namespace perSONA
             string responseTime = currentTryal.Text;
             double answer = testWordsList.SelectedItems.Count;
             double totalWords = testWordsList.Items.Count;
-            string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords)));
+            double percentage = Math.Round(100 * (answer / totalWords));
+            string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords))); 
             vAInterface.concatText(string.Format("{0} - response time: {1}", string.Join(",", testWordsList.Items.Cast<string>()), responseTime));
+
+
+            if (percentage > 50) 
+            {
+                RightSentences++;
+            }
+
 
             Tuple<int, int> SpeechTestFormWords = updatePercentage();
             allCountCorrectWords += SpeechTestFormWords.Item1;
@@ -401,7 +418,11 @@ namespace perSONA
                 iteractiveResponseTime.Add(responseTime);
                 iteractiveResponsePercentage.Add(responsePercentage);
                 textBox3.Text = string.Format("{0}", actualSNR);
-                updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
+                if (test.TestOption == "azbio") { }
+                else
+                {
+                    updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
+                }   
             }
             else
             {
@@ -409,7 +430,7 @@ namespace perSONA
                 {
                     test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
                     test.IterativeSNR = signalToNoiseArray;
-
+                    test.rightSenteces = RightSentences;
                     //detailsBox.AppendText("/r/n Finished list");
                     test.TotalDuration = continuousTimerText.Text;
                     test.IterativeDuration = iteractiveResponseTime.ToArray();
@@ -420,8 +441,8 @@ namespace perSONA
                     double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
 
                     string completedTestMessage = string.Format(
-                        "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}",
-                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage);
+                        "Avaliação 1 finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}, sentenças acertadas: {5}",
+                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage, test.rightSenteces);
 
                     string message = completedTestMessage;
                     const string caption = "Fim da avaliação";
@@ -446,6 +467,7 @@ namespace perSONA
                     vAInterface.fillWords(currentFile, testWordsList);
                     nTest = false;
 
+                    RightSentences = 0;
 
                 }
                 else
@@ -457,14 +479,15 @@ namespace perSONA
                     test.TotalDuration = continuousTimerText.Text;
                     test.IterativeDuration = iteractiveResponseTime.ToArray();
                     test.IterativePercentage = iteractiveResponsePercentage.ToArray();
+                    test.rightSenteces = RightSentences;
 
                     vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
 
                     double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
 
                     string completedTestMessage = string.Format(
-                        "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}",
-                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage);
+                        "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}, sentenças acertadas: {5}",
+                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage, test.rightSenteces);
 
                     string message = completedTestMessage;
                     const string caption = "Fim da avaliação";
