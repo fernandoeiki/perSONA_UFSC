@@ -31,6 +31,7 @@ namespace perSONA
         public string TotalDuration { get; set; } = "0";
         public string[] IterativeDuration { get; set; } = { };
         public string[] IterativePercentage { get; set; } = { };
+        public string TestOption { get; set; } 
 
         public override string ToString()
         {
@@ -104,7 +105,7 @@ namespace perSONA
                             string label, double snr,
                             double[] presentingLogic,
                             double acceptanceRule, double signalToNoiseStep,
-                            string applicator, string patientName, string sceeneLogic)
+                            string applicator, string patientName, string sceeneLogic, string testOption)
         {
             Applicator = applicator;
             PatientName = patientName;
@@ -120,6 +121,7 @@ namespace perSONA
             PresentingLogic = presentingLogic;
             AcceptanceRule = acceptanceRule;
             SignalToNoiseStep = signalToNoiseStep;
+            TestOption = testOption;
             TestStart = DateTime.Now;
         }
 

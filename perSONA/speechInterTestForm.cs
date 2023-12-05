@@ -12,6 +12,7 @@ using System.IO;
 using VA;
 using ZedGraph;
 using TagLib;
+using System.Windows.Media;
 
 namespace perSONA
 {
@@ -22,6 +23,8 @@ namespace perSONA
 
         public string[] speechFiles;
         public string currentFile;
+        string[] audioList2;
+        bool nTest = true;
 
         public bool currentStreak = false;
 
@@ -33,6 +36,8 @@ namespace perSONA
 
         private int allCountCorrectWords;
         private int allCountWords;
+
+        
 
         List<string> iteractiveResponseTime;
         List<string> iteractiveResponsePercentage;
@@ -61,18 +66,61 @@ namespace perSONA
 
             vAInterface.plotSceneGraph(zedGraphControl2, radiusList, angleList);
 
-            //detailsBox.Text = test.ToString();
+            if (test.TestOption == "azbio")
+            {
+                //detailsBox.Text = test.ToString();
 
-            string[] filePaths = System.IO.Directory.GetFiles(test.SpeechFolder, "*.wav");
-            speechFiles = filePaths.Select(System.IO.Path.GetFileName).ToArray();
+                string[] filePaths = System.IO.Directory.GetFiles(test.SpeechFolder, "*.wav");
+                speechFiles = filePaths.Select(System.IO.Path.GetFileName).ToArray();
 
-            filenameList.DataSource = speechFiles;
-            filenameList.SelectedIndex = 0;
+                Random random = new Random();
+                speechFiles = speechFiles.OrderBy(x => random.Next()).ToArray();
 
-            currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+                //speechFiles = speechFiles.Take(500).ToArray();
+                //remainingFiles = speechFiles.Skip(500).ToArray();
 
-            //detailsBox.AppendText(currentFile);
-            vAInterface.fillWords(currentFile, testWordsList);
+                string[] firstGroup = speechFiles.Take(4).ToArray();
+                string[] remainingFiles = speechFiles.Skip(4).ToArray();
+                
+                string[] repeatedSentences = firstGroup.Take(1).ToArray();
+
+                string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).Take(3).ToArray();
+                finalAudioList = remainingFiles.Concat(repeatedSentences).ToArray();
+                finalAudioList = finalAudioList.OrderBy(x => random.Next()).ToArray();
+
+                audioList2 = finalAudioList;
+
+                speechFiles = firstGroup;
+
+                Console.WriteLine("---"+audioList2.Length+"----"+remainingFiles.Length+"-------"+repeatedSentences.Length);
+
+                filenameList.DataSource = speechFiles;
+                filenameList.SelectedIndex = 0;
+
+                currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+
+                //detailsBox.AppendText(currentFile);
+                vAInterface.fillWords(currentFile, testWordsList);
+
+            }
+            else
+            {
+                //detailsBox.Text = test.ToString();
+                string[] filePaths = System.IO.Directory.GetFiles(test.SpeechFolder, "*.wav");
+                speechFiles = filePaths.Select(System.IO.Path.GetFileName).ToArray();
+
+                filenameList.DataSource = speechFiles;
+                filenameList.SelectedIndex = 0;
+
+                currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+
+                //detailsBox.AppendText(currentFile);
+                vAInterface.fillWords(currentFile, testWordsList);
+
+
+            }
+
+            
 
 
 
@@ -230,7 +278,7 @@ namespace perSONA
             }
 
             snrArray.Add(indexes.ToArray(), signalToNoiseArray);
-            LineItem snrCurve = myPane.AddCurve(tipoSNR, snrArray, Color.Blue, SymbolType.XCross);
+            LineItem snrCurve = myPane.AddCurve(tipoSNR, snrArray, System.Drawing.Color.Blue, SymbolType.XCross);
             snrCurve.Line.IsVisible = true;
             snrCurve.Line.Width = 2;
             snrCurve.Symbol.Size = 20;
@@ -357,30 +405,78 @@ namespace perSONA
             }
             else
             {
-                test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
-                test.IterativeSNR = signalToNoiseArray;
+                if ((test.TestOption == "azbio") && (nTest))
+                {
+                    test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
+                    test.IterativeSNR = signalToNoiseArray;
 
-                //detailsBox.AppendText("/r/n Finished list");
-                test.TotalDuration = continuousTimerText.Text;
-                test.IterativeDuration = iteractiveResponseTime.ToArray();
-                test.IterativePercentage = iteractiveResponsePercentage.ToArray();
+                    //detailsBox.AppendText("/r/n Finished list");
+                    test.TotalDuration = continuousTimerText.Text;
+                    test.IterativeDuration = iteractiveResponseTime.ToArray();
+                    test.IterativePercentage = iteractiveResponsePercentage.ToArray();
 
-                vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
+                    vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
 
-                double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
+                    double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
 
-                string completedTestMessage = string.Format(
-                    "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}",
-                    actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage);
+                    string completedTestMessage = string.Format(
+                        "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}",
+                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage);
 
-                string message = completedTestMessage;
-                const string caption = "Fim da avaliação";
-                var result = MessageBox.Show(message, caption,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                vAInterface.addCompletedTest(test);
+                    string message = completedTestMessage;
+                    const string caption = "Fim da avaliação";
+                    var result = MessageBox.Show(message, caption,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    vAInterface.addCompletedTest(test);
 
-                this.Close();
+                    filenameList.DataSource = null;
+                    filenameList.Items.Clear();
+
+                    List<string> newSpeechFiles = audioList2.ToList();
+
+                    speechFiles = audioList2;
+
+                    filenameList.DataSource = newSpeechFiles;
+                    filenameList.SelectedIndex = 0;
+
+                    currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+
+                    //detailsBox.AppendText(currentFile);
+                    vAInterface.fillWords(currentFile, testWordsList);
+                    nTest = false;
+
+
+                }
+                else
+                {
+                    test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
+                    test.IterativeSNR = signalToNoiseArray;
+
+                    //detailsBox.AppendText("/r/n Finished list");
+                    test.TotalDuration = continuousTimerText.Text;
+                    test.IterativeDuration = iteractiveResponseTime.ToArray();
+                    test.IterativePercentage = iteractiveResponsePercentage.ToArray();
+
+                    vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
+
+                    double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
+
+                    string completedTestMessage = string.Format(
+                        "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}",
+                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage);
+
+                    string message = completedTestMessage;
+                    const string caption = "Fim da avaliação";
+                    var result = MessageBox.Show(message, caption,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    vAInterface.addCompletedTest(test);
+
+                    this.Close();
+
+                }
+
             }
             tryalStartTime = DateTime.Now;
         }

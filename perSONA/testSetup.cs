@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using VA;
 using ZedGraph;
 using TagLib;
+using System.Windows.Controls;
 
 namespace perSONA
 {
@@ -20,8 +21,10 @@ namespace perSONA
         public speechPerceptionTest test;
         private readonly IvAInterface vAInterface;
         string speechFolder = "data/Sounds/Speech";
+        string azbio = "data/Sounds/Speech/AzBio";
         string noiseFolder = "data/Sounds/Noise";
         string[] subjects;
+        string testOption = "speechPeception";
         public VANet vA { get; private set; }
         public testSetup(IvAInterface vAInterface, string testTipe, string[] subjects)
         {
@@ -34,6 +37,8 @@ namespace perSONA
 
             this.vAInterface = vAInterface;
 
+
+            testTab.SelectedIndexChanged += testTab_SelectedIndexChanged;
             comboBox3.DataSource = Directory.GetFiles(noiseFolder).Select(Path.GetFileName).ToArray();
             comboBox3.SelectedItem = comboBox3.Items.IndexOf("4talker-babble_ISTS.wav");
             string[] procedureList = { "2-down-1-up", "1-down-1-up" };
@@ -71,7 +76,18 @@ namespace perSONA
                     break;
             }
 
+            //codigo para azbio 02/12/2023
+
+            string[] azbioFiles = Directory.GetDirectories(azbio).Select(Path.GetFileName).ToArray();
+            for (int i = 0; i < azbioFiles.Length; i++)
+            {
+                //Console.WriteLine(azbioFiles[i]);
+                azbioTest.Items.Add(azbioFiles[i]);
+            }
+            azbioTest.SelectedItem = azbioTest.Items[0];
         }
+
+
 
         private void BeginTest_Click(object sender, EventArgs e)
         {
@@ -85,29 +101,59 @@ namespace perSONA
             string noiseFile = Path.Combine(noiseFolder, comboBox3.SelectedItem.ToString());
             string sceeneLogic = checkLogic(noiseLogic.Checked);
             string procedureString = (string)comboBox1.SelectedItem;
+            string TestOption = testOption;
 
             double[] presentingLogic = { double.Parse(procedureString.Split('-')[0]), double.Parse(procedureString.Split('-')[2]) };
             double acceptanceRule = (double)numericRule.Value;
             double signalToNoiseStep = (double)stepSnr.Value;
-            string Location = Path.Combine(speechFolder, speechFiles.GetItemText(speechFiles.SelectedItem), speechLists.GetItemText(speechLists.SelectedItem));
-            speechFolder = vAInterface.getDatabaseFiles(Location);
 
-            speechPerceptionTest speechTest = new speechPerceptionTest(
+            
+            if (testOption == "azbio")
+            {
+                string Location = Path.Combine(azbio, azbioTest.GetItemText(azbioTest.SelectedItem));
+                speechFolder = vAInterface.getDatabaseFiles(Location);
+                
+                speechPerceptionTest speechTest = new speechPerceptionTest(
                                                     angleSpeech, radiusSpeech,
                                                     angleNoise, radiusNoise,
                                                     speechFolder, noiseFile,
                                                     textBox1.Text, snr,
                                                     presentingLogic,
                                                     acceptanceRule / 100, signalToNoiseStep,
-                                                    subjects[0], subjects[1], sceeneLogic);
-            string testString = speechTest.ToString();
-            vAInterface.concatText(testString);
+                                                    subjects[0], subjects[1], sceeneLogic, TestOption);
+                string testString = speechTest.ToString();
+                vAInterface.concatText(testString);
 
-            if (Application.OpenForms["speechIterTestForm"] == null)
-            {
-                new speechIterTestForm(speechTest, vAInterface).Show();
+                if (Application.OpenForms["speechIterTestForm"] == null)
+                {
+                    new speechIterTestForm(speechTest, vAInterface).Show();
+                }
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                string Location = Path.Combine(speechFolder, speechFiles.GetItemText(speechFiles.SelectedItem), speechLists.GetItemText(speechLists.SelectedItem));
+                speechFolder = vAInterface.getDatabaseFiles(Location);
+
+                speechPerceptionTest speechTest = new speechPerceptionTest(
+                                                    angleSpeech, radiusSpeech,
+                                                    angleNoise, radiusNoise,
+                                                    speechFolder, noiseFile,
+                                                    textBox1.Text, snr,
+                                                    presentingLogic,
+                                                    acceptanceRule / 100, signalToNoiseStep,
+                                                    subjects[0], subjects[1], sceeneLogic, TestOption);
+                string testString = speechTest.ToString();
+                vAInterface.concatText(testString);
+
+                if (Application.OpenForms["speechIterTestForm"] == null)
+                {
+                    new speechIterTestForm(speechTest, vAInterface).Show();
+                }
+                this.Close();
+            }
+
+
         }
 
         private void playSpeech_Click(object sender, EventArgs e)
@@ -350,6 +396,19 @@ namespace perSONA
             speechSentences.SelectedIndex = 0;
         }
 
+        private void azbioTest_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Location = Path.Combine(azbio, azbioTest.SelectedItem.ToString());
+            Console.WriteLine(Location);
+            string[] filePaths = System.IO.Directory.GetFiles(Location, "*.wav");
+            string[] Files = filePaths.Select(System.IO.Path.GetFileName).ToArray();
+            Console.WriteLine(Files);
+
+            azbioSentences.DataSource = Files;
+            azbioSentences.SelectedIndex = 0;
+        }
+
+
         private void noiseLogic_CheckedChanged(object sender, EventArgs e)
         {
             if(noiseLogic.Checked == true)
@@ -380,6 +439,29 @@ namespace perSONA
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void testTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedTab = testTab.SelectedTab.Name;
+
+            if (selectedTab == "speechPerceptionTab")
+            {
+                Console.WriteLine(selectedTab);
+                testOption = "speechPeception";
+            }
+            else if (selectedTab == "azbioTab")
+            {
+                Console.WriteLine(selectedTab);
+                testOption = "azbio";
+            }      
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
         {
 
         }

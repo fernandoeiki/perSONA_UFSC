@@ -87,12 +87,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.testWordsList.FormattingEnabled = true;
-            this.testWordsList.ItemHeight = 20;
+            this.testWordsList.ItemHeight = 17;
             this.testWordsList.Location = new System.Drawing.Point(5, 388);
             this.testWordsList.Margin = new System.Windows.Forms.Padding(5);
             this.testWordsList.Name = "testWordsList";
             this.testWordsList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.testWordsList.Size = new System.Drawing.Size(352, 324);
+            this.testWordsList.Size = new System.Drawing.Size(352, 327);
             this.testWordsList.TabIndex = 3;
             this.testWordsList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -197,10 +197,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 212);
+            this.label5.Location = new System.Drawing.Point(5, 202);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 40);
+            this.label5.Size = new System.Drawing.Size(199, 34);
             this.label5.TabIndex = 9;
             this.label5.Text = "Porcentagem de acerto na sentença";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,7 +214,7 @@
             this.label6.Location = new System.Drawing.Point(5, 135);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(199, 40);
+            this.label6.Size = new System.Drawing.Size(199, 34);
             this.label6.TabIndex = 7;
             this.label6.Text = "Palavras corretas na sentença";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,10 +225,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(5, 180);
+            this.textBox1.Location = new System.Drawing.Point(5, 174);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 27);
+            this.textBox1.Size = new System.Drawing.Size(199, 23);
             this.textBox1.TabIndex = 8;
             // 
             // textBox2
@@ -237,10 +237,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(5, 257);
+            this.textBox2.Location = new System.Drawing.Point(5, 241);
             this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 27);
+            this.textBox2.Size = new System.Drawing.Size(199, 23);
             this.textBox2.TabIndex = 10;
             // 
             // NextSentence
@@ -251,10 +251,10 @@
             this.NextSentence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
             this.NextSentence.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NextSentence.ForeColor = System.Drawing.Color.White;
-            this.NextSentence.Location = new System.Drawing.Point(5, 294);
+            this.NextSentence.Location = new System.Drawing.Point(5, 274);
             this.NextSentence.Margin = new System.Windows.Forms.Padding(5);
             this.NextSentence.Name = "NextSentence";
-            this.NextSentence.Size = new System.Drawing.Size(199, 42);
+            this.NextSentence.Size = new System.Drawing.Size(199, 59);
             this.NextSentence.TabIndex = 11;
             this.NextSentence.Text = "Próxima sentença";
             this.NextSentence.UseVisualStyleBackColor = false;
@@ -302,7 +302,7 @@
             this.currentTryal.Location = new System.Drawing.Point(5, 229);
             this.currentTryal.Margin = new System.Windows.Forms.Padding(5);
             this.currentTryal.Name = "currentTryal";
-            this.currentTryal.Size = new System.Drawing.Size(199, 27);
+            this.currentTryal.Size = new System.Drawing.Size(199, 23);
             this.currentTryal.TabIndex = 22;
             // 
             // streakText
@@ -314,7 +314,7 @@
             this.streakText.Location = new System.Drawing.Point(5, 101);
             this.streakText.Margin = new System.Windows.Forms.Padding(5);
             this.streakText.Name = "streakText";
-            this.streakText.Size = new System.Drawing.Size(199, 27);
+            this.streakText.Size = new System.Drawing.Size(199, 23);
             this.streakText.TabIndex = 16;
             // 
             // computedAudioText
@@ -326,7 +326,7 @@
             this.computedAudioText.Location = new System.Drawing.Point(5, 165);
             this.computedAudioText.Margin = new System.Windows.Forms.Padding(5);
             this.computedAudioText.Name = "computedAudioText";
-            this.computedAudioText.Size = new System.Drawing.Size(199, 27);
+            this.computedAudioText.Size = new System.Drawing.Size(199, 23);
             this.computedAudioText.TabIndex = 18;
             // 
             // filenameList
@@ -336,12 +336,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.filenameList.Enabled = false;
             this.filenameList.FormattingEnabled = true;
-            this.filenameList.ItemHeight = 20;
+            this.filenameList.ItemHeight = 17;
             this.filenameList.Location = new System.Drawing.Point(5, 125);
             this.filenameList.Margin = new System.Windows.Forms.Padding(5);
             this.filenameList.Name = "filenameList";
             this.filenameList.ScrollAlwaysVisible = true;
-            this.filenameList.Size = new System.Drawing.Size(352, 244);
+            this.filenameList.Size = new System.Drawing.Size(352, 242);
             this.filenameList.TabIndex = 1;
             // 
             // playCurrentScene
@@ -370,7 +370,7 @@
             this.textBox3.Location = new System.Drawing.Point(5, 37);
             this.textBox3.Margin = new System.Windows.Forms.Padding(5);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 27);
+            this.textBox3.Size = new System.Drawing.Size(199, 23);
             this.textBox3.TabIndex = 14;
             // 
             // timer1
@@ -556,7 +556,7 @@
             this.textBox4.Location = new System.Drawing.Point(5, 240);
             this.textBox4.Margin = new System.Windows.Forms.Padding(5);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(221, 27);
+            this.textBox4.Size = new System.Drawing.Size(221, 23);
             this.textBox4.TabIndex = 9;
             // 
             // label11
@@ -626,7 +626,7 @@
             this.textBox5.Location = new System.Drawing.Point(5, 334);
             this.textBox5.Margin = new System.Windows.Forms.Padding(5);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(221, 27);
+            this.textBox5.Size = new System.Drawing.Size(221, 23);
             this.textBox5.TabIndex = 11;
             // 
             // label4
@@ -652,7 +652,7 @@
             this.continuousTimerText.Location = new System.Drawing.Point(5, 146);
             this.continuousTimerText.Margin = new System.Windows.Forms.Padding(5);
             this.continuousTimerText.Name = "continuousTimerText";
-            this.continuousTimerText.Size = new System.Drawing.Size(221, 27);
+            this.continuousTimerText.Size = new System.Drawing.Size(221, 23);
             this.continuousTimerText.TabIndex = 24;
             // 
             // totalWordsText
@@ -664,7 +664,7 @@
             this.totalWordsText.Location = new System.Drawing.Point(5, 52);
             this.totalWordsText.Margin = new System.Windows.Forms.Padding(5);
             this.totalWordsText.Name = "totalWordsText";
-            this.totalWordsText.Size = new System.Drawing.Size(221, 27);
+            this.totalWordsText.Size = new System.Drawing.Size(221, 23);
             this.totalWordsText.TabIndex = 20;
             // 
             // tableLayoutPanel5
@@ -720,7 +720,7 @@
             // 
             // speechIterTestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1238, 757);

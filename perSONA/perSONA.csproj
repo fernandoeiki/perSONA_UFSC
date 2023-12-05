@@ -857,7 +857,6 @@
     <Content Include="data\Sounds\L001s04r.wav" />
     <Content Include="data\Sounds\Noise\12 %286 Homens e 6 Mulheres%29 Individual Audacity OK.wav" />
     <Content Include="data\Sounds\Noise\4talker-babble_ISTS.wav" />
-    <Content Include="data\Sounds\Noise\audiocheck.net_pinknoise.wav" />
     <Content Include="data\Sounds\Noise\Babble_12_Meninas_Dialog_RASP.wav" />
     <Content Include="data\Sounds\Noise\Babble_12_Meninas_Ind_RASP.wav" />
     <Content Include="data\Sounds\Noise\Babble_4_Meninas_Dialog_RASP.wav" />
