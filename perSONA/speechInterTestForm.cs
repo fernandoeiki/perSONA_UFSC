@@ -80,10 +80,10 @@ namespace perSONA
                 //speechFiles = speechFiles.Take(500).ToArray();
                 //remainingFiles = speechFiles.Skip(500).ToArray();
 
-                string[] firstGroup = speechFiles.Take(4).ToArray();
-                string[] remainingFiles = speechFiles.Skip(4).ToArray();
+                string[] firstGroup = speechFiles.Take(500).ToArray();
+                string[] remainingFiles = speechFiles.Skip(500).ToArray();
                 
-                string[] repeatedSentences = firstGroup.Take(1).ToArray();
+                string[] repeatedSentences = firstGroup.Take(13).ToArray();
 
                 string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).ToArray();
                 finalAudioList = remainingFiles.Concat(repeatedSentences).ToArray();
