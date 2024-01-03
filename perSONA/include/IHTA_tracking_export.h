@@ -1,0 +1,42 @@
+
+#ifndef IHTATRACKING_EXPORT_H
+#define IHTATRACKING_EXPORT_H
+
+#ifdef IHTATRACKING_STATIC_DEFINE
+#  define IHTATRACKING_EXPORT
+#  define IHTATRACKING_NO_EXPORT
+#else
+#  ifndef IHTATRACKING_EXPORT
+#    ifdef IHTATracking_EXPORTS
+        /* We are building this library */
+#      define IHTATRACKING_EXPORT __declspec(dllexport)
+#    else
+        /* We are using this library */
+#      define IHTATRACKING_EXPORT __declspec(dllimport)
+#    endif
+#  endif
+
+#  ifndef IHTATRACKING_NO_EXPORT
+#    define IHTATRACKING_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef IHTATRACKING_DEPRECATED
+#  define IHTATRACKING_DEPRECATED __declspec(deprecated)
+#endif
+
+#ifndef IHTATRACKING_DEPRECATED_EXPORT
+#  define IHTATRACKING_DEPRECATED_EXPORT IHTATRACKING_EXPORT IHTATRACKING_DEPRECATED
+#endif
+
+#ifndef IHTATRACKING_DEPRECATED_NO_EXPORT
+#  define IHTATRACKING_DEPRECATED_NO_EXPORT IHTATRACKING_NO_EXPORT IHTATRACKING_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef IHTATRACKING_NO_DEPRECATED
+#    define IHTATRACKING_NO_DEPRECATED
+#  endif
+#endif
+
+#endif /* IHTATRACKING_EXPORT_H */

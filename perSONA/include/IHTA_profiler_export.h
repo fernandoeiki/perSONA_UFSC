@@ -1,0 +1,42 @@
+
+#ifndef IHTAPROFILER_EXPORT_H
+#define IHTAPROFILER_EXPORT_H
+
+#ifdef IHTAPROFILER_STATIC_DEFINE
+#  define IHTAPROFILER_EXPORT
+#  define IHTAPROFILER_NO_EXPORT
+#else
+#  ifndef IHTAPROFILER_EXPORT
+#    ifdef IHTAProfiler_EXPORTS
+        /* We are building this library */
+#      define IHTAPROFILER_EXPORT __declspec(dllexport)
+#    else
+        /* We are using this library */
+#      define IHTAPROFILER_EXPORT __declspec(dllimport)
+#    endif
+#  endif
+
+#  ifndef IHTAPROFILER_NO_EXPORT
+#    define IHTAPROFILER_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef IHTAPROFILER_DEPRECATED
+#  define IHTAPROFILER_DEPRECATED __declspec(deprecated)
+#endif
+
+#ifndef IHTAPROFILER_DEPRECATED_EXPORT
+#  define IHTAPROFILER_DEPRECATED_EXPORT IHTAPROFILER_EXPORT IHTAPROFILER_DEPRECATED
+#endif
+
+#ifndef IHTAPROFILER_DEPRECATED_NO_EXPORT
+#  define IHTAPROFILER_DEPRECATED_NO_EXPORT IHTAPROFILER_NO_EXPORT IHTAPROFILER_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef IHTAPROFILER_NO_DEPRECATED
+#    define IHTAPROFILER_NO_DEPRECATED
+#  endif
+#endif
+
+#endif /* IHTAPROFILER_EXPORT_H */

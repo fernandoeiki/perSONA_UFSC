@@ -23,7 +23,7 @@ Unfortunately, any copyleft license, notably the GNU General Public License (GPL
 
 #### VA code license
 
-Copyright 2015-2018 Institute of Technical Acoustics (ITA), RWTH Aachen University.
+Copyright 2015-2022 Institute of Technical Acoustics (ITA), RWTH Aachen University.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use files of this project except in compliance with the License.
@@ -93,3 +93,14 @@ To use a spefic version of a VA submodule, say VACore, you have to `cd VACore` a
 Sometimes, submodules remain in a dirty state because files are created by the build environment - which are not under version control.
 If you want to clean up your working directory, use `git submodule foreach git clean -f -n`, and remove the `-n` if your are sure to remove the listed files in the submodules.
 Afterwards, a `git submodule status` should return a clean copy.:
+
+
+### Deploy
+
+To generate a VA binary package (deploy), the following steps must be performed:
+
+1. Check your VA configuration using CMake. You can modify the install target directory if you want, otherwise it is set to the `dist` folder of the VA source tree.
+2. Check / uncheck core, bindings, modules, extensions etc. (according to what you want to include) and generate the project file.
+3. Run `make install`, i.e. Open Visual Studio and build the `INSTALL` project (Release Build). It will automatically assemble all required libraries (and more) and copies them to the install target directory / the `dist` folder. It might be necessary to re-run this project until no errors occur, this can happen if the dependencies were not set in the correct order.
+4. In case the *Matlab* bindings were included, the VA Matlab class must be generated *manually*. This can be done by running the `VA_build.m` script in Matlab afterwards. A copy of the script can be found in the `matlab` folder of the distribution in the install target directory.
+5. Finally, the distribution can be zipped manually and is ready-to-use. Users just have to unzip the VA binary package anywhere, it is a portable distribution that can be executed right away.
