@@ -24,6 +24,7 @@ namespace perSONA
         public string currentFile;
 
         public bool currentStreak = false;
+        public bool previousStreak;
 
         public double SumofAnswers;
         public double SumofWords;
@@ -296,6 +297,7 @@ namespace perSONA
             double answer = testWordsList.SelectedItems.Count;
             double totalWords = testWordsList.Items.Count;
             double nextSNR = 0;
+            previousStreak = currentStreak;
 
             if (answer / totalWords < test.AcceptanceRule)
             {
@@ -400,8 +402,9 @@ namespace perSONA
                 }
                 tryalStartTime = DateTime.Now;
                 blockClick = false;
+                
                 Console.WriteLine("Valores de HSNR:");
-                foreach (var value in HSNR)
+                foreach (var value in signalToNoiseArray)
                 {
                     Console.WriteLine(value);
                 }
@@ -440,7 +443,16 @@ namespace perSONA
             if (filenameList.SelectedIndex > 0) 
             {
                 filenameList.SelectedIndex = filenameList.SelectedIndex - 1;
-                actualSNR = HSNR[filenameList.SelectedIndex];
+
+                currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+
+                //detailsBox.AppendText(currentFile);
+                vAInterface.fillWords(currentFile, testWordsList);
+
+                actualSNR = signalToNoiseArray[filenameList.SelectedIndex];
+                Array.Resize(ref signalToNoiseArray, signalToNoiseArray.Length - 1);
+                currentStreak = previousStreak;
+
                 textBox3.Text = string.Format("{0}", actualSNR);
 
                 double answer = testWordsList.SelectedItems.Count;
@@ -450,40 +462,19 @@ namespace perSONA
                 allCountCorrectWords -= HCorrectSenteces[filenameList.SelectedIndex];
                 allCountWords -= testWordsList.Items.Count;
 
-                //allCountWords += SpeechTestFormWords.Item2;
-                /*  string responseTime = currentTryal.Text;
-                  double answer = testWordsList.SelectedItems.Count;
-                  double totalWords = testWordsList.Items.Count;
-                  string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords)));
-                  vAInterface.concatText(string.Format("{0} - response time: {1}", string.Join(",", testWordsList.Items.Cast<string>()), responseTime));
+                textBox4.Text = string.Format("{0}", allCountCorrectWords);
+                textBox5.Text = string.Format("{0}%", Math.Round(100.0 * allCountCorrectWords / allCountWords, 2)); // 100.0 * (correctWords / totalWords));
 
-                  Tuple<int, int> SpeechTestFormWords = updatePercentage();
-                  allCountCorrectWords += SpeechTestFormWords.Item1;
-                  allCountWords += SpeechTestFormWords.Item2;
-                  double PORCENTAGEMDEACERTOTOTAL = 100.0 * allCountCorrectWords / allCountWords;
+                computedAudioText.Text = (filenameList.SelectedIndex + 1).ToString();
+                totalWordsText.Text = string.Format("{0}", filenameList.Items.Count);
 
-                      if (filenameList.SelectedIndex + 1 < filenameList.Items.Count)
-                      {
-                          filenameList.SelectedIndex = filenameList.SelectedIndex + 1;
-                          currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
-
-                          //detailsBox.AppendText(currentFile);
-                          vAInterface.fillWords(currentFile, testWordsList);
-
-
-                          textBox4.Text = string.Format("{0}", allCountCorrectWords);
-                          textBox5.Text = string.Format("{0}%", Math.Round(100.0 * allCountCorrectWords / allCountWords, 2)); // 100.0 * (correctWords / totalWords));
-
-
-                          computedAudioText.Text = (filenameList.SelectedIndex + 1).ToString();
-                          totalWordsText.Text = string.Format("{0}", filenameList.Items.Count);
-
-                          signalToNoiseArray = signalToNoiseArray.Concat(new double[] { actualSNR }).ToArray();
-                          iteractiveResponseTime.Add(responseTime);
-                          iteractiveResponsePercentage.Add(responsePercentage);
-                          textBox3.Text = string.Format("{0}", actualSNR);
-                          updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
-                      }*/
+                if (iteractiveResponseTime.Count > 0 && iteractiveResponsePercentage.Count > 0)
+                {
+                    iteractiveResponseTime.RemoveAt(iteractiveResponseTime.Count - 1);
+                    iteractiveResponsePercentage.RemoveAt(iteractiveResponsePercentage.Count - 1);
+                }
+                else
+                {}
             }
         }
     }
