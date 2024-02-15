@@ -33,7 +33,6 @@ namespace perSONA
 
 
         double[] signalToNoiseArray;
-        public double[] HSNR;
         public double[] HCorrectSenteces;
 
         private double allCountCorrectWords;
@@ -87,8 +86,6 @@ namespace perSONA
             totalWordsText.Text = string.Format("{0}", filenameList.Items.Count);
             actualSNR = test.SignalToNoise;
 
-            HSNR = new double[filenameList.Items.Count];
-            HSNR[filenameList.SelectedIndex] = actualSNR;
             HCorrectSenteces = new double[filenameList.Items.Count];
             Console.WriteLine(actualSNR);
            
@@ -337,7 +334,6 @@ namespace perSONA
             if (blockClick)
             {
                 actualSNR = getNextSNR(actualSNR, test.SignalToNoiseStep);
-                HSNR[filenameList.SelectedIndex+1] = actualSNR;
                 HCorrectSenteces[filenameList.SelectedIndex] = testWordsList.SelectedItems.Count;
 
                 string responseTime = currentTryal.Text;
