@@ -13,6 +13,7 @@ using VA;
 using ZedGraph;
 using TagLib;
 using System.Windows.Media;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace perSONA
 {
@@ -24,7 +25,7 @@ namespace perSONA
         public string[] speechFiles;
         public string currentFile;
         string[] audioList2;
-        bool nTest = true;
+        string caminhoArquivo;
 
         public bool currentStreak = false;
 
@@ -102,6 +103,7 @@ namespace perSONA
 
                 //detailsBox.AppendText(currentFile);
                 vAInterface.fillWords(currentFile, testWordsList);
+                getDirectoryAzbio();
 
             }
             else
@@ -375,6 +377,8 @@ namespace perSONA
             return nextSNR;
         }
 
+        
+
         private void NextSentence_Click(object sender, EventArgs e)
         {
             actualSNR = getNextSNR(actualSNR, test.SignalToNoiseStep);
@@ -397,6 +401,51 @@ namespace perSONA
             allCountCorrectWords += SpeechTestFormWords.Item1;
             allCountWords += SpeechTestFormWords.Item2;
             double PORCENTAGEMDEACERTOTOTAL = 100.0 * allCountCorrectWords / allCountWords;
+
+            if (test.TestOption == "azbio")
+            {
+                
+
+                string AzBioLista = filenameList.Text;
+                string AzBioSentence = "";
+                string palavrasErradas = "";
+
+                foreach (object item in testWordsList.Items)
+                {
+                    AzBioSentence += item.ToString() + " ";
+                    
+                    if (testWordsList.SelectedItems.Contains(item))
+                    { }
+                    else
+                    {
+                        palavrasErradas += item.ToString() + " ";
+                    }
+                }
+
+                if (percentage == 100)
+                {
+                    try
+                    {
+                        using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
+                        {
+                            writer.WriteLine(AzBioLista + " - " + AzBioSentence + "- ok");
+                        }
+                    }
+                    catch (Exception ex)
+                    { }
+                }
+                else 
+                {
+                    using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
+                    {
+                        writer.WriteLine(AzBioLista + " - " + AzBioSentence + "- palavras erradas: " + palavrasErradas);
+                    }
+                }
+            }
+
+
+
+
 
             if (filenameList.SelectedIndex + 1 < filenameList.Items.Count)
             {
@@ -426,79 +475,31 @@ namespace perSONA
             }
             else
             {
-                if ((test.TestOption == "azbio") && (nTest))
-                {
-                    test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
-                    test.IterativeSNR = signalToNoiseArray;
-                    test.rightSenteces = RightSentences;
-                    //detailsBox.AppendText("/r/n Finished list");
-                    test.TotalDuration = continuousTimerText.Text;
-                    test.IterativeDuration = iteractiveResponseTime.ToArray();
-                    test.IterativePercentage = iteractiveResponsePercentage.ToArray();
+                test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
+                test.IterativeSNR = signalToNoiseArray;
 
-                    vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
+                //detailsBox.AppendText("/r/n Finished list");
+                test.TotalDuration = continuousTimerText.Text;
+                test.IterativeDuration = iteractiveResponseTime.ToArray();
+                test.IterativePercentage = iteractiveResponsePercentage.ToArray();
+                test.rightSenteces = RightSentences;
 
-                    double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
+                vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
 
-                    string completedTestMessage = string.Format(
-                        "Avaliação 1 finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}, sentenças acertadas: {5}",
-                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage, test.rightSenteces);
+                double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
 
-                    string message = completedTestMessage;
-                    const string caption = "Fim da avaliação";
-                    var result = MessageBox.Show(message, caption,
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    vAInterface.addCompletedTest(test);
+                string completedTestMessage = string.Format(
+                    "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}, sentenças acertadas: {5}",
+                    actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage, test.rightSenteces);
 
-                    filenameList.DataSource = null;
-                    filenameList.Items.Clear();
+                string message = completedTestMessage;
+                const string caption = "Fim da avaliação";
+                var result = MessageBox.Show(message, caption,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                vAInterface.addCompletedTest(test);
 
-                    List<string> newSpeechFiles = audioList2.ToList();
-
-                    speechFiles = audioList2;
-
-                    filenameList.DataSource = newSpeechFiles;
-                    filenameList.SelectedIndex = 0;
-
-                    currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
-
-                    //detailsBox.AppendText(currentFile);
-                    vAInterface.fillWords(currentFile, testWordsList);
-                    nTest = false;
-
-                    RightSentences = 0;
-
-                }
-                else
-                {
-                    test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
-                    test.IterativeSNR = signalToNoiseArray;
-
-                    //detailsBox.AppendText("/r/n Finished list");
-                    test.TotalDuration = continuousTimerText.Text;
-                    test.IterativeDuration = iteractiveResponseTime.ToArray();
-                    test.IterativePercentage = iteractiveResponsePercentage.ToArray();
-                    test.rightSenteces = RightSentences;
-
-                    vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
-
-                    double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
-
-                    string completedTestMessage = string.Format(
-                        "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}, sentenças acertadas: {5}",
-                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage, test.rightSenteces);
-
-                    string message = completedTestMessage;
-                    const string caption = "Fim da avaliação";
-                    var result = MessageBox.Show(message, caption,
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    vAInterface.addCompletedTest(test);
-
-                    this.Close();
-
-                }
+                this.Close();
 
             }
             tryalStartTime = DateTime.Now;
@@ -524,6 +525,21 @@ namespace perSONA
                 int newHeight = Convert.ToInt32(PCResolutionHeight * 0.95);
                 this.Size = new Size(newWidth, newHeight);
             }
+        }
+
+        private void getDirectoryAzbio()
+        {
+            string diretorioAreaTrabalho = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string baseFileName = "AzBioTest";
+            string extension = ".txt";
+
+            int sequencial = 1;
+
+            do
+            {
+                caminhoArquivo = Path.Combine(diretorioAreaTrabalho, $"{baseFileName}_{sequencial}{extension}");
+                sequencial++;
+            } while (System.IO.File.Exists(caminhoArquivo));
         }
     }
 }
