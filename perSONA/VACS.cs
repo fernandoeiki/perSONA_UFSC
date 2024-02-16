@@ -5,7 +5,7 @@ using System.Text;
 namespace VA
 {
 
-    public class VAVec3
+    public partial class VAVec3
     {
         public double x;
         public double y;
@@ -19,7 +19,7 @@ namespace VA
         }
     }
 
-    public class VAQuat
+    public partial class VAQuat
     {
         public double x;
         public double y;
@@ -86,6 +86,93 @@ namespace VA
             return NativeAddSearchPath(_NetClient, SearchPath);
         }
 
+		
+		// Global methods
+		
+        public void SetGlobalAuralizationMode(string sAuralizationMode)
+        {
+            NativeSetGlobalAuralizationMode(_NetClient, sAuralizationMode);
+        }
+
+        public bool GetInputMuted()
+        {
+            return NativeGetInputMuted(_NetClient);
+        }
+		
+        public bool GetOutputMuted()
+        {
+            return NativeGetOutputMuted(_NetClient);
+        }
+		
+        public void SetOutputMuted(bool bMuted)
+        {
+            NativeSetOutputMuted(_NetClient, bMuted);
+        }
+		
+        public void SetInputMuted(bool bMuted)
+        {
+            NativeSetInputMuted(_NetClient, bMuted);
+        }
+		
+        public void SetInputGain(double dGain)
+        {
+            NativeSetInputGain(_NetClient, dGain);
+        }
+		
+        public double GetInputGain()
+        {
+            return NativeGetInputGain(_NetClient);
+        }
+		
+        public void SetOutputGain(double dGain)
+        {
+            NativeSetOutputGain(_NetClient, dGain);
+        }
+        public double GetOutputGain()
+        {
+            return NativeGetOutputGain(_NetClient);
+        }
+
+        public void SetRenderingModuleMuted(string sModuleID, bool bMuted)
+        {
+            NativeSetRenderingModuleMuted(_NetClient, sModuleID, bMuted);
+        }
+		
+        public bool GetRenderingModuleMuted(string sModuleID)
+        {
+            return NativeGetRenderingModuleMuted(_NetClient, sModuleID);
+        }
+		
+        public double GetRenderingModuleGain(string sModuleID)
+        {
+            return NativeGetRenderingModuleGain(_NetClient, sModuleID);
+        }
+		
+        public void SetRenderingModuleGain(string sModuleID, double dGain)
+        {
+            NativeSetRenderingModuleGain(_NetClient, sModuleID, dGain);
+        }
+		
+        public void SetReproductionModuleMuted(string sModuleID, bool bMuted)
+        {
+            NativeSetReproductionModuleMuted(_NetClient, sModuleID, bMuted);
+        }
+		
+        public bool GetReproductionModuleMuted(string sModuleID)
+        {
+            return NativeGetReproductionModuleMuted(_NetClient, sModuleID);
+        }
+		
+        public double GetReproductionModuleGain(string sModuleID)
+        {
+            return NativeGetReproductionModuleGain(_NetClient, sModuleID);
+        }
+		
+        public void SetReproductionModuleGain(string sModuleID, double dGain)
+        {
+            NativeSetReproductionModuleGain(_NetClient, sModuleID, dGain);
+        }
+
 
         // Sound receiver
 
@@ -103,16 +190,6 @@ namespace VA
             return NativeCreateSoundReceiverExplicitRenderer(_NetClient, RendererID, Name);
         }
 		
-        public void SetActiveSoundReceiverExplicitRenderer(string RendererID, int SoundReceiverID)
-        {
-            NativeSetActiveSoundReceiverExplicitRenderer(_NetClient, RendererID, SoundReceiverID);
-        }
-		
-        public int GetActiveSoundReceiverExplicitRenderer(string RendererID)
-        {
-            return NativeGetActiveSoundReceiverExplicitRenderer(_NetClient, RendererID);
-        }
-
         public void SetSoundReceiverPose(int SoundReceiver, VAVec3 v, VAQuat o)
         {
             NativeSetSoundReceiverPose(_NetClient, SoundReceiver, v.x, v.y, v.z, o.x, o.y, o.z, o.w);
@@ -159,6 +236,26 @@ namespace VA
             return NativeDeleteSoundReceiver(_NetClient, iSoundReceiverID);
         }
 
+        public void SetSoundReceiverEnabled(int iSoundReceiverID, bool bEnabled)
+        {
+            NativeSetSoundReceiverEnabled(_NetClient, iSoundReceiverID, bEnabled);
+        }
+		
+        public void SetSoundReceiverDirectivity(int iSoundReceiverID, int iDirID)
+        {
+            NativeSetSoundReceiverDirectivity(_NetClient, iSoundReceiverID, iDirID);
+        }
+		
+        public void SetSoundReceiverMuted(int iID, bool bMuted)
+        {
+            NativeSetSoundReceiverMuted(_NetClient, iID, bMuted);
+        }
+
+        public bool GetSoundReceiverMuted(int iID)
+        {
+            return NativeGetSoundReceiverMuted(_NetClient, iID);
+        }
+
 
         // Sound sources
 
@@ -177,7 +274,7 @@ namespace VA
          */
         public int CreateSoundSourceExplicitRenderer(string RendererID, string Name = "")
         {
-            return NativeCreateSoundSourceExplicitRenderer(_NetClient, RendererID, Name);
+            return NativeCreateSoundSourceExplicitRenderer(_NetClient, Name, RendererID);
         }
 
         public void SetSoundSourcePose(int SoundSource, VAVec3 v, VAQuat o)
@@ -205,36 +302,77 @@ namespace VA
             return NativeDeleteSoundSource(_NetClient, iSoundSourceID);
         }
 
+        public void SetSoundSourceDirectivity(int iSoundSourceID, int iDirectivityID)
+        {
+            NativeSetSoundSourceDirectivity(_NetClient, iSoundSourceID, iDirectivityID);
+        }
 
+        public void SetSoundSourceAuralizationMode(int iSoundSourceID, string sAuralizationMode)
+        {
+            NativeSetSoundSourceAuralizationMode(_NetClient, iSoundSourceID, sAuralizationMode);
+        }
+		
+        public void SetSoundSourceSoundPower(int iSoundSourceID, double dPowerWatts)
+        {
+            NativeSetSoundSourceSoundPower(_NetClient, iSoundSourceID, dPowerWatts);
+        }
+		
+        public void SetSoundSourceMuted(int iSoundSourceID, bool bMuted)
+        {
+            NativeSetSoundSourceMuted(_NetClient, iSoundSourceID, bMuted);
+        }
+		
+        public bool GetSoundSourceMuted(int iID)
+        {
+            return NativeGetSoundSourceMuted(_NetClient, iID);
+        }
+
+        public void SetSoundSourceEnabled(int iSoundSourceID, bool bEnabled)
+        {
+            NativeSetSoundSourceEnabled(_NetClient, iSoundSourceID, bEnabled);
+        }
+
+		
         // Signal sources
 
         public void SetSignalSourceBufferPlaybackAction(string sSignalSourceID, string sPlaybackAction)
         {
             NativeSetSignalSourceBufferPlaybackAction(_NetClient, sSignalSourceID, sPlaybackAction);
         }
+		
+        public string GetSignalSourceBufferPlaybackState(string sSignalSourceID)
+        {
+            StringBuilder sPlaybackState = new StringBuilder(10 * 256);
+            NativeGetSignalSourceBufferPlaybackState( _NetClient, sSignalSourceID, sPlaybackState );
+            return sPlaybackState.ToString();
+        }
+		
         public void SetSignalSourceBufferPlaybackPosition(string sSignalSourceID, double dPlaybackPosition)
         {
             NativeSetSignalSourceBufferPlaybackPosition(_NetClient, sSignalSourceID, dPlaybackPosition);
         }
+		
         public bool GetSignalSourceBufferLooping(string sSignalSourceID)
         {
             return NativeGetSignalSourceBufferLooping(_NetClient, sSignalSourceID);
         }
+		
         public void SetSignalSourceBufferLooping(string sSignalSourceID, bool bLooping)
         {
             NativeSetSignalSourceBufferLooping(_NetClient, sSignalSourceID, bLooping);
         }
+		
         public string GetSoundSourceSignalSource(int iSoundSourceID)
         {
             StringBuilder sSignalSourceID = new StringBuilder(10 * 256);
             NativeGetSoundSourceSignalSource(_NetClient, iSoundSourceID, sSignalSourceID);
             return sSignalSourceID.ToString();
         }
+		
         public void SetSoundSourceSignalSource(int iSoundSourceID, string sSignalSourceID)
         {
             NativeSetSoundSourceSignalSource(_NetClient, iSoundSourceID, sSignalSourceID);
         }
-
 
         public bool DeleteSignalSource(string sIdentifier)
         {
@@ -247,85 +385,58 @@ namespace VA
             NativeCreateSignalSourceBufferFromFile(_NetClient, FilePath, sName, sIdentifier);
             return sIdentifier.ToString();
         }
+		
         public string CreateSignalSourceTextToSpeech(string Name = "")
         {
             StringBuilder sIdentifier = new StringBuilder(10 * 256);
             NativeCreateSignalSourceTextToSpeech(_NetClient, Name, sIdentifier);
             return sIdentifier.ToString();
         }
+		
         public string CreateSignalSourceEngineSignalSource(string Name = "")
         {
             StringBuilder sIdentifier = new StringBuilder(10 * 256);
             NativeCreateSignalSourceEngine(_NetClient, Name, sIdentifier);
             return sIdentifier.ToString();
         }
+		
         public string CreateSignalSourceMachine(string Name = "")
         {
             StringBuilder sIdentifier = new StringBuilder(10 * 256);
             NativeCreateSignalSourceMachine(_NetClient, Name, sIdentifier);
             return sIdentifier.ToString();
         }
+		
         public string CreateSignalSourceSequencer(string Name = "")
         {
             StringBuilder sIdentifier = new StringBuilder(10 * 256);
             NativeCreateSignalSourceSequencer(_NetClient, Name, sIdentifier);
             return sIdentifier.ToString();
         }
+		
         public string CreateSignalSourceEngineSignalSource(string Name, string sInterface, int iPort)
         {
             StringBuilder sIdentifier = new StringBuilder(10 * 256);
             NativeCreateSignalSourceNetworkStream(_NetClient, Name, sInterface, iPort, sIdentifier);
             return sIdentifier.ToString();
         }
+		
 
-        public void SetSoundSourceSoundPower(int iSoundSourceID, double dPowerWatts)
+		// Directivities
+		
+        public int CreateDirectivityFromFile(string FileName, string Name = "")
         {
-            NativeSetSoundSourceSoundPower(_NetClient, iSoundSourceID, dPowerWatts);
+            return NativeCreateDirectivityFromFile(_NetClient, FileName, Name);
         }
-        public void SetSoundSourceMuted(int iSoundSourceID, bool bMuted)
-        {
-            NativeSetSoundSourceMuted(_NetClient, iSoundSourceID, bMuted);
-        }
-        public int CreateDirectivityFromFile(string sFileName)
-        {
-            return NativeCreateDirectivityFromFile(_NetClient, sFileName);
-        }
+		
         public bool DeleteDirectivity(int iDirID)
         {
             return NativeDeleteDirectivity(_NetClient, iDirID);
-        }
-        public void SetSoundSourceEnabled(int iSoundSourceID, bool bEnabled)
-        {
-            NativeSetSoundSourceEnabled(_NetClient, iSoundSourceID, bEnabled);
-        }
-
-        public void SetSoundReceiverEnabled(int iSoundReceiverID, bool bEnabled)
-        {
-            NativeSetSoundReceiverEnabled(_NetClient, iSoundReceiverID, bEnabled);
-        }
-        public void SetSoundReceiverDirectivity(int iSoundReceiverID, int iDirID)
-        {
-            NativeSetSoundReceiverDirectivity(_NetClient, iSoundReceiverID, iDirID);
-        }
-
-        public void SetSoundSourceDirectivity(int iSoundSourceID, int iDirectivityID)
-        {
-            NativeSetSoundSourceDirectivity(_NetClient, iSoundSourceID, iDirectivityID);
-        }
-
-        public void SetGlobalAuralizationMode(string sAuralizationMode)
-        {
-            NativeSetGlobalAuralizationMode(_NetClient, sAuralizationMode);
         }
 
         public void SetSoundReceiverAuralizationMode(int iSoundReceiverID, string sAuralizationMode)
         {
             NativeSetSoundReceiverAuralizationMode(_NetClient, iSoundReceiverID, sAuralizationMode);
-        }
-
-        public void SetSoundSourceAuralizationMode(int iSoundSourceID, string sAuralizationMode)
-        {
-            NativeSetSoundSourceAuralizationMode(_NetClient, iSoundSourceID, sAuralizationMode);
         }
 
         public void SetArtificialReverberationTime(string Renderer, double ReverbTime)
@@ -343,27 +454,34 @@ namespace VA
             NativeSetArtificialSurfaceArea(_NetClient, Renderer, ReverbTime);
         }
 
+		
         // Homogeneous medium
+		
         public void SetHomogeneousMediumSoundSpeed(double SoundSpeed)
         {
             NativeSetHomogeneousMediumSoundSpeed(_NetClient, SoundSpeed);
         }
+		
         public double GetHomogeneousMediumSoundSpeed()
         {
             return NativeGetHomogeneousMediumSoundSpeed(_NetClient);
         }
+		
         public void SetHomogeneousMediumRelativeHumidity(double RelativeHumidity)
         {
             NativeSetHomogeneousMediumRelativeHumidity(_NetClient, RelativeHumidity);
         }
+		
         public double GetHomogeneousMediumRelativeHumidity()
         {
             return NativeGetHomogeneousMediumRelativeHumidity(_NetClient);
         }
+		
         public void SetHomogeneousMediumShiftSpeed(VAVec3 ShiftSpeed)
         {
             NativeSetHomogeneousMediumShiftSpeed(_NetClient, ShiftSpeed.x, ShiftSpeed.y, ShiftSpeed.z);
         }
+		
         public VAVec3 GetHomogeneousMediumShiftSpeed()
         {
             double x = 0;
@@ -372,18 +490,22 @@ namespace VA
             NativeGetHomogeneousMediumShiftSpeed(_NetClient, ref x, ref y, ref z);
             return new VAVec3(x, y, z);
         }
+		
         public void SetHomogeneousMediumStaticPressure(double StaticPressure)
         {
             NativeSetHomogeneousMediumStaticPressure(_NetClient, StaticPressure);
         }
+		
         public double GetHomogeneousMediumStaticPressure()
         {
             return NativeGetHomogeneousMediumStaticPressure(_NetClient);
         }
+		
         public void SetHomogeneousMediumTemperature(double Temperature)
         {
             NativeSetHomogeneousMediumTemperature(_NetClient, Temperature);
         }
+		
         public double GetHomogeneousMediumTemperature()
         {
             return NativeGetHomogeneousMediumTemperature(_NetClient);
@@ -398,20 +520,24 @@ namespace VA
             NativeCreateSceneFromFile(_NetClient, FilePath, Identifier);
             return Identifier.ToString();
         }
+		
         public string GetSceneName(string ID)
         {
             StringBuilder Name = new StringBuilder(10 * 256);
             NativeGetSceneName(_NetClient, ID, Name);
             return Name.ToString();
         }
+		
         public void SetSceneName(string ID, string Name)
         {
             NativeSetSceneName(_NetClient, ID, Name);
         }
+		
         public bool GetSceneEnabled(string ID)
         {
             return NativeGetSceneEnabled(_NetClient, ID);
         }
+		
         public void SetSceneEnabled(string ID, bool Enabled)
         {
             NativeSetSceneEnabled(_NetClient, ID, Enabled);
@@ -420,97 +546,36 @@ namespace VA
 
         // Geometry meshes
 
-
         public int CreateGeometryMeshFromFile(string FilePath)
         {
             return NativeCreateGeometryMeshFromFile(_NetClient, FilePath);
         }
+		
         public string GetGeometryMeshName(int ID)
         {
             StringBuilder Name = new StringBuilder(10 * 256);
             NativeGetGeometryMeshName(_NetClient, ID, Name);
             return Name.ToString();
         }
+		
         public void SetGeometryMeshName(int ID, string Name)
         {
             NativeSetGeometryMeshName(_NetClient, ID, Name);
         }
+		
         public bool GetGeometryMeshEnabled(int ID)
         {
             return NativeGetGeometryMeshEnabled(_NetClient, ID);
         }
+		
         public void SetGeometryMeshEnabled(int ID, bool Enabled)
         {
             NativeSetGeometryMeshEnabled(_NetClient, ID, Enabled);
         }
 
 
-        public bool GetInputMuted()
-        {
-            return NativeGetInputMuted(_NetClient);
-        }
-        public bool GetOutputMuted()
-        {
-            return NativeGetOutputMuted(_NetClient);
-        }
-        public void SetOutputMuted(bool bMuted)
-        {
-            NativeSetOutputMuted(_NetClient, bMuted);
-        }
-        public void SetInputMuted(bool bMuted)
-        {
-            NativeSetInputMuted(_NetClient, bMuted);
-        }
-        public void SetInputGain(double dGain)
-        {
-            NativeSetInputGain(_NetClient, dGain);
-        }
-        public double GetInputGain()
-        {
-            return NativeGetInputGain(_NetClient);
-        }
-        public void SetOutputGain(double dGain)
-        {
-            NativeSetOutputGain(_NetClient, dGain);
-        }
-        public double GetOutputGain()
-        {
-            return NativeGetOutputGain(_NetClient);
-        }
-
-        public void SetRenderingModuleMuted(string sModuleID, bool bMuted)
-        {
-            NativeSetRenderingModuleMuted(_NetClient, sModuleID, bMuted);
-        }
-        public bool GetRenderingModuleMuted(string sModuleID)
-        {
-            return NativeGetRenderingModuleMuted(_NetClient, sModuleID);
-        }
-        public double GetRenderingModuleGain(string sModuleID)
-        {
-            return NativeGetRenderingModuleGain(_NetClient, sModuleID);
-        }
-        public void SetRenderingModuleGain(string sModuleID, double dGain)
-        {
-            NativeSetRenderingModuleGain(_NetClient, sModuleID, dGain);
-        }
-        public void SetReproductionModuleMuted(string sModuleID, bool bMuted)
-        {
-            NativeSetReproductionModuleMuted(_NetClient, sModuleID, bMuted);
-        }
-        public bool GetReproductionModuleMuted(string sModuleID)
-        {
-            return NativeGetReproductionModuleMuted(_NetClient, sModuleID);
-        }
-        public double GetReproductionModuleGain(string sModuleID)
-        {
-            return NativeGetReproductionModuleGain(_NetClient, sModuleID);
-        }
-        public void SetReproductionModuleGain(string sModuleID, double dGain)
-        {
-            NativeSetReproductionModuleGain(_NetClient, sModuleID, dGain);
-        }
-
+		// Specialties
+		
         public void SetSoundReceiverAnthropometricData(int iSoundReceiverID, double dHeadWidth, double dHeadHeight, double dHeadDepth)
         {
             NativeSetSoundReceiverAnthropometricData(_NetClient, iSoundReceiverID, dHeadWidth, dHeadHeight, dHeadDepth);
@@ -520,10 +585,12 @@ namespace VA
         {
             NativeTextToSpeechPrepareTextAndPlaySpeech(_NetClient, sSignalSourceIdentifier, sText);
         }
+		
         public void TextToSpeechPrepareText(string sSignalSourceIdentifier, string sTextIdentifier, string sText)
         {
             NativeTextToSpeechPrepareText(_NetClient, sSignalSourceIdentifier, sTextIdentifier, sText);
         }
+		
         public void TextToSpeechPlaySpeech(string sSignalSourceIdentifier, string sTextIdentifier)
         {
             NativeTextToSpeechPlaySpeech(_NetClient, sSignalSourceIdentifier, sTextIdentifier);
@@ -533,9 +600,15 @@ namespace VA
         {
             NativeUpdateGenericPath(_NetClient, sModuleID, iSource, iReceiver, iChannel, fDelaySeconds, iNumSamples, vfSampleBuffer);
         }
+		
         public void UpdateGenericPathFromFile(string sModuleID, int iSource, int iReceiver, string sFilePath)
         {
             NativeUpdateGenericPathFromFile(_NetClient, sModuleID, iSource, iReceiver, sFilePath);
+        }
+		
+        public void UpdateGenericPathDelay(string sModuleID, int iSource, int iReceiver, float fDelaySeconds)
+        {
+            NativeUpdateGenericPathDelay(_NetClient, sModuleID, iSource, iReceiver, fDelaySeconds);
         }
 
 
@@ -575,7 +648,7 @@ namespace VA
         // Directivities
 
         [DllImport("VANetCSWrapper")]
-        private static extern int NativeCreateDirectivityFromFile(IntPtr pClient, string sFilePath);
+        private static extern int NativeCreateDirectivityFromFile(IntPtr pClient, string sFilePath, string sName);
         [DllImport("VANetCSWrapper")]
         private static extern bool NativeDeleteDirectivity(IntPtr pClient, int iDirID);
 
@@ -597,7 +670,7 @@ namespace VA
         [DllImport("VANetCSWrapper")]
         private static extern bool NativeDeleteSignalSource(IntPtr pClient, string sIdentifier);
         [DllImport("VANetCSWrapper")]
-        private static extern void NativeGetSignalSourceBufferPlaybackState(IntPtr pClient, string sSignalSourceID, string sPlaybackState);
+        private static extern void NativeGetSignalSourceBufferPlaybackState(IntPtr pClient, string sSignalSourceID, StringBuilder sPlaybackState);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetSignalSourceBufferPlaybackAction(IntPtr pClient, string sSignalSourceID, string sPlaybackAction);
         [DllImport("VANetCSWrapper")]
@@ -615,7 +688,7 @@ namespace VA
         [DllImport("VANetCSWrapper")]
         private static extern void NativeLockUpdate(IntPtr pClient);
         [DllImport("VANetCSWrapper")]
-        private static extern int NativeUnlockScene(IntPtr pClient);
+        private static extern int NativeUnlockUpdate(IntPtr pClient);
 
 
         // Sound sources
@@ -654,7 +727,6 @@ namespace VA
         private static extern bool NativeGetSoundSourceMuted(IntPtr pClient, int iSoundSourceID);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetSoundSourceMuted(IntPtr pClient, int iSoundSourceID, bool bMuted);
-
         [DllImport("VANetCSWrapper")]
         private static extern void NativeGetSoundSourcePose(IntPtr pClient, int iID, ref double x, ref double y, ref double z, ref double ox, ref double oy, ref double oz, ref double ow);
         [DllImport("VANetCSWrapper")]
@@ -682,10 +754,6 @@ namespace VA
         [DllImport("VANetCSWrapper")]
         private static extern int NativeCreateSoundReceiverExplicitRenderer(IntPtr pClient, string sRendererID, string sName);
         [DllImport("VANetCSWrapper")]
-        private static extern void NativeSetActiveSoundReceiverExplicitRenderer(IntPtr pClient, string sRendererID, int iSoundReceiverID);
-        [DllImport("VANetCSWrapper")]
-        private static extern int NativeGetActiveSoundReceiverExplicitRenderer(IntPtr pClient, string sRendererID);
-        [DllImport("VANetCSWrapper")]
         private static extern int NativeDeleteSoundReceiver(IntPtr pClient, int iSoundReceiverID);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetSoundReceiverEnabled(IntPtr pClient, int iSoundReceiverID, bool bEnabled);
@@ -703,7 +771,10 @@ namespace VA
         private static extern int NativeGetSoundReceiverDirectivity(IntPtr pClient, int iSoundReceiverID);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetSoundReceiverDirectivity(IntPtr pClient, int iSoundReceiverID, int iDirID);
-
+        [DllImport("VANetCSWrapper")]
+        private static extern bool NativeGetSoundReceiverMuted(IntPtr pClient, int iID);
+        [DllImport("VANetCSWrapper")]
+        private static extern void NativeSetSoundReceiverMuted(IntPtr pClient, int iID, bool bMuted);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeGetSoundReceiverPose(IntPtr pClient, int iSoundReceiverID, ref double x, ref double y, ref double z, ref double ox, ref double oy, ref double oz, ref double ow);
         [DllImport("VANetCSWrapper")]
@@ -724,8 +795,6 @@ namespace VA
         private static extern void NativeGetSoundReceiverHeadAboveTorsoOrientation(IntPtr pClient, int iSoundReceiverID, ref double qx, ref double qy, ref double qz, ref double qw);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetSoundReceiverHeadAboveTorsoOrientation(IntPtr pClient, int iSoundReceiverID, double qx, double qy, double qz, double qw);
-
-
         [DllImport("VANetCSWrapper")]
         private static extern void NativeGetSoundReceiverRealWorldPositionOrientationVU(IntPtr pClient, int iSoundReceiverID, ref double px, ref double py, ref double pz, ref double vx, ref double vy, ref double vz, ref double ux, ref double uy, ref double uz);
         [DllImport("VANetCSWrapper")]
@@ -741,6 +810,7 @@ namespace VA
 
 
         // Homogeneous medium
+		
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetHomogeneousMediumSoundSpeed(IntPtr pClient, double dSoundSpeed);
         [DllImport("VANetCSWrapper")]
@@ -795,7 +865,7 @@ namespace VA
 
         // Portals
 
-        // @todo jst mim ahe
+        // @todo
 
 
         // Global control
@@ -816,25 +886,14 @@ namespace VA
         private static extern bool NativeGetOutputMuted(IntPtr pClient);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetOutputMuted(IntPtr pClient, bool bMuted);
-
         [DllImport("VANetCSWrapper")]
         private static extern int NativeGetGlobalAuralizationMode(IntPtr pClient);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetGlobalAuralizationMode(IntPtr pClient, string sAuralizationMode);
-
-
-        [DllImport("VANetCSWrapper")]
-        private static extern int NativeGetActiveSoundReceiver(IntPtr pClient);
-        [DllImport("VANetCSWrapper")]
-        private static extern void NativeSetActiveSoundReceiver(IntPtr pClient, int iSoundReceiverID);
-
-
         [DllImport("VANetCSWrapper")]
         private static extern double NativeGetCoreClock(IntPtr pClient);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetCoreClock(IntPtr pClient, double dSeconds);
-
-
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetRenderingModuleMuted(IntPtr pClient, string sModuleID, bool bMuted);
         [DllImport("VANetCSWrapper")]
@@ -843,8 +902,6 @@ namespace VA
         private static extern void NativeSetRenderingModuleGain(IntPtr pClient, string sModuleID, double dGain);
         [DllImport("VANetCSWrapper")]
         private static extern double NativeGetRenderingModuleGain(IntPtr pClient, string sModuleID);
-
-
         [DllImport("VANetCSWrapper")]
         private static extern void NativeSetReproductionModuleMuted(IntPtr pClient, string sModuleID, bool bMuted);
         [DllImport("VANetCSWrapper")]
@@ -886,9 +943,11 @@ namespace VA
         private static extern void NativeUpdateGenericPath(IntPtr pClient, string sRendererID, int iSourceID, int iReceiverID, int iChannel, float fDelaySeconds, int iNumSamples, [In] float[] vfSampleBuffer);
         [DllImport("VANetCSWrapper")]
         private static extern void NativeUpdateGenericPathFromFile(IntPtr pClient, string sRendererID, int iSourceID, int iReceiverID, string sFilePath);
+        [DllImport("VANetCSWrapper")]
+        private static extern void NativeUpdateGenericPathDelay(IntPtr pClient, string sModuleID, int iSourceID, int iReceiverID, float fDelaySeconds);
 
         // Ambient mixer renderer
-        
+
         [DllImport("VANetCSWrapper")]
         private static extern void NativeAmbientMixerRendererPlaySampleFromFile( IntPtr pClient, string sRendererID, string sSampleFilePath );
 
