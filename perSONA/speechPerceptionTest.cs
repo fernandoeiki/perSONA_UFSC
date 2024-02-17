@@ -32,7 +32,8 @@ namespace perSONA
         public string TotalDuration { get; set; } = "0";
         public string[] IterativeDuration { get; set; } = { };
         public string[] IterativePercentage { get; set; } = { };
-        public string TestOption { get; set; } 
+        public string TestOption { get; set; }
+        public double azbionum { get; set; }
 
         public override string ToString()
         {
@@ -106,7 +107,7 @@ namespace perSONA
                             string label, double snr,
                             double[] presentingLogic,
                             double acceptanceRule, double signalToNoiseStep,
-                            string applicator, string patientName, string sceeneLogic, string testOption)
+                            string applicator, string patientName, string sceeneLogic, string testOption, double azbionumsentences)
         {
             Applicator = applicator;
             PatientName = patientName;
@@ -124,6 +125,7 @@ namespace perSONA
             SignalToNoiseStep = signalToNoiseStep;
             TestOption = testOption;
             TestStart = DateTime.Now;
+            azbionum = azbionumsentences;
         }
 
     }

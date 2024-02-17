@@ -106,7 +106,7 @@ namespace perSONA
             double[] presentingLogic = { double.Parse(procedureString.Split('-')[0]), double.Parse(procedureString.Split('-')[2]) };
             double acceptanceRule = (double)numericRule.Value;
             double signalToNoiseStep = (double)stepSnr.Value;
-
+            double AzbionumSentences = (double)numSetencesCount.Value;
             
             if (testOption == "azbio")
             {
@@ -120,7 +120,7 @@ namespace perSONA
                                                     textBox1.Text, snr,
                                                     presentingLogic,
                                                     acceptanceRule / 100, signalToNoiseStep,
-                                                    subjects[0], subjects[1], sceeneLogic, TestOption);
+                                                    subjects[0], subjects[1], sceeneLogic, TestOption, AzbionumSentences);
                 string testString = speechTest.ToString();
                 vAInterface.concatText(testString);
 
@@ -142,7 +142,7 @@ namespace perSONA
                                                     textBox1.Text, snr,
                                                     presentingLogic,
                                                     acceptanceRule / 100, signalToNoiseStep,
-                                                    subjects[0], subjects[1], sceeneLogic, TestOption);
+                                                    subjects[0], subjects[1], sceeneLogic, TestOption, AzbionumSentences);
                 string testString = speechTest.ToString();
                 vAInterface.concatText(testString);
 
@@ -438,10 +438,6 @@ namespace perSONA
 
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
 
 
@@ -462,6 +458,11 @@ namespace perSONA
         }
 
         private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -78,23 +78,24 @@ namespace perSONA
                 Random random = new Random();
                 speechFiles = speechFiles.OrderBy(x => random.Next()).ToArray();
 
+                // Os comentarios seguintes funcionam para criar dois testes com 500 sentenças cada, em específico para o teste AzBio
                 //speechFiles = speechFiles.Take(500).ToArray();
                 //remainingFiles = speechFiles.Skip(500).ToArray();
 
-                string[] firstGroup = speechFiles.Take(500).ToArray();
-                string[] remainingFiles = speechFiles.Skip(500).ToArray();
+                string[] firstGroup = speechFiles.Take((int)test.azbionum).ToArray();
+                //string[] remainingFiles = speechFiles.Skip(500).ToArray();
                 
-                string[] repeatedSentences = firstGroup.Take(13).ToArray();
+               // string[] repeatedSentences = firstGroup.Take(13).ToArray();
 
-                string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).ToArray();
-                finalAudioList = remainingFiles.Concat(repeatedSentences).ToArray();
-                finalAudioList = finalAudioList.OrderBy(x => random.Next()).ToArray();
+               // string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).ToArray();
+               //finalAudioList = remainingFiles.Concat(repeatedSentences).ToArray();
+               //finalAudioList = finalAudioList.OrderBy(x => random.Next()).ToArray();
 
-                audioList2 = finalAudioList;
+               // audioList2 = finalAudioList;
 
                 speechFiles = firstGroup;
 
-                Console.WriteLine("---"+audioList2.Length+"----"+remainingFiles.Length+"-------"+repeatedSentences.Length);
+                //Console.WriteLine("---"+audioList2.Length+"----"+remainingFiles.Length+"-------"+repeatedSentences.Length);
 
                 filenameList.DataSource = speechFiles;
                 filenameList.SelectedIndex = 0;
