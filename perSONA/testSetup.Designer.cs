@@ -45,8 +45,10 @@
             this.speechLists = new System.Windows.Forms.ComboBox();
             this.speechSentences = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.azbioTab = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.numSetencesCount = new System.Windows.Forms.NumericUpDown();
             this.azbioTest = new System.Windows.Forms.ComboBox();
             this.azbioSentences = new System.Windows.Forms.ListBox();
             this.numSentences = new System.Windows.Forms.Label();
@@ -83,8 +85,6 @@
             this.sceneLogic = new System.Windows.Forms.GroupBox();
             this.noiseLogic = new System.Windows.Forms.RadioButton();
             this.speechLogic = new System.Windows.Forms.RadioButton();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.numSetencesCount = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -94,6 +94,7 @@
             this.groupBox7.SuspendLayout();
             this.azbioTab.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSetencesCount)).BeginInit();
             this.simulacaodeFala.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -110,7 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericRule)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.sceneLogic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSetencesCount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -342,6 +342,18 @@
             this.label5.Text = "Ruído mascarador";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(6, 211);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(5);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(602, 25);
+            this.comboBox3.TabIndex = 9;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
             // azbioTab
             // 
             this.azbioTab.Controls.Add(this.groupBox9);
@@ -368,6 +380,33 @@
             this.groupBox9.TabIndex = 15;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Teste";
+            // 
+            // numSetencesCount
+            // 
+            this.numSetencesCount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numSetencesCount.Location = new System.Drawing.Point(6, 220);
+            this.numSetencesCount.Margin = new System.Windows.Forms.Padding(5);
+            this.numSetencesCount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numSetencesCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSetencesCount.Name = "numSetencesCount";
+            this.numSetencesCount.Size = new System.Drawing.Size(602, 23);
+            this.numSetencesCount.TabIndex = 1;
+            this.numSetencesCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numSetencesCount.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
             // azbioTest
             // 
@@ -1001,45 +1040,6 @@
             this.speechLogic.UseVisualStyleBackColor = false;
             this.speechLogic.CheckedChanged += new System.EventHandler(this.speechLogic_CheckedChanged);
             // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 211);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(602, 25);
-            this.comboBox3.TabIndex = 9;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
-            // numSetencesCount
-            // 
-            this.numSetencesCount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numSetencesCount.Location = new System.Drawing.Point(6, 220);
-            this.numSetencesCount.Margin = new System.Windows.Forms.Padding(5);
-            this.numSetencesCount.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numSetencesCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numSetencesCount.Name = "numSetencesCount";
-            this.numSetencesCount.Size = new System.Drawing.Size(602, 23);
-            this.numSetencesCount.TabIndex = 1;
-            this.numSetencesCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numSetencesCount.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
             // testSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1066,6 +1066,7 @@
             this.azbioTab.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSetencesCount)).EndInit();
             this.simulacaodeFala.ResumeLayout(false);
             this.simulacaodeFala.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1086,7 +1087,6 @@
             this.groupBox6.ResumeLayout(false);
             this.sceneLogic.ResumeLayout(false);
             this.sceneLogic.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSetencesCount)).EndInit();
             this.ResumeLayout(false);
 
         }
