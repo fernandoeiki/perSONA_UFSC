@@ -478,7 +478,7 @@
             this.backSentence.Name = "backSentence";
             this.backSentence.Size = new System.Drawing.Size(205, 62);
             this.backSentence.TabIndex = 12;
-            this.backSentence.Text = "Voltar ";
+            this.backSentence.Text = "Voltar";
             this.backSentence.UseVisualStyleBackColor = false;
             this.backSentence.Click += new System.EventHandler(this.backSentence_Click);
             // 
