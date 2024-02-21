@@ -91,8 +91,8 @@ namespace perSONA
            
             
             textBox3.Text = string.Format("{0}", actualSNR);
-            NextSentence.BackColor = Color.Red;
-            backSentence.BackColor = Color.Red;
+            NextSentence.BackColor = Color.FromArgb(224, 224, 224);
+            backSentence.BackColor = Color.FromArgb(224, 224, 224);
 
             signalToNoiseArray = new double[] { actualSNR };
             updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
@@ -200,7 +200,7 @@ namespace perSONA
                 vAInterface.concatText(
                     string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
                 vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-                vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
+                vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR, signalToNoiseArray[0]);
 
                 TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
                 var duration = file.Properties.Duration;            //Take duration
@@ -401,7 +401,7 @@ namespace perSONA
                 }
                 tryalStartTime = DateTime.Now;
                 blockClick = false;
-                NextSentence.BackColor = Color.Red;
+                NextSentence.BackColor = Color.FromArgb(224, 224, 224);
                 blockChain = true;
                 backSentence.BackColor = Color.FromArgb(23, 64, 137);
 
@@ -480,7 +480,7 @@ namespace perSONA
                     { }
                 }
                 blockChain = false;
-                backSentence.BackColor = Color.Red;
+                backSentence.BackColor = Color.FromArgb(224, 224, 224);
             }
         }
     }

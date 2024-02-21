@@ -485,10 +485,6 @@ namespace perSONA
             double powerNoise = powerSpeechFixed / linRatio;
             double powerSpeech = powerSpeechFixed;
 
-            if (snr >= 40)
-            {
-                powerNoise = 0;
-            }
 
             vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
             vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));
@@ -513,7 +509,7 @@ namespace perSONA
             vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
         }
 
-        public void playSceneNoiseFixed(double radius, double angle, double snr)
+        public void playSceneNoiseFixed(double radius, double angle, double snr, double iniSnr)
         {
 
             if (!cond4.Checked)
@@ -545,6 +541,8 @@ namespace perSONA
             //Potência do ruído fixo
 
             double powerNoiseFixed = 0.25 * normalizationFactor; //Potencia ou Amplitude?
+            double iniLinRatio = Math.Pow(10.0, (iniSnr / 20.0));
+            powerNoiseFixed = powerNoiseFixed / iniLinRatio;
 
             double linRatio = Math.Pow(10.0, (snr / 20.0));
             //29/08/2023 alterado para  Math.Pow(10.0, (snr / 20.0));
@@ -553,10 +551,6 @@ namespace perSONA
             double powerSpeech = linRatio * powerNoiseFixed;
             double powerNoise = powerNoiseFixed;
 
-            if (snr >= 40)
-            {
-                powerNoise = 0;
-            }
 
             vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
             vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));
