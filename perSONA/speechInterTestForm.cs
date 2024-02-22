@@ -480,7 +480,9 @@ namespace perSONA
                     { }
                 }
                 blockChain = false;
+                blockClick = true;
                 backSentence.BackColor = Color.FromArgb(224, 224, 224);
+                NextSentence.BackColor = Color.FromArgb(23, 64, 137);
             }
         }
     }
