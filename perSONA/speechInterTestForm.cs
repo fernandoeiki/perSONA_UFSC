@@ -24,15 +24,19 @@ namespace perSONA
         public string currentFile;
 
         public bool currentStreak = false;
+        public bool previousStreak;
 
         public double SumofAnswers;
         public double SumofWords;
         private double actualSNR;
+        private bool blockClick = false;
+        private bool blockChain = false;
 
         double[] signalToNoiseArray;
+        public double[] HCorrectSenteces;
 
-        private int allCountCorrectWords;
-        private int allCountWords;
+        private double allCountCorrectWords;
+        private double allCountWords;
 
         List<string> iteractiveResponseTime;
         List<string> iteractiveResponsePercentage;
@@ -81,7 +85,14 @@ namespace perSONA
             computedAudioText.Text = (filenameList.SelectedIndex + 1).ToString();
             totalWordsText.Text = string.Format("{0}", filenameList.Items.Count);
             actualSNR = test.SignalToNoise;
+
+            HCorrectSenteces = new double[filenameList.Items.Count];
+            Console.WriteLine(actualSNR);
+           
+            
             textBox3.Text = string.Format("{0}", actualSNR);
+            NextSentence.BackColor = Color.FromArgb(224, 224, 224);
+            backSentence.BackColor = Color.FromArgb(224, 224, 224);
 
             signalToNoiseArray = new double[] { actualSNR };
             updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
@@ -125,7 +136,7 @@ namespace perSONA
                 vA = vAInterface.getVa();
                 vA.Reset();
                 int receiverId = vA.CreateSoundReceiver("Subject");
-
+          
                 double xSides = 0;
                 double zFront = 0;
                 double yHeight = 1.7;
@@ -189,7 +200,7 @@ namespace perSONA
                 vAInterface.concatText(
                     string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
                 vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-                vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
+                vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR, signalToNoiseArray[0]);
 
                 TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
                 var duration = file.Properties.Duration;            //Take duration
@@ -203,6 +214,8 @@ namespace perSONA
                     vAInterface.stopScene(true, true);
                 });
             }
+            blockClick = true;
+            NextSentence.BackColor = Color.FromArgb(23, 64, 137);
         }
 
         private void updateIterationGraph(GraphPane graph, double[] signalToNoiseArray)
@@ -284,6 +297,7 @@ namespace perSONA
             double answer = testWordsList.SelectedItems.Count;
             double totalWords = testWordsList.Items.Count;
             double nextSNR = 0;
+            previousStreak = currentStreak;
 
             if (answer / totalWords < test.AcceptanceRule)
             {
@@ -320,69 +334,88 @@ namespace perSONA
 
         private void NextSentence_Click(object sender, EventArgs e)
         {
-            actualSNR = getNextSNR(actualSNR, test.SignalToNoiseStep);
-
-            string responseTime = currentTryal.Text;
-            double answer = testWordsList.SelectedItems.Count;
-            double totalWords = testWordsList.Items.Count;
-            string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords)));
-            vAInterface.concatText(string.Format("{0} - response time: {1}", string.Join(",", testWordsList.Items.Cast<string>()), responseTime));
-
-            Tuple<int, int> SpeechTestFormWords = updatePercentage();
-            allCountCorrectWords += SpeechTestFormWords.Item1;
-            allCountWords += SpeechTestFormWords.Item2;
-            double PORCENTAGEMDEACERTOTOTAL = 100.0 * allCountCorrectWords / allCountWords;
-
-            if (filenameList.SelectedIndex + 1 < filenameList.Items.Count)
+            if (blockClick)
             {
-                filenameList.SelectedIndex = filenameList.SelectedIndex + 1;
-                currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+                actualSNR = getNextSNR(actualSNR, test.SignalToNoiseStep);
+                HCorrectSenteces[filenameList.SelectedIndex] = testWordsList.SelectedItems.Count;
 
-                //detailsBox.AppendText(currentFile);
-                vAInterface.fillWords(currentFile, testWordsList);
+                string responseTime = currentTryal.Text;
+                double answer = testWordsList.SelectedItems.Count;
+                double totalWords = testWordsList.Items.Count;
+                string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords)));
+                vAInterface.concatText(string.Format("{0} - response time: {1}", string.Join(",", testWordsList.Items.Cast<string>()), responseTime));
+
+                Tuple<int, int> SpeechTestFormWords = updatePercentage();
+                allCountCorrectWords += SpeechTestFormWords.Item1;
+                allCountWords += SpeechTestFormWords.Item2;
+                double PORCENTAGEMDEACERTOTOTAL = 100.0 * allCountCorrectWords / allCountWords;
+
+                if (filenameList.SelectedIndex + 1 < filenameList.Items.Count)
+                {
+                    filenameList.SelectedIndex = filenameList.SelectedIndex + 1;
+                    currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+
+                    //detailsBox.AppendText(currentFile);
+                    vAInterface.fillWords(currentFile, testWordsList);
 
 
-                textBox4.Text = string.Format("{0}", allCountCorrectWords);
-                textBox5.Text = string.Format("{0}%", Math.Round(100.0 * allCountCorrectWords / allCountWords, 2)); // 100.0 * (correctWords / totalWords));
+                    textBox4.Text = string.Format("{0}", allCountCorrectWords);
+                    textBox5.Text = string.Format("{0}%", Math.Round(100.0 * allCountCorrectWords / allCountWords, 2)); // 100.0 * (correctWords / totalWords));
 
 
-                computedAudioText.Text = (filenameList.SelectedIndex + 1).ToString();
-                totalWordsText.Text = string.Format("{0}", filenameList.Items.Count);
+                    computedAudioText.Text = (filenameList.SelectedIndex + 1).ToString();
+                    totalWordsText.Text = string.Format("{0}", filenameList.Items.Count);
 
-                signalToNoiseArray = signalToNoiseArray.Concat(new double[] { actualSNR }).ToArray();
-                iteractiveResponseTime.Add(responseTime);
-                iteractiveResponsePercentage.Add(responsePercentage);
-                textBox3.Text = string.Format("{0}", actualSNR);
-                updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
+                    signalToNoiseArray = signalToNoiseArray.Concat(new double[] { actualSNR }).ToArray();
+                    iteractiveResponseTime.Add(responseTime);
+                    iteractiveResponsePercentage.Add(responsePercentage);
+                    textBox3.Text = string.Format("{0}", actualSNR);
+                    updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
+                }
+                else
+                {
+                    test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
+                    test.IterativeSNR = signalToNoiseArray;
+
+                    //detailsBox.AppendText("/r/n Finished list");
+                    test.TotalDuration = continuousTimerText.Text;
+                    test.IterativeDuration = iteractiveResponseTime.ToArray();
+                    test.IterativePercentage = iteractiveResponsePercentage.ToArray();
+
+                    vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
+
+                    double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
+
+                    string completedTestMessage = string.Format(
+                        "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}",
+                        actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage);
+
+                    string message = completedTestMessage;
+                    const string caption = "Fim da avaliação";
+                    var result = MessageBox.Show(message, caption,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    vAInterface.addCompletedTest(test);
+
+                    this.Close();
+                }
+                tryalStartTime = DateTime.Now;
+                blockClick = false;
+                NextSentence.BackColor = Color.FromArgb(224, 224, 224);
+                blockChain = true;
+                backSentence.BackColor = Color.FromArgb(23, 64, 137);
+
+                /*   Console.WriteLine("Valores de HSNR:");
+                   foreach (var value in signalToNoiseArray)
+                   {
+                       Console.WriteLine(value);
+                   }
+                   Console.WriteLine("Valores de HCorrect:");
+                   foreach (var value in HCorrectSenteces)
+                   {
+                       Console.WriteLine(value);
+                   }*/
             }
-            else
-            {
-                test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
-                test.IterativeSNR = signalToNoiseArray;
-
-                //detailsBox.AppendText("/r/n Finished list");
-                test.TotalDuration = continuousTimerText.Text;
-                test.IterativeDuration = iteractiveResponseTime.ToArray();
-                test.IterativePercentage = iteractiveResponsePercentage.ToArray();
-
-                vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
-
-                double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
-
-                string completedTestMessage = string.Format(
-                    "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}",
-                    actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage);
-
-                string message = completedTestMessage;
-                const string caption = "Fim da avaliação";
-                var result = MessageBox.Show(message, caption,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                vAInterface.addCompletedTest(test);
-
-                this.Close();
-            }
-            tryalStartTime = DateTime.Now;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -404,6 +437,52 @@ namespace perSONA
                 int newWidth = Convert.ToInt32(PCResolutionWidth * 0.95);
                 int newHeight = Convert.ToInt32(PCResolutionHeight * 0.95);
                 this.Size = new Size(newWidth, newHeight);
+            }
+        }
+
+        private void backSentence_Click(object sender, EventArgs e)
+        {
+            if (blockChain) {
+                if (filenameList.SelectedIndex > 0)
+                {
+                    filenameList.SelectedIndex = filenameList.SelectedIndex - 1;
+
+                    currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+
+                    //detailsBox.AppendText(currentFile);
+                    vAInterface.fillWords(currentFile, testWordsList);
+
+                    actualSNR = signalToNoiseArray[filenameList.SelectedIndex];
+                    Array.Resize(ref signalToNoiseArray, signalToNoiseArray.Length - 1);
+                    currentStreak = previousStreak;
+
+                    textBox3.Text = string.Format("{0}", actualSNR);
+
+                    double answer = testWordsList.SelectedItems.Count;
+                    double totalWords = testWordsList.Items.Count;
+                    string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords)));
+
+                    allCountCorrectWords -= HCorrectSenteces[filenameList.SelectedIndex];
+                    allCountWords -= testWordsList.Items.Count;
+
+                    textBox4.Text = string.Format("{0}", allCountCorrectWords);
+                    textBox5.Text = string.Format("{0}%", Math.Round(100.0 * allCountCorrectWords / allCountWords, 2)); // 100.0 * (correctWords / totalWords));
+
+                    computedAudioText.Text = (filenameList.SelectedIndex + 1).ToString();
+                    totalWordsText.Text = string.Format("{0}", filenameList.Items.Count);
+
+                    if (iteractiveResponseTime.Count > 0 && iteractiveResponsePercentage.Count > 0)
+                    {
+                        iteractiveResponseTime.RemoveAt(iteractiveResponseTime.Count - 1);
+                        iteractiveResponsePercentage.RemoveAt(iteractiveResponsePercentage.Count - 1);
+                    }
+                    else
+                    { }
+                }
+                blockChain = false;
+                blockClick = true;
+                backSentence.BackColor = Color.FromArgb(224, 224, 224);
+                NextSentence.BackColor = Color.FromArgb(23, 64, 137);
             }
         }
     }

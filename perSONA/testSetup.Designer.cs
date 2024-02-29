@@ -262,7 +262,7 @@
             this.simulaFala.Location = new System.Drawing.Point(10, 29);
             this.simulaFala.Margin = new System.Windows.Forms.Padding(5);
             this.simulaFala.Name = "simulaFala";
-            this.simulaFala.Size = new System.Drawing.Size(62, 24);
+            this.simulaFala.Size = new System.Drawing.Size(53, 21);
             this.simulaFala.TabIndex = 0;
             this.simulaFala.TabStop = true;
             this.simulaFala.Text = "Fala";
@@ -278,7 +278,7 @@
             this.simulaFalaeRuido.Location = new System.Drawing.Point(238, 29);
             this.simulaFalaeRuido.Margin = new System.Windows.Forms.Padding(5);
             this.simulaFalaeRuido.Name = "simulaFalaeRuido";
-            this.simulaFalaeRuido.Size = new System.Drawing.Size(115, 24);
+            this.simulaFalaeRuido.Size = new System.Drawing.Size(98, 21);
             this.simulaFalaeRuido.TabIndex = 2;
             this.simulaFalaeRuido.Text = "Fala+Ruído";
             this.simulaFalaeRuido.UseVisualStyleBackColor = true;
@@ -293,7 +293,7 @@
             this.simulaRuido.Location = new System.Drawing.Point(115, 29);
             this.simulaRuido.Margin = new System.Windows.Forms.Padding(5);
             this.simulaRuido.Name = "simulaRuido";
-            this.simulaRuido.Size = new System.Drawing.Size(73, 24);
+            this.simulaRuido.Size = new System.Drawing.Size(63, 21);
             this.simulaRuido.TabIndex = 1;
             this.simulaRuido.Text = "Ruído";
             this.simulaRuido.UseVisualStyleBackColor = false;
@@ -306,7 +306,7 @@
             this.textBox1.Location = new System.Drawing.Point(5, 37);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(419, 27);
+            this.textBox1.Size = new System.Drawing.Size(419, 23);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Test one";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -351,7 +351,7 @@
             this.speechFiles.Location = new System.Drawing.Point(6, 24);
             this.speechFiles.Name = "speechFiles";
             this.speechFiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.speechFiles.Size = new System.Drawing.Size(415, 28);
+            this.speechFiles.Size = new System.Drawing.Size(415, 25);
             this.speechFiles.TabIndex = 12;
             this.speechFiles.SelectedIndexChanged += new System.EventHandler(this.speechFiles_SelectedIndexChanged);
             // 
@@ -363,7 +363,7 @@
             this.speechLists.FormattingEnabled = true;
             this.speechLists.Location = new System.Drawing.Point(6, 58);
             this.speechLists.Name = "speechLists";
-            this.speechLists.Size = new System.Drawing.Size(415, 28);
+            this.speechLists.Size = new System.Drawing.Size(415, 25);
             this.speechLists.TabIndex = 10;
             this.speechLists.SelectedIndexChanged += new System.EventHandler(this.speechLists_SelectedIndexChanged);
             // 
@@ -373,12 +373,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.speechSentences.FormattingEnabled = true;
-            this.speechSentences.ItemHeight = 20;
+            this.speechSentences.ItemHeight = 17;
             this.speechSentences.Location = new System.Drawing.Point(6, 97);
             this.speechSentences.Margin = new System.Windows.Forms.Padding(5);
             this.speechSentences.Name = "speechSentences";
             this.speechSentences.ScrollAlwaysVisible = true;
-            this.speechSentences.Size = new System.Drawing.Size(415, 44);
+            this.speechSentences.Size = new System.Drawing.Size(415, 38);
             this.speechSentences.TabIndex = 7;
             // 
             // label5
@@ -389,7 +389,7 @@
             this.label5.Location = new System.Drawing.Point(104, 153);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 20);
+            this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Ruído mascarador";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,7 +402,7 @@
             this.comboBox3.Location = new System.Drawing.Point(6, 178);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(415, 28);
+            this.comboBox3.Size = new System.Drawing.Size(415, 25);
             this.comboBox3.TabIndex = 9;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
@@ -500,7 +500,7 @@
             this.speechLeft.Location = new System.Drawing.Point(10, 29);
             this.speechLeft.Margin = new System.Windows.Forms.Padding(5);
             this.speechLeft.Name = "speechLeft";
-            this.speechLeft.Size = new System.Drawing.Size(101, 24);
+            this.speechLeft.Size = new System.Drawing.Size(87, 21);
             this.speechLeft.TabIndex = 0;
             this.speechLeft.TabStop = true;
             this.speechLeft.Text = "Esquerda";
@@ -517,7 +517,7 @@
             this.speechRight.Location = new System.Drawing.Point(379, 29);
             this.speechRight.Margin = new System.Windows.Forms.Padding(5);
             this.speechRight.Name = "speechRight";
-            this.speechRight.Size = new System.Drawing.Size(80, 24);
+            this.speechRight.Size = new System.Drawing.Size(67, 21);
             this.speechRight.TabIndex = 2;
             this.speechRight.Text = "Direita";
             this.speechRight.UseVisualStyleBackColor = true;
@@ -533,7 +533,7 @@
             this.speechFront.Location = new System.Drawing.Point(204, 30);
             this.speechFront.Margin = new System.Windows.Forms.Padding(5);
             this.speechFront.Name = "speechFront";
-            this.speechFront.Size = new System.Drawing.Size(78, 24);
+            this.speechFront.Size = new System.Drawing.Size(67, 21);
             this.speechFront.TabIndex = 1;
             this.speechFront.Text = "Frente";
             this.speechFront.UseVisualStyleBackColor = false;
@@ -578,7 +578,7 @@
             0,
             0});
             this.speechDistance.Name = "speechDistance";
-            this.speechDistance.Size = new System.Drawing.Size(443, 27);
+            this.speechDistance.Size = new System.Drawing.Size(443, 23);
             this.speechDistance.TabIndex = 0;
             this.speechDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.speechDistance.Value = new decimal(new int[] {
@@ -614,7 +614,7 @@
             this.noiseLeft.Location = new System.Drawing.Point(10, 27);
             this.noiseLeft.Margin = new System.Windows.Forms.Padding(5);
             this.noiseLeft.Name = "noiseLeft";
-            this.noiseLeft.Size = new System.Drawing.Size(101, 24);
+            this.noiseLeft.Size = new System.Drawing.Size(87, 21);
             this.noiseLeft.TabIndex = 0;
             this.noiseLeft.Text = "Esquerda";
             this.noiseLeft.UseVisualStyleBackColor = true;
@@ -629,7 +629,7 @@
             this.noiseRight.Location = new System.Drawing.Point(379, 27);
             this.noiseRight.Margin = new System.Windows.Forms.Padding(5);
             this.noiseRight.Name = "noiseRight";
-            this.noiseRight.Size = new System.Drawing.Size(80, 24);
+            this.noiseRight.Size = new System.Drawing.Size(67, 21);
             this.noiseRight.TabIndex = 2;
             this.noiseRight.Text = "Direita";
             this.noiseRight.UseVisualStyleBackColor = true;
@@ -645,7 +645,7 @@
             this.noiseFront.Location = new System.Drawing.Point(204, 27);
             this.noiseFront.Margin = new System.Windows.Forms.Padding(5);
             this.noiseFront.Name = "noiseFront";
-            this.noiseFront.Size = new System.Drawing.Size(78, 24);
+            this.noiseFront.Size = new System.Drawing.Size(67, 21);
             this.noiseFront.TabIndex = 1;
             this.noiseFront.TabStop = true;
             this.noiseFront.Text = "Frente";
@@ -702,7 +702,7 @@
             0,
             -2147483648});
             this.stepSnr.Name = "stepSnr";
-            this.stepSnr.Size = new System.Drawing.Size(443, 27);
+            this.stepSnr.Size = new System.Drawing.Size(443, 23);
             this.stepSnr.TabIndex = 0;
             this.stepSnr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.stepSnr.Value = new decimal(new int[] {
@@ -750,7 +750,7 @@
             0,
             0});
             this.noiseDistance.Name = "noiseDistance";
-            this.noiseDistance.Size = new System.Drawing.Size(438, 27);
+            this.noiseDistance.Size = new System.Drawing.Size(438, 23);
             this.noiseDistance.TabIndex = 0;
             this.noiseDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.noiseDistance.Value = new decimal(new int[] {
@@ -793,7 +793,7 @@
             0,
             -2147483648});
             this.initialSnr.Name = "initialSnr";
-            this.initialSnr.Size = new System.Drawing.Size(443, 27);
+            this.initialSnr.Size = new System.Drawing.Size(443, 23);
             this.initialSnr.TabIndex = 0;
             this.initialSnr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -820,7 +820,7 @@
             this.numericRule.Location = new System.Drawing.Point(10, 28);
             this.numericRule.Margin = new System.Windows.Forms.Padding(5);
             this.numericRule.Name = "numericRule";
-            this.numericRule.Size = new System.Drawing.Size(443, 27);
+            this.numericRule.Size = new System.Drawing.Size(443, 23);
             this.numericRule.TabIndex = 0;
             this.numericRule.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericRule.Value = new decimal(new int[] {
@@ -855,7 +855,7 @@
             this.comboBox1.Location = new System.Drawing.Point(10, 26);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(439, 28);
+            this.comboBox1.Size = new System.Drawing.Size(439, 25);
             this.comboBox1.TabIndex = 0;
             // 
             // sceneLogic
@@ -883,7 +883,7 @@
             this.noiseLogic.Location = new System.Drawing.Point(236, 28);
             this.noiseLogic.Margin = new System.Windows.Forms.Padding(5);
             this.noiseLogic.Name = "noiseLogic";
-            this.noiseLogic.Size = new System.Drawing.Size(238, 24);
+            this.noiseLogic.Size = new System.Drawing.Size(203, 21);
             this.noiseLogic.TabIndex = 3;
             this.noiseLogic.Text = "Potência do ruído constante";
             this.noiseLogic.UseVisualStyleBackColor = true;
@@ -901,7 +901,7 @@
             this.speechLogic.Location = new System.Drawing.Point(8, 28);
             this.speechLogic.Margin = new System.Windows.Forms.Padding(5);
             this.speechLogic.Name = "speechLogic";
-            this.speechLogic.Size = new System.Drawing.Size(219, 24);
+            this.speechLogic.Size = new System.Drawing.Size(183, 20);
             this.speechLogic.TabIndex = 2;
             this.speechLogic.TabStop = true;
             this.speechLogic.Text = "Potência de fala constante";
@@ -910,7 +910,7 @@
             // 
             // testSetup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 737);
