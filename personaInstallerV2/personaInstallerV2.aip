@@ -21,10 +21,10 @@
     <ROW Property="ARPPRODUCTICON" Value="icone_perSONA.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="LVA-UFSC"/>
-    <ROW Property="ProductCode" Value="1033:{31777C95-7C6B-4F84-B2DA-F9EED11099C4} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{D29E372B-B0C8-4E69-A626-6B82DB1F69CF} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="perSONA-BETA-AzBio"/>
-    <ROW Property="ProductVersion" Value="2.8.5" Options="32"/>
+    <ROW Property="ProductVersion" Value="2.8.5.2" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{2E351919-0754-48EA-9BCC-7450A9453229}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -7465,7 +7465,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="UninstallperSONA" Directory_="perSONA_Dir" Name="UNINST~1|Uninstall perSONA" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
     <ROW Shortcut="UninstallperSONA_1" Directory_="SHORTCUTDIR" Name="UNINST~1|Uninstall perSONA" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
-    <ROW Shortcut="perSONALITE" Directory_="DesktopFolder" Name="PERSON~1.5-B|perSONA v2.8.5-BETA-AzBio" Component_="AI_PROPPATH_FILENAME_PERBUILD_perSONA.exe" Target="[#perSONA.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
+    <ROW Shortcut="perSONALITE" Directory_="DesktopFolder" Name="PERSON~1.2-B|perSONA v2.8.5.2-BETA-AzBio" Component_="AI_PROPPATH_FILENAME_PERBUILD_perSONA.exe" Target="[#perSONA.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
     <ROW Shortcut="run_VAServer" Directory_="DesktopFolder" Name="VA(PER~1|VA (perSONA)" Component_="run_VAServer.bat" Target="[#run_VAServer.bat]" Hotkey="0" Icon_="run_VAServer_1.exe" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">

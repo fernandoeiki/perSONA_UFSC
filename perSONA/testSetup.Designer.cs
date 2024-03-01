@@ -383,8 +383,7 @@
             // 
             // numSetencesCount
             // 
-            this.numSetencesCount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.numSetencesCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numSetencesCount.Location = new System.Drawing.Point(6, 220);
             this.numSetencesCount.Margin = new System.Windows.Forms.Padding(5);
@@ -403,7 +402,7 @@
             this.numSetencesCount.TabIndex = 1;
             this.numSetencesCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numSetencesCount.Value = new decimal(new int[] {
-            100,
+            250,
             0,
             0,
             0});
@@ -437,7 +436,7 @@
             // 
             // numSentences
             // 
-            this.numSentences.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.numSentences.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numSentences.AutoSize = true;
             this.numSentences.Location = new System.Drawing.Point(232, 184);
