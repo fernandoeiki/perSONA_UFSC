@@ -28,7 +28,6 @@ namespace perSONA
         string caminhoArquivo;
 
         public bool currentStreak = false;
-        public bool block = false;
 
         public double SumofAnswers;
         public double SumofWords;
@@ -68,8 +67,6 @@ namespace perSONA
             double[] angleList = { test.AngleSpeech, test.AngleNoise };
 
             vAInterface.plotSceneGraph(zedGraphControl2, radiusList, angleList);
-
-            playCurrentScene.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
 
             if (test.TestOption == "azbio")
             {
@@ -128,7 +125,10 @@ namespace perSONA
 
             }
 
-          
+
+
+
+
             updatePercentage();
 
             computedAudioText.Text = (filenameList.SelectedIndex + 1).ToString();
@@ -141,70 +141,6 @@ namespace perSONA
 
             iteractiveResponseTime = new List<string> { };
             iteractiveResponsePercentage = new List<string> { };
-
-            Task.Run(() =>
-            {
-                if (test.SceeneLogic == "SpeechConstant")
-                {
-                    vA = vAInterface.getVa();
-                    vA.Reset();
-                    int receiverId = vA.CreateSoundReceiver("Subject");
-
-                    double xSides = 0;
-                    double zFront = 0;
-                    double yHeight = 1.7;
-
-                    VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                    VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                    VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                    vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                    vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                    vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                             xSides, zFront, yHeight, receiverId));
-
-                    int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                    vA.SetSoundReceiverDirectivity(receiverId, hrirId);
-
-                    string speechFile = currentFile;
-                    vAInterface.concatText(speechFile);
-                    vAInterface.concatText(
-                        string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                    vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-
-                }
-                else
-                {
-                    vA = vAInterface.getVa();
-                    vA.Reset();
-                    int receiverId = vA.CreateSoundReceiver("Subject");
-
-                    double xSides = 0;
-                    double zFront = 0;
-                    double yHeight = 1.7;
-
-                    VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                    VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                    VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                    vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                    vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                    vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                             xSides, zFront, yHeight, receiverId));
-
-                    int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                    vA.SetSoundReceiverDirectivity(receiverId, hrirId);
-
-                    string speechFile = currentFile;
-                    vAInterface.concatText(speechFile);
-                    vAInterface.concatText(
-                        string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                    vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-                }
-                block = true;
-                playCurrentScene.BackColor = System.Drawing.Color.FromArgb(23, 64, 137);
-            });
-
         }
 
         private void AllCorrect_Click(object sender, EventArgs e)
@@ -237,47 +173,95 @@ namespace perSONA
 
         private void playCurrentScene_Click(object sender, EventArgs e)
         {
-            if (block) 
-            { 
-                if(test.SceeneLogic == "SpeechConstant")
-                {                  
-                    if (test.TestOption == "azbio")
-                    {
-                        vAInterface.playSceneAzbio(test.RadiusSpeech, test.AngleSpeech, actualSNR);
-                    }
-                    else
-                    {
-                        vAInterface.playSceneSpeechFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
-                    }
-                    TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
-                    var duration = file.Properties.Duration;            //Take duration
-                    int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
-                    vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
+            if(test.SceeneLogic == "SpeechConstant")
+            {
+                vA = vAInterface.getVa();
+                vA.Reset();
+                int receiverId = vA.CreateSoundReceiver("Subject");
 
-                    // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
-                    Task.Run(() =>
-                    {
-                        Thread.Sleep(msecduration); //sleep file duration
-                        vAInterface.stopScene(true, true);
-                    });
+                double xSides = 0;
+                double zFront = 0;
+                double yHeight = 1.7;
+
+                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
+                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
+                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
+
+                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
+                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
+                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
+                                         xSides, zFront, yHeight, receiverId));
+
+                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
+                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
+
+                string speechFile = currentFile;
+                vAInterface.concatText(speechFile);
+                vAInterface.concatText(
+                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+
+                if (test.TestOption == "azbio")
+                {
+                    vAInterface.playSceneAzbio(test.RadiusSpeech, test.AngleSpeech, actualSNR);
                 }
-
                 else
-                {                    
-                    vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
-
-                    TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
-                    var duration = file.Properties.Duration;            //Take duration
-                    int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
-                    vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
-
-                    // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
-                    Task.Run(() =>
-                    {
-                        Thread.Sleep(msecduration); //sleep file duration
-                        vAInterface.stopScene(true, true);
-                    });
+                {
+                    vAInterface.playSceneSpeechFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
                 }
+                TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
+                var duration = file.Properties.Duration;            //Take duration
+                int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
+                vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
+
+                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
+                Task.Run(() =>
+                {
+                    Thread.Sleep(msecduration); //sleep file duration
+                    vAInterface.stopScene(true, true);
+                });
+            }
+
+            else
+            {
+                vA = vAInterface.getVa();
+                vA.Reset();
+                int receiverId = vA.CreateSoundReceiver("Subject");
+
+                double xSides = 0;
+                double zFront = 0;
+                double yHeight = 1.7;
+
+                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
+                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
+                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
+
+                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
+                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
+                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
+                                         xSides, zFront, yHeight, receiverId));
+
+                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
+                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
+
+                string speechFile = currentFile;
+                vAInterface.concatText(speechFile);
+                vAInterface.concatText(
+                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+                vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
+
+                TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
+                var duration = file.Properties.Duration;            //Take duration
+                int msecduration = Convert.ToInt32(duration.TotalMilliseconds) + 20;
+                vAInterface.concatText(string.Format("Speech time: {0}", msecduration.ToString()));
+
+                // Move o processamento para uma thread em segundo plano evitando o travamento da thread principal
+                Task.Run(() =>
+                {
+                    Thread.Sleep(msecduration); //sleep file duration
+                    vAInterface.stopScene(true, true);
+                });
             }
         }
 
@@ -399,8 +383,6 @@ namespace perSONA
         private void NextSentence_Click(object sender, EventArgs e)
         {
             actualSNR = getNextSNR(actualSNR, test.SignalToNoiseStep);
-            block = false;
-            playCurrentScene.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);           
 
             string responseTime = currentTryal.Text;
             double answer = testWordsList.SelectedItems.Count;
@@ -427,7 +409,7 @@ namespace perSONA
 
                 string AzBioLista = filenameList.Text;
                 string AzBioSentence = "";
-                List<string> palavrasErradas = new List<string>();
+                string palavrasErradas = "";
 
                 foreach (object item in testWordsList.Items)
                 {
@@ -437,7 +419,7 @@ namespace perSONA
                     { }
                     else
                     {
-                        palavrasErradas.Add(item.ToString());
+                        palavrasErradas += item.ToString() + " ";
                     }
                 }
 
@@ -490,72 +472,7 @@ namespace perSONA
                 else
                 {
                     updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
-                }
-
-
-                Task.Run(() =>
-                {
-                    if (test.SceeneLogic == "SpeechConstant")
-                    {
-                        vA = vAInterface.getVa();
-                        vA.Reset();
-                        int receiverId = vA.CreateSoundReceiver("Subject");
-
-                        double xSides = 0;
-                        double zFront = 0;
-                        double yHeight = 1.7;
-
-                        VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                        VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                        VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                        vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                        vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                        vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                                 xSides, zFront, yHeight, receiverId));
-
-                        int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                        vA.SetSoundReceiverDirectivity(receiverId, hrirId);
-
-                        string speechFile = currentFile;
-                        vAInterface.concatText(speechFile);
-                        vAInterface.concatText(
-                            string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                        vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-
-                    }
-                    else
-                    {
-                        vA = vAInterface.getVa();
-                        vA.Reset();
-                        int receiverId = vA.CreateSoundReceiver("Subject");
-
-                        double xSides = 0;
-                        double zFront = 0;
-                        double yHeight = 1.7;
-
-                        VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                        VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                        VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                        vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                        vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                        vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                                 xSides, zFront, yHeight, receiverId));
-
-                        int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                        vA.SetSoundReceiverDirectivity(receiverId, hrirId);
-
-                        string speechFile = currentFile;
-                        vAInterface.concatText(speechFile);
-                        vAInterface.concatText(
-                            string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                        vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-                    }
-                    block = true;
-                    playCurrentScene.BackColor = System.Drawing.Color.FromArgb(23, 64, 137);
-                });
-
+                }   
             }
             else
             {
