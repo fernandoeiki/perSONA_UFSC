@@ -695,7 +695,7 @@ namespace perSONA
                 vA.SetSignalSourceBufferLooping(noiseSound, true);
                 vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
             }
-        }
+        }    
 
         public void stopScene(bool speechON, bool noiseON)
         {
@@ -853,7 +853,7 @@ namespace perSONA
         public void createSpeechScene(string speechFile)
         {
             speechSound = vA.CreateSignalSourceBufferFromFile(speechFile);
-            speechSource = vA.CreateSoundSource("Speech");
+            vA.SetSoundSourceSignalSource(speechSource, speechSound);
 
             int humanDirectivity = vA.CreateDirectivityFromFile("data/Singer.v17.ms.daff");
             vA.SetSoundSourceDirectivity(speechSource, humanDirectivity);

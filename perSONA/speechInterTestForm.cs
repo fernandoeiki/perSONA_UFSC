@@ -22,10 +22,13 @@ namespace perSONA
         private readonly speechPerceptionTest test;
         private readonly IvAInterface vAInterface;
 
+        public string namePatient;
+
         public string[] speechFiles;
         public string currentFile;
         string[] audioList2;
         string caminhoArquivo;
+        string caminhoArquivoList;
 
         public bool currentStreak = false;
 
@@ -106,6 +109,24 @@ namespace perSONA
                 //detailsBox.AppendText(currentFile);
                 vAInterface.fillWords(currentFile, testWordsList);
                 getDirectoryAzbio();
+
+                caminhoArquivoList = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), test.PatientName + ".txt");
+                
+                try
+                {
+                    using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivoList))
+                    {
+                        writer.WriteLine(test.PatientName);
+                        foreach (string file in speechFiles)
+                        {
+                            writer.WriteLine(file);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Não foi possível salvar a lista de sentenças");
+                }
 
             }
             else
@@ -237,7 +258,7 @@ namespace perSONA
         {
             if(test.SceeneLogic == "SpeechConstant")
             {                
-                if (rt == 3)
+                if (false)
                 {
                     vA = vAInterface.getVa();
                     vA.Reset();
