@@ -66,7 +66,6 @@
     <ROW Directory="BaseEngine_Dir" Directory_Parent="ITAPropagationPathSim_Dir" DefaultDir="BASEEN~1|BaseEngine"/>
     <ROW Directory="Binaural_2_Dir" Directory_Parent="Reproduction_Dir" DefaultDir="Binaural"/>
     <ROW Directory="Binaural_Dir" Directory_Parent="Rendering_Dir" DefaultDir="Binaural"/>
-    <ROW Directory="CMake_Dir" Directory_Parent="perSONA_Dir" DefaultDir="CMake"/>
     <ROW Directory="CUDA_Dir" Directory_Parent="arch_Dir" DefaultDir="CUDA"/>
     <ROW Directory="CXX11_Dir" Directory_Parent="Eigen_1_Dir" DefaultDir="CXX11"/>
     <ROW Directory="Cholesky_Dir" Directory_Parent="src_Dir" DefaultDir="Cholesky"/>
@@ -173,7 +172,6 @@
     <ROW Directory="KroneckerProduct_Dir" Directory_Parent="src_2_Dir" DefaultDir="KRONEC~1|KroneckerProduct"/>
     <ROW Directory="LU_Dir" Directory_Parent="src_Dir" DefaultDir="LU"/>
     <ROW Directory="LevenbergMarquardt_Dir" Directory_Parent="src_2_Dir" DefaultDir="LEVENB~1|LevenbergMarquardt"/>
-    <ROW Directory="Lib_Dir" Directory_Parent="python_Dir" DefaultDir="Lib"/>
     <ROW Directory="Lista10_1_Dir" Directory_Parent="RASP_F_1_Dir" DefaultDir="Lista10"/>
     <ROW Directory="Lista10_3_Dir" Directory_Parent="RASP_M_1_Dir" DefaultDir="Lista10"/>
     <ROW Directory="Lista1A_2_Dir" Directory_Parent="Training_1_Dir" DefaultDir="LISTA1~1|Lista 1A"/>
@@ -311,7 +309,6 @@
     <ROW Directory="VABase_2_Dir" Directory_Parent="cmake_5_Dir" DefaultDir="VABase"/>
     <ROW Directory="VABase_3_Dir" Directory_Parent="lib_Dir" DefaultDir="VABase"/>
     <ROW Directory="VABase_Dir" Directory_Parent="share_Dir" DefaultDir="VABase"/>
-    <ROW Directory="VACS_v2022a_Dir" Directory_Parent="perSONA_Dir" DefaultDir="VACS_V~1|VACS_v2022a"/>
     <ROW Directory="VACore_1_Dir" Directory_Parent="include_Dir" DefaultDir="VACore"/>
     <ROW Directory="VACore_2_Dir" Directory_Parent="cmake_5_Dir" DefaultDir="VACore"/>
     <ROW Directory="VACore_3_Dir" Directory_Parent="lib_Dir" DefaultDir="VACore"/>
@@ -360,7 +357,6 @@
     <ROW Directory="eigen3_1_Dir" Directory_Parent="share_Dir" DefaultDir="eigen3"/>
     <ROW Directory="eigen3_Dir" Directory_Parent="include_Dir" DefaultDir="eigen3"/>
     <ROW Directory="event_engine_Dir" Directory_Parent="grpc_Dir" DefaultDir="EVENT_~1|event_engine"/>
-    <ROW Directory="examples_Dir" Directory_Parent="python_Dir" DefaultDir="examples"/>
     <ROW Directory="exporter_Dir" Directory_Parent="IO_Dir" DefaultDir="exporter"/>
     <ROW Directory="ext_1_Dir" Directory_Parent="grpcpp_Dir" DefaultDir="ext"/>
     <ROW Directory="ext_Dir" Directory_Parent="grpc_1_Dir" DefaultDir="ext"/>
@@ -383,8 +379,6 @@
     <ROW Directory="importer_Dir" Directory_Parent="IO_Dir" DefaultDir="importer"/>
     <ROW Directory="include_Dir" Directory_Parent="perSONA_Dir" DefaultDir="include"/>
     <ROW Directory="internal_Dir" Directory_Parent="event_engine_Dir" DefaultDir="internal"/>
-    <ROW Directory="ipynb_checkpoints_Dir" Directory_Parent="jupyter_Dir" DefaultDir="IPYNB_~1|.ipynb_checkpoints"/>
-    <ROW Directory="jupyter_Dir" Directory_Parent="examples_Dir" DefaultDir="jupyter"/>
     <ROW Directory="lib_Dir" Directory_Parent="perSONA_Dir" DefaultDir="lib"/>
     <ROW Directory="logo_Dir" Directory_Parent="perSONA_Dir" DefaultDir="logo"/>
     <ROW Directory="man3_Dir" Directory_Parent="man_Dir" DefaultDir="man3"/>
@@ -413,7 +407,6 @@
     <ROW Directory="portaudio_1_Dir" Directory_Parent="lib_Dir" DefaultDir="PORTAU~1|portaudio"/>
     <ROW Directory="portaudio_Dir" Directory_Parent="cmake_5_Dir" DefaultDir="PORTAU~1|portaudio"/>
     <ROW Directory="products_Dir" Directory_Parent="Core_Dir" DefaultDir="products"/>
-    <ROW Directory="python_Dir" Directory_Parent="perSONA_Dir" DefaultDir="python"/>
     <ROW Directory="re2_1_Dir" Directory_Parent="cmake_5_Dir" DefaultDir="re2"/>
     <ROW Directory="re2_Dir" Directory_Parent="include_Dir" DefaultDir="re2"/>
     <ROW Directory="reader_Dir" Directory_Parent="IO_Dir" DefaultDir="reader"/>
@@ -427,7 +420,6 @@
     <ROW Directory="security_3_Dir" Directory_Parent="grpcpp_Dir" DefaultDir="security"/>
     <ROW Directory="security_Dir" Directory_Parent="codegen_1_Dir" DefaultDir="security"/>
     <ROW Directory="share_Dir" Directory_Parent="perSONA_Dir" DefaultDir="share"/>
-    <ROW Directory="sitepackages_Dir" Directory_Parent="Lib_Dir" DefaultDir="SITE-P~1|site-packages"/>
     <ROW Directory="sndfile_1_Dir" Directory_Parent="lib_Dir" DefaultDir="sndfile"/>
     <ROW Directory="sndfile_Dir" Directory_Parent="cmake_5_Dir" DefaultDir="sndfile"/>
     <ROW Directory="spline_1_Dir" Directory_Parent="cmake_5_Dir" DefaultDir="spline"/>
@@ -442,7 +434,6 @@
     <ROW Directory="talkthrough_Dir" Directory_Parent="reproduction_Dir" DefaultDir="TALKTH~1|talkthrough"/>
     <ROW Directory="tbb_1_Dir" Directory_Parent="include_Dir" DefaultDir="tbb"/>
     <ROW Directory="tbb_Dir" Directory_Parent="oneapi_Dir" DefaultDir="tbb"/>
-    <ROW Directory="tests_Dir" Directory_Parent="python_Dir" DefaultDir="tests"/>
     <ROW Directory="unsupported_Dir" Directory_Parent="eigen3_Dir" DefaultDir="UNSUPP~1|unsupported"/>
     <ROW Directory="util_1_Dir" Directory_Parent="TensorSymmetry_Dir" DefaultDir="util"/>
     <ROW Directory="util_2_Dir" Directory_Parent="src_1_Dir" DefaultDir="util"/>
@@ -742,7 +733,6 @@
     <ROW Component="Tensor" ComponentId="{71753AD1-185B-4184-ABEA-7A7FC4858764}" Directory_="CXX11_Dir" Attributes="0" KeyPath="Tensor" Type="0"/>
     <ROW Component="Tensor.h" ComponentId="{EEC6FD7C-1E78-460D-A6BE-15D84E10859A}" Directory_="Tensor_Dir" Attributes="0" KeyPath="Tensor.h" Type="0"/>
     <ROW Component="UmfPackSupport.h" ComponentId="{0CB7D154-5BDA-43FB-9ABB-FA5BE647CF94}" Directory_="UmfPackSupport_Dir" Attributes="0" KeyPath="UmfPackSupport.h" Type="0"/>
-    <ROW Component="Untitledcheckpoint.ipynb" ComponentId="{50E875DD-97DE-4177-8B58-1592E895A472}" Directory_="ipynb_checkpoints_Dir" Attributes="0" KeyPath="Untitledcheckpoint.ipynb" Type="0"/>
     <ROW Component="UrbanDiffraction.h" ComponentId="{BE78E76E-79D7-4DE7-AF85-A6E523458A88}" Directory_="UrbanEngine_Dir" Attributes="0" KeyPath="UrbanDiffraction.h" Type="0"/>
     <ROW Component="VA.h" ComponentId="{6B22ABF8-F253-44EE-92AC-A715BA4FECC4}" Directory_="include_Dir" Attributes="0" KeyPath="VA.h" Type="0"/>
     <ROW Component="VA.h_1" ComponentId="{4A8ABC87-E976-4318-AE2B-4DB17920D21C}" Directory_="VABase_1_Dir" Attributes="0" KeyPath="VA.h_1" Type="0"/>
@@ -759,7 +749,6 @@
     <ROW Component="VABase.dll_1" ComponentId="{F6EAEEAE-E095-4EEF-ADBB-7B045A6167C5}" Directory_="bin_Dir" Attributes="256" KeyPath="VABase.dll_1"/>
     <ROW Component="VABase.dll_2" ComponentId="{EF9F631E-A0B5-4251-A0CC-F0351515EEC6}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VABase.dll_2"/>
     <ROW Component="VABase.dll_5" ComponentId="{871287C3-9005-4278-8FE0-07D6F1F0DF4B}" Directory_="lib_Dir" Attributes="256" KeyPath="VABase.dll_5"/>
-    <ROW Component="VABase.dll_6" ComponentId="{231620E2-BDBF-480C-A142-BB1F2B05250C}" Directory_="sitepackages_Dir" Attributes="256" KeyPath="VABase.dll_6"/>
     <ROW Component="VABase.lib" ComponentId="{335D6349-2695-4D9B-B0BA-2D001DF8EF7C}" Directory_="lib_Dir" Attributes="0" KeyPath="VABase.lib" Type="0"/>
     <ROW Component="VABase.lib_1" ComponentId="{33D3FC15-3D4F-4675-9CB1-4506E675213C}" Directory_="VABase_3_Dir" Attributes="0" KeyPath="VABase.lib_1" Type="0"/>
     <ROW Component="VABaseConfig.cmake" ComponentId="{16BC444F-737B-4AB0-9E24-25AF50B44858}" Directory_="cmake_Dir" Attributes="0" KeyPath="VABaseConfig.cmake" Type="0"/>
@@ -788,10 +777,8 @@
     <ROW Component="VANet.dll_1" ComponentId="{30404D29-F281-45F7-8428-F12055EE6F53}" Directory_="bin_Dir" Attributes="256" KeyPath="VANet.dll_1"/>
     <ROW Component="VANet.dll_2" ComponentId="{97B6CBA2-5F0B-422A-9005-B8B1AB755064}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VANet.dll_2"/>
     <ROW Component="VANet.dll_5" ComponentId="{D276A2E9-E0F8-4CBF-83EC-4754A4BE17A2}" Directory_="lib_Dir" Attributes="256" KeyPath="VANet.dll_5"/>
-    <ROW Component="VANet.dll_6" ComponentId="{3621A9F3-01B1-4E61-983A-F10423F57F66}" Directory_="sitepackages_Dir" Attributes="256" KeyPath="VANet.dll_6"/>
     <ROW Component="VANet.h" ComponentId="{371037A0-0BF9-4371-8E0C-1889E5DEF47F}" Directory_="VANet_1_Dir" Attributes="0" KeyPath="VANet.h_1" Type="0"/>
     <ROW Component="VANet.lib" ComponentId="{77764C28-4390-4AB9-A26C-474EED9DD267}" Directory_="VANet_3_Dir" Attributes="0" KeyPath="VANet.lib_1" Type="0"/>
-    <ROW Component="VANetCSWrapper.dll" ComponentId="{AFE5A877-BDF1-48C6-ADB7-91CF5FF48F2E}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="VANetCSWrapper.dll"/>
     <ROW Component="VANetCSWrapper.dll_1" ComponentId="{F2A9B20D-5E6F-4AEA-B558-1979EE9549D0}" Directory_="bin_Dir" Attributes="256" KeyPath="VANetCSWrapper.dll_1"/>
     <ROW Component="VANetCSWrapper.dll_2" ComponentId="{2142AB7A-85B3-4EC3-A460-FAE7D8A88AB8}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VANetCSWrapper.dll_2"/>
     <ROW Component="VANetCSWrapper.dll_5" ComponentId="{FA3D4D5A-E351-4FE5-800A-A9B102FA72CA}" Directory_="lib_Dir" Attributes="256" KeyPath="VANetCSWrapper.dll_5"/>
@@ -809,10 +796,8 @@
     <ROW Component="VAVBAPFreefieldAudioRenderer.h" ComponentId="{02D1CF30-04DC-48EC-839C-15F55F07B736}" Directory_="Freefield_2_Dir" Attributes="0" KeyPath="VAVBAPFreefieldAudioRenderer.h" Type="0"/>
     <ROW Component="VistaAspects.dll_1" ComponentId="{4141233D-7B2E-4836-8370-7BC848339276}" Directory_="bin_Dir" Attributes="256" KeyPath="VistaAspects.dll_1"/>
     <ROW Component="VistaAspects.dll_2" ComponentId="{E853973A-C60F-4F48-8C4B-DA85A9B56130}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VistaAspects.dll_2"/>
-    <ROW Component="VistaAspects.dll_5" ComponentId="{CEE43F00-682C-469A-B9AD-63ECD3CDABEA}" Directory_="sitepackages_Dir" Attributes="256" KeyPath="VistaAspects.dll_5"/>
     <ROW Component="VistaBase.dll_1" ComponentId="{27B353B1-5177-4A68-B56A-08D8675EAC84}" Directory_="bin_Dir" Attributes="256" KeyPath="VistaBase.dll_1"/>
     <ROW Component="VistaBase.dll_2" ComponentId="{BE67371F-4BED-4FB7-9353-02114A02A5BB}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VistaBase.dll_2"/>
-    <ROW Component="VistaBase.dll_5" ComponentId="{FCE0F61A-FD9A-4D8D-9BDE-9FAD4ABA6E06}" Directory_="sitepackages_Dir" Attributes="256" KeyPath="VistaBase.dll_5"/>
     <ROW Component="VistaCyberGloveDriver.dll" ComponentId="{E1B18CCB-5006-4912-8207-AE045122731D}" Directory_="bin_Dir" Attributes="256" KeyPath="VistaCyberGloveDriver.dll"/>
     <ROW Component="VistaCyberGloveDriver.dll_1" ComponentId="{C08EFF45-4DA5-429D-940D-06BCD7E9A702}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VistaCyberGloveDriver.dll_1"/>
     <ROW Component="VistaCyberGlovePlugin.dll" ComponentId="{5717C414-A0C8-494D-A32E-984405624BDF}" Directory_="bin_Dir" Attributes="256" KeyPath="VistaCyberGlovePlugin.dll"/>
@@ -873,7 +858,6 @@
     <ROW Component="VistaIRManTranscoder.dll_1" ComponentId="{27E46B56-6DCB-40F5-8293-4F3F4BFC522B}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VistaIRManTranscoder.dll_1"/>
     <ROW Component="VistaInterProcComm.dll_1" ComponentId="{1101F252-278C-4775-8AF6-486D708FA2BE}" Directory_="bin_Dir" Attributes="256" KeyPath="VistaInterProcComm.dll_1"/>
     <ROW Component="VistaInterProcComm.dll_2" ComponentId="{CCB70E7D-B7DA-4356-9472-7608D5C2FAA0}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VistaInterProcComm.dll_2"/>
-    <ROW Component="VistaInterProcComm.dll_5" ComponentId="{9CEDBBC2-501A-44C5-8E28-618B9B474504}" Directory_="sitepackages_Dir" Attributes="256" KeyPath="VistaInterProcComm.dll_5"/>
     <ROW Component="VistaKernel.dll" ComponentId="{5FCE8576-DA22-419C-B5E1-F4895341BA43}" Directory_="bin_Dir" Attributes="256" KeyPath="VistaKernel.dll"/>
     <ROW Component="VistaKernel.dll_1" ComponentId="{BEDFFC21-101C-4937-9D64-36F581FD3660}" Directory_="perSONA_Dir" Attributes="256" KeyPath="VistaKernel.dll_1"/>
     <ROW Component="VistaKernelOpenSGExt.dll" ComponentId="{A5D85FAF-DB86-432D-8EA0-F0B1DCF07EDC}" Directory_="bin_Dir" Attributes="256" KeyPath="VistaKernelOpenSGExt.dll"/>
@@ -934,7 +918,6 @@
     <ROW Component="blocked_range.h_1" ComponentId="{2B4A7700-61FE-49E1-A7A2-32EB8C820A70}" Directory_="tbb_1_Dir" Attributes="0" KeyPath="blocked_range.h_1" Type="0"/>
     <ROW Component="byte_buffer.h" ComponentId="{A398E36A-30A4-4E2A-9F9C-221A924DF42E}" Directory_="grpc_Dir" Attributes="0" KeyPath="byte_buffer.h" Type="0"/>
     <ROW Component="calculation_utils.h" ComponentId="{C03685D7-5FB4-42E5-825B-2B53E91446BE}" Directory_="Utils_1_Dir" Attributes="0" KeyPath="calculation_utils.h" Type="0"/>
-    <ROW Component="calibrationScene.ipynb" ComponentId="{7C3AB13C-3D7E-49EF-8A31-1638BCE2A28B}" Directory_="jupyter_Dir" Attributes="0" KeyPath="calibrationScene.ipynb" Type="0"/>
     <ROW Component="call.h" ComponentId="{68C72E0E-02EC-4766-B1DC-2AE5EFB9FCC5}" Directory_="impl_1_Dir" Attributes="0" KeyPath="call.h" Type="0"/>
     <ROW Component="call.h_1" ComponentId="{CD4E1862-5B82-4E36-9565-24B896504A61}" Directory_="impl_2_Dir" Attributes="0" KeyPath="call.h_2" Type="0"/>
     <ROW Component="caresconfigversion.cmake" ComponentId="{484A672C-C496-4C37-96CF-F41801598DF9}" Directory_="cares_Dir" Attributes="0" KeyPath="caresconfigversion.cmake" Type="0"/>
@@ -948,12 +931,10 @@
     <ROW Component="chkder.h" ComponentId="{F630E0C2-4CE1-4519-89C0-2E70AEC0B7FB}" Directory_="NonLinearOptimization_Dir" Attributes="0" KeyPath="chkder.h" Type="0"/>
     <ROW Component="circulators_header.hh" ComponentId="{0F07BF88-FDAA-480E-B4B0-B13CA6E6D581}" Directory_="gen_Dir" Attributes="0" KeyPath="circulators_header.hh" Type="0"/>
     <ROW Component="compiler.hh" ComponentId="{2CD02528-EA99-4407-9F9C-983E8293C8D1}" Directory_="System_Dir" Attributes="0" KeyPath="compiler.hh" Type="0"/>
-    <ROW Component="concrt140.dll" ComponentId="{750327FD-B4FE-46A0-A611-C57B132108EE}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="concrt140.dll"/>
     <ROW Component="concrt140.dll_1" ComponentId="{BB53C07C-A152-4843-8CA1-1889179D699D}" Directory_="bin_Dir" Attributes="256" KeyPath="concrt140.dll_1"/>
     <ROW Component="core.h" ComponentId="{F213B760-AEF4-4436-ACA5-6F325C5188FD}" Directory_="core_Dir" Attributes="0" KeyPath="core.h" Type="0"/>
     <ROW Component="d_object.h" ComponentId="{F14F0876-94F0-479D-A958-A186BB45D635}" Directory_="SimulationScheduler_Dir" Attributes="0" KeyPath="d_object.h" Type="0"/>
     <ROW Component="date.h" ComponentId="{9EC85F83-4297-4F1B-B1E3-BB71D892A4F4}" Directory_="date_Dir" Attributes="0" KeyPath="date.h" Type="0"/>
-    <ROW Component="dateConfig.cmake" ComponentId="{78CA2C68-E16C-4DA1-8130-BEB9D108204D}" Directory_="CMake_Dir" Attributes="0" KeyPath="dateConfig.cmake" Type="0"/>
     <ROW Component="details.h" ComponentId="{7B46FDC0-5F0F-40F5-A98B-7645B2B5CB80}" Directory_="StlSupport_Dir" Attributes="0" KeyPath="details.h" Type="0"/>
     <ROW Component="ei_fftw_impl.h" ComponentId="{F64926A3-C908-4243-95CC-F445F3AA2B52}" Directory_="FFT_Dir" Attributes="0" KeyPath="ei_fftw_impl.h" Type="0"/>
     <ROW Component="endpoint_config.h" ComponentId="{BE1AA4DC-825E-4BE4-90BC-DF53A0FD4DE1}" Directory_="event_engine_Dir" Attributes="0" KeyPath="endpoint_config.h" Type="0"/>
@@ -983,15 +964,10 @@
     <ROW Component="memory_allocator_impl.h" ComponentId="{93F6B340-6258-4855-B6C8-E75C5F023164}" Directory_="internal_Dir" Attributes="0" KeyPath="memory_allocator_impl.h" Type="0"/>
     <ROW Component="msvcp120.dll_1" ComponentId="{711B7053-1C6B-40C0-9B48-1BE9FE502131}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcp120.dll_1"/>
     <ROW Component="msvcp120.dll_2" ComponentId="{ED5154C3-D537-43A6-9992-51F795189D35}" Directory_="perSONA_Dir" Attributes="256" KeyPath="msvcp120.dll_2"/>
-    <ROW Component="msvcp140.dll" ComponentId="{3E49394A-554D-4BD8-AA10-04ECE4BAB3F2}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="msvcp140.dll"/>
     <ROW Component="msvcp140.dll_1" ComponentId="{50D709C7-1AED-4EA3-BF70-3FF58A4C3DA5}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcp140.dll_1"/>
-    <ROW Component="msvcp140_1.dll" ComponentId="{14815C4A-7BBB-4419-9B39-0C4C895E475F}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="msvcp140_1.dll"/>
     <ROW Component="msvcp140_1.dll_1" ComponentId="{A1B6ABB2-8AB4-4C01-B045-55CE41C28471}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcp140_1.dll_1"/>
-    <ROW Component="msvcp140_2.dll" ComponentId="{04D2C003-684B-4B2B-BD4B-5816742FE3FD}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="msvcp140_2.dll"/>
     <ROW Component="msvcp140_2.dll_1" ComponentId="{7AB2C7D2-7383-4DFF-B463-28F5CF159E2D}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcp140_2.dll_1"/>
-    <ROW Component="msvcp140_atomic_wait.dll" ComponentId="{92C671CD-A3B4-408D-BA7A-A918CB436EB0}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="msvcp140_atomic_wait.dll"/>
     <ROW Component="msvcp140_atomic_wait.dll_1" ComponentId="{D865A193-A46A-46EF-8931-FDB590BC6139}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcp140_atomic_wait.dll_1"/>
-    <ROW Component="msvcp140_codecvt_ids.dll" ComponentId="{A61B3358-B8CC-4948-9430-6B35943DF2CB}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="msvcp140_codecvt_ids.dll"/>
     <ROW Component="msvcp140_codecvt_ids.dll_1" ComponentId="{B9A821C0-01BF-4F7C-81EF-FF1106FF6BB9}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcp140_codecvt_ids.dll_1"/>
     <ROW Component="msvcr120.dll_1" ComponentId="{15F3C407-9F02-4B46-B3E4-E8A4B3509A1D}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcr120.dll_1"/>
     <ROW Component="msvcr120.dll_2" ComponentId="{B87D8DC9-5EF5-40D5-BADF-304C6870BBDF}" Directory_="perSONA_Dir" Attributes="256" KeyPath="msvcr120.dll_2"/>
@@ -1051,24 +1027,14 @@
     <ROW Component="tbbmalloc_proxy_debug.dll_1" ComponentId="{40236B56-C0E4-4AD2-9A51-CBD2700D59C2}" Directory_="perSONA_Dir" Attributes="256" KeyPath="tbbmalloc_proxy_debug.dll_1"/>
     <ROW Component="tracking.h" ComponentId="{3DE5DFD4-5150-45F7-ACF9-F86C59CB50FF}" Directory_="Tracking_Dir" Attributes="0" KeyPath="tracking.h" Type="0"/>
     <ROW Component="urban_simulator.h" ComponentId="{FB167514-599A-4B6C-8145-99A2BE8824DB}" Directory_="Urban_Dir" Attributes="0" KeyPath="urban_simulator.h" Type="0"/>
-    <ROW Component="va_example_simple.py" ComponentId="{AAC198C8-523E-4B60-A09B-EC38028C2D39}" Directory_="examples_Dir" Attributes="0" KeyPath="va_example_simple.py" Type="0"/>
-    <ROW Component="va_test_connection.py" ComponentId="{95A7B473-D264-40B2-B830-141895A4D14E}" Directory_="tests_Dir" Attributes="0" KeyPath="va_test_connection.py" Type="0"/>
-    <ROW Component="vabase.dll" ComponentId="{33C926E8-4A51-4845-9083-4DC0539B5014}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="vabase.dll"/>
-    <ROW Component="vanet.dll" ComponentId="{03C23A68-F300-465D-9550-E8F0CC8BF3D1}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="vanet.dll"/>
-    <ROW Component="vav2017dpy3.6.egginfo" ComponentId="{44417392-D066-4574-BD4A-5F0B4BB56DBC}" Directory_="sitepackages_Dir" Attributes="0" KeyPath="vav2017dpy3.6.egginfo" Type="0"/>
-    <ROW Component="vcruntime140.dll" ComponentId="{BD0BFCB4-EB80-4084-81D1-44D1DEBF8E35}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="vcruntime140.dll"/>
     <ROW Component="vcruntime140.dll_1" ComponentId="{9C4831D9-4FF7-4A53-B3E6-AB7020E1ADC4}" Directory_="bin_Dir" Attributes="256" KeyPath="vcruntime140.dll_1"/>
-    <ROW Component="vcruntime140_1.dll" ComponentId="{B31F4F67-230F-4087-9890-749A26B346F1}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="vcruntime140_1.dll"/>
     <ROW Component="vcruntime140_1.dll_1" ComponentId="{96F2F4B9-5452-4C34-80DB-870F06C7AD77}" Directory_="bin_Dir" Attributes="256" KeyPath="vcruntime140_1.dll_1"/>
-    <ROW Component="vista_aspects.dll" ComponentId="{30D892AB-8E67-4AE2-A104-11C689B6FF30}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="vista_aspects.dll"/>
     <ROW Component="vista_aspects.dll_1" ComponentId="{5C990FFC-0F3D-45FC-8B49-34992731810F}" Directory_="bin_Dir" Attributes="256" KeyPath="vista_aspects.dll_1"/>
     <ROW Component="vista_aspects.lib" ComponentId="{E5947FFC-F960-4107-AC41-A3806126882A}" Directory_="vista_aspects_1_Dir" Attributes="0" KeyPath="vista_aspects.lib" Type="0"/>
     <ROW Component="vista_aspectsConfig.cmake" ComponentId="{999AB62C-2AE2-4B06-B08D-64D1C1E4C604}" Directory_="vista_aspects_Dir" Attributes="0" KeyPath="vista_aspectsConfig.cmake" Type="0"/>
-    <ROW Component="vista_base.dll" ComponentId="{2BD1FD22-DF04-4319-B295-4751D3ADAC75}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="vista_base.dll"/>
     <ROW Component="vista_base.dll_1" ComponentId="{DDA6165F-60BF-4A0E-B8B3-D0AB2F3D22B3}" Directory_="bin_Dir" Attributes="256" KeyPath="vista_base.dll_1"/>
     <ROW Component="vista_base.lib" ComponentId="{94535D40-5431-4128-8EE3-069E27AC63CA}" Directory_="vista_base_1_Dir" Attributes="0" KeyPath="vista_base.lib" Type="0"/>
     <ROW Component="vista_baseConfig.cmake" ComponentId="{61938D58-737B-45FF-9AB8-8B2BCDA731E4}" Directory_="vista_base_Dir" Attributes="0" KeyPath="vista_baseConfig.cmake" Type="0"/>
-    <ROW Component="vista_inter_proc_comm.dll" ComponentId="{BE268E07-9DD0-4EB4-BDE8-46014E203FDA}" Directory_="VACS_v2022a_Dir" Attributes="256" KeyPath="vista_inter_proc_comm.dll"/>
     <ROW Component="vista_inter_proc_comm.dll_1" ComponentId="{0897BC63-FC80-4299-BBBE-C7C63A7522A5}" Directory_="bin_Dir" Attributes="256" KeyPath="vista_inter_proc_comm.dll_1"/>
     <ROW Component="vista_inter_proc_comm.lib" ComponentId="{311FD2AF-82DA-4D08-98C2-22C431F88985}" Directory_="vista_inter_proc_comm_1_Dir" Attributes="0" KeyPath="vista_inter_proc_comm.lib" Type="0"/>
     <ROW Component="vista_inter_proc_commConfig.cmake" ComponentId="{2C187FE8-0E2C-4E4B-BA50-498C32824D43}" Directory_="vista_inter_proc_comm_Dir" Attributes="0" KeyPath="vista_inter_proc_commConfig.cmake" Type="0"/>
@@ -1645,30 +1611,6 @@
     <ROW File="Resources.resx" Component_="AssemblyInfo.cs" FileName="RESOUR~1.RES|Resources.resx" Attributes="0" SourcePath="..\perSONA\Properties\Resources.resx" SelfReg="false"/>
     <ROW File="Settings.Designer.cs" Component_="AssemblyInfo.cs" FileName="SETTIN~1.CS|Settings.Designer.cs" Attributes="0" SourcePath="..\perSONA\Properties\Settings.Designer.cs" SelfReg="false"/>
     <ROW File="Settings.settings" Component_="AssemblyInfo.cs" FileName="SETTIN~1.SET|Settings.settings" Attributes="0" SourcePath="..\perSONA\Properties\Settings.settings" SelfReg="false"/>
-    <ROW File="Untitledcheckpoint.ipynb" Component_="Untitledcheckpoint.ipynb" FileName="UNTITL~1.IPY|Untitled-checkpoint.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\.ipynb_checkpoints\Untitled-checkpoint.ipynb" SelfReg="false"/>
-    <ROW File="va_core_controllercheckpoint.ipynb" Component_="Untitledcheckpoint.ipynb" FileName="VA_COR~1.IPY|va_core_controller-checkpoint.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\.ipynb_checkpoints\va_core_controller-checkpoint.ipynb" SelfReg="false"/>
-    <ROW File="va_experimental_renderer_examplecheckpoint.ipynb" Component_="Untitledcheckpoint.ipynb" FileName="VA_EXP~1.IPY|va_experimental_renderer_example-checkpoint.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\.ipynb_checkpoints\va_experimental_renderer_example-checkpoint.ipynb" SelfReg="false"/>
-    <ROW File="va_notebook_examplecheckpoint.ipynb" Component_="Untitledcheckpoint.ipynb" FileName="VA_NOT~1.IPY|va_notebook_example-checkpoint.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\.ipynb_checkpoints\va_notebook_example-checkpoint.ipynb" SelfReg="false"/>
-    <ROW File="va_scene_controllercheckpoint.ipynb" Component_="Untitledcheckpoint.ipynb" FileName="VA_SCE~1.IPY|va_scene_controller-checkpoint.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\.ipynb_checkpoints\va_scene_controller-checkpoint.ipynb" SelfReg="false"/>
-    <ROW File="va_signal_sources_controllercheckpoint.ipynb" Component_="Untitledcheckpoint.ipynb" FileName="VA_SIG~1.IPY|va_signal_sources_controller-checkpoint.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\.ipynb_checkpoints\va_signal_sources_controller-checkpoint.ipynb" SelfReg="false"/>
-    <ROW File="va_simple_acoustic_scenecheckpoint.ipynb" Component_="Untitledcheckpoint.ipynb" FileName="VA_SIM~1.IPY|va_simple_acoustic_scene-checkpoint.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\.ipynb_checkpoints\va_simple_acoustic_scene-checkpoint.ipynb" SelfReg="false"/>
-    <ROW File="calibrationScene.ipynb" Component_="calibrationScene.ipynb" FileName="CALIBR~1.IPY|calibrationScene.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\calibrationScene.ipynb" SelfReg="false"/>
-    <ROW File="va_core_controller.ipynb" Component_="calibrationScene.ipynb" FileName="VA_COR~1.IPY|va_core_controller.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\va_core_controller.ipynb" SelfReg="false"/>
-    <ROW File="va_experimental_renderer_example.ipynb" Component_="calibrationScene.ipynb" FileName="VA_EXP~1.IPY|va_experimental_renderer_example.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\va_experimental_renderer_example.ipynb" SelfReg="false"/>
-    <ROW File="va_notebook_example.ipynb" Component_="calibrationScene.ipynb" FileName="VA_NOT~1.IPY|va_notebook_example.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\va_notebook_example.ipynb" SelfReg="false"/>
-    <ROW File="va_scene_controller.ipynb" Component_="calibrationScene.ipynb" FileName="VA_SCE~1.IPY|va_scene_controller.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\va_scene_controller.ipynb" SelfReg="false"/>
-    <ROW File="va_signal_sources_controller.ipynb" Component_="calibrationScene.ipynb" FileName="VA_SIG~1.IPY|va_signal_sources_controller.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\va_signal_sources_controller.ipynb" SelfReg="false"/>
-    <ROW File="va_simple_acoustic_scene.ipynb" Component_="calibrationScene.ipynb" FileName="VA_SIM~1.IPY|va_simple_acoustic_scene.ipynb" Attributes="0" SourcePath="..\perSONA\python\examples\jupyter\va_simple_acoustic_scene.ipynb" SelfReg="false"/>
-    <ROW File="va_example_simple.py" Component_="va_example_simple.py" FileName="VA_EXA~1.PY|va_example_simple.py" Attributes="0" SourcePath="..\perSONA\python\examples\va_example_simple.py" SelfReg="false"/>
-    <ROW File="vav2017dpy3.6.egginfo" Component_="vav2017dpy3.6.egginfo" FileName="VA-V20~1.EGG|va-v2017d-py3.6.egg-info" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\va-v2017d-py3.6.egg-info" SelfReg="false"/>
-    <ROW File="vav2018apy3.6.egginfo" Component_="vav2017dpy3.6.egginfo" FileName="VA-V20~2.EGG|va-v2018a-py3.6.egg-info" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\va-v2018a-py3.6.egg-info" SelfReg="false"/>
-    <ROW File="va.cp36win_amd64.pyd" Component_="vav2017dpy3.6.egginfo" FileName="VACP36~1.PYD|va.cp36-win_amd64.pyd" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\va.cp36-win_amd64.pyd" SelfReg="false"/>
-    <ROW File="VABase.dll_6" Component_="VABase.dll_6" FileName="VABase.dll" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\VABase.dll" SelfReg="false"/>
-    <ROW File="VANet.dll_6" Component_="VANet.dll_6" FileName="VANet.dll" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\VANet.dll" SelfReg="false"/>
-    <ROW File="VistaAspects.dll_5" Component_="VistaAspects.dll_5" FileName="VISTAA~1.DLL|VistaAspects.dll" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\VistaAspects.dll" SelfReg="false"/>
-    <ROW File="VistaBase.dll_5" Component_="VistaBase.dll_5" FileName="VISTAB~1.DLL|VistaBase.dll" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\VistaBase.dll" SelfReg="false"/>
-    <ROW File="VistaInterProcComm.dll_5" Component_="VistaInterProcComm.dll_5" FileName="VISTAI~1.DLL|VistaInterProcComm.dll" Attributes="0" SourcePath="..\perSONA\python\Lib\site-packages\VistaInterProcComm.dll" SelfReg="false"/>
-    <ROW File="va_test_connection.py" Component_="va_test_connection.py" FileName="VA_TES~1.PY|va_test_connection.py" Attributes="0" SourcePath="..\perSONA\python\tests\va_test_connection.py" SelfReg="false"/>
     <ROW File="renderer_out.wav" Component_="renderer_out.wav" FileName="RENDER~1.WAV|renderer_out.wav" Attributes="0" SourcePath="..\perSONA\recordings\MyOfflineRecordingProject\renderer\MyBinauralFreeField\renderer_out.wav" SelfReg="false"/>
     <ROW File="reproduction_out.wav" Component_="reproduction_out.wav" FileName="REPROD~1.WAV|reproduction_out.wav" Attributes="0" SourcePath="..\perSONA\recordings\MyOfflineRecordingProject\reproduction\MyHeadphones\reproduction_out.wav" SelfReg="false"/>
     <ROW File="readmeEditForm.png" Component_="readmeEditForm.png" FileName="README~1.PNG|readmeEditForm.png" Attributes="0" SourcePath="..\perSONA\Resources\readmeEditForm.png" SelfReg="false"/>
@@ -3551,9 +3493,6 @@
     <ROW File="_SSN_IEEE.wav" Component_="Babble_4_Meninas_Dialog_RASP.wav" FileName="_SSN_I~1.WAV|_SSN_IEEE.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Noise\_SSN_IEEE.wav" SelfReg="false"/>
     <ROW File="talkerbabble_ISTS.wav" Component_="Babble_4_Meninas_Dialog_RASP.wav" FileName="4TALKE~1.WAV|4talker-babble_ISTS.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Noise\4talker-babble_ISTS.wav" SelfReg="false"/>
     <ROW File="Homense6MulheresIndividualAudacityOK.wav" Component_="Babble_4_Meninas_Dialog_RASP.wav" FileName="12(6HO~1.WAV|12 (6 Homens e 6 Mulheres) Individual Audacity OK.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Noise\12 (6 Homens e 6 Mulheres) Individual Audacity OK.wav" SelfReg="false"/>
-    <ROW File="dateConfig.cmake" Component_="dateConfig.cmake" FileName="DATECO~1.CMA|dateConfig.cmake" Attributes="0" SourcePath="..\perSONA\CMake\dateConfig.cmake" SelfReg="false"/>
-    <ROW File="dateConfigVersion.cmake" Component_="dateConfig.cmake" FileName="DATECO~2.CMA|dateConfigVersion.cmake" Attributes="0" SourcePath="..\perSONA\CMake\dateConfigVersion.cmake" SelfReg="false"/>
-    <ROW File="dateTargets.cmake" Component_="dateConfig.cmake" FileName="DATETA~1.CMA|dateTargets.cmake" Attributes="0" SourcePath="..\perSONA\CMake\dateTargets.cmake" SelfReg="false"/>
     <ROW File="VASetup.15DesignP120.ini" Component_="VACore.experimental.ini" FileName="VASETU~8.INI|VASetup.15DesignP120.ini" Attributes="0" SourcePath="..\perSONA\conf\VASetup.15DesignP120.ini" SelfReg="false"/>
     <ROW File="VASetup.HOAIdeal.Triangulation.ini" Component_="VACore.experimental.ini" FileName="VASETU~9.INI|VASetup.HOAIdeal.Triangulation.ini" Attributes="0" SourcePath="..\perSONA\conf\VASetup.HOAIdeal.Triangulation.ini" SelfReg="false"/>
     <ROW File="VASetup.VRLab.Triangulation.ini" Component_="VACore.experimental.ini" FileName="VASET~10.INI|VASetup.VRLab.Triangulation.ini" Attributes="0" SourcePath="..\perSONA\conf\VASetup.VRLab.Triangulation.ini" SelfReg="false"/>
@@ -5676,20 +5615,6 @@
     <ROW File="ares_strerror.3" Component_="ares_cancel.3" FileName="ARES_~17.3|ares_strerror.3" Attributes="0" SourcePath="..\perSONA\share\man\man3\ares_strerror.3" SelfReg="false"/>
     <ROW File="ares_timeout.3" Component_="ares_cancel.3" FileName="ARES_T~1.3|ares_timeout.3" Attributes="0" SourcePath="..\perSONA\share\man\man3\ares_timeout.3" SelfReg="false"/>
     <ROW File="ares_version.3" Component_="ares_cancel.3" FileName="ARES_V~1.3|ares_version.3" Attributes="0" SourcePath="..\perSONA\share\man\man3\ares_version.3" SelfReg="false"/>
-    <ROW File="concrt140.dll" Component_="concrt140.dll" FileName="CONCRT~1.DLL|concrt140.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\concrt140.dll" SelfReg="false"/>
-    <ROW File="msvcp140.dll" Component_="msvcp140.dll" FileName="msvcp140.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\msvcp140.dll" SelfReg="false"/>
-    <ROW File="msvcp140_1.dll" Component_="msvcp140_1.dll" FileName="MSVCP1~1.DLL|msvcp140_1.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\msvcp140_1.dll" SelfReg="false"/>
-    <ROW File="msvcp140_2.dll" Component_="msvcp140_2.dll" FileName="MSVCP1~2.DLL|msvcp140_2.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\msvcp140_2.dll" SelfReg="false"/>
-    <ROW File="msvcp140_atomic_wait.dll" Component_="msvcp140_atomic_wait.dll" FileName="MSVCP1~3.DLL|msvcp140_atomic_wait.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\msvcp140_atomic_wait.dll" SelfReg="false"/>
-    <ROW File="msvcp140_codecvt_ids.dll" Component_="msvcp140_codecvt_ids.dll" FileName="MSVCP1~4.DLL|msvcp140_codecvt_ids.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\msvcp140_codecvt_ids.dll" SelfReg="false"/>
-    <ROW File="vabase.dll" Component_="vabase.dll" FileName="vabase.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\vabase.dll" SelfReg="false"/>
-    <ROW File="vanet.dll" Component_="vanet.dll" FileName="vanet.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\vanet.dll" SelfReg="false"/>
-    <ROW File="VANetCSWrapper.dll" Component_="VANetCSWrapper.dll" FileName="VANETC~1.DLL|VANetCSWrapper.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\VANetCSWrapper.dll" SelfReg="false"/>
-    <ROW File="vcruntime140.dll" Component_="vcruntime140.dll" FileName="VCRUNT~1.DLL|vcruntime140.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\vcruntime140.dll" SelfReg="false"/>
-    <ROW File="vcruntime140_1.dll" Component_="vcruntime140_1.dll" FileName="VCRUNT~2.DLL|vcruntime140_1.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\vcruntime140_1.dll" SelfReg="false"/>
-    <ROW File="vista_aspects.dll" Component_="vista_aspects.dll" FileName="VISTA_~1.DLL|vista_aspects.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\vista_aspects.dll" SelfReg="false"/>
-    <ROW File="vista_base.dll" Component_="vista_base.dll" FileName="VISTA_~2.DLL|vista_base.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\vista_base.dll" SelfReg="false"/>
-    <ROW File="vista_inter_proc_comm.dll" Component_="vista_inter_proc_comm.dll" FileName="VISTA_~3.DLL|vista_inter_proc_comm.dll" Attributes="0" SourcePath="..\perSONA\VACS_v2022a\vista_inter_proc_comm.dll" SelfReg="false"/>
     <ROW File="concrt140.dll_1" Component_="concrt140.dll_1" FileName="CONCRT~1.DLL|concrt140.dll" Attributes="0" SourcePath="..\perSONA\bin\x64\Release\bin\concrt140.dll" SelfReg="false"/>
     <ROW File="fftw3f.dll" Component_="fftw3f.dll" FileName="fftw3f.dll" Attributes="0" SourcePath="..\perSONA\bin\x64\Release\bin\fftw3f.dll" SelfReg="false"/>
     <ROW File="IHTAProfiler.dll" Component_="IHTAProfiler.dll" FileName="IHTAPR~1.DLL|IHTAProfiler.dll" Attributes="0" SourcePath="..\perSONA\bin\x64\Release\bin\IHTAProfiler.dll" SelfReg="false"/>
@@ -5731,7 +5656,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="perSONA-Installer-BETA" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="perSONA-Installer-BETA-Teste" Languages="en" InstallationType="4" UseLargeSchema="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -6046,16 +5971,6 @@
     <ROW Feature_="MainFeature" Component_="perSONA.exe_2"/>
     <ROW Feature_="MainFeature" Component_="Properties.Resources.Designer.cs.dll"/>
     <ROW Feature_="MainFeature" Component_="AssemblyInfo.cs"/>
-    <ROW Feature_="MainFeature" Component_="Untitledcheckpoint.ipynb"/>
-    <ROW Feature_="MainFeature" Component_="calibrationScene.ipynb"/>
-    <ROW Feature_="MainFeature" Component_="va_example_simple.py"/>
-    <ROW Feature_="MainFeature" Component_="vav2017dpy3.6.egginfo"/>
-    <ROW Feature_="MainFeature" Component_="VABase.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="VANet.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="VistaAspects.dll_5"/>
-    <ROW Feature_="MainFeature" Component_="VistaBase.dll_5"/>
-    <ROW Feature_="MainFeature" Component_="VistaInterProcComm.dll_5"/>
-    <ROW Feature_="MainFeature" Component_="va_test_connection.py"/>
     <ROW Feature_="MainFeature" Component_="renderer_out.wav"/>
     <ROW Feature_="MainFeature" Component_="reproduction_out.wav"/>
     <ROW Feature_="MainFeature" Component_="readmeEditForm.png"/>
@@ -6117,7 +6032,6 @@
     <ROW Feature_="MainFeature" Component_="FM1L7S01_filt_RMS_24dB.wav_1"/>
     <ROW Feature_="MainFeature" Component_="FM1L8S01_filt_RMS_24dB.wav_1"/>
     <ROW Feature_="MainFeature" Component_="FM1L9S01_filt_RMS_24dB.wav_1"/>
-    <ROW Feature_="MainFeature" Component_="dateConfig.cmake"/>
     <ROW Feature_="MainFeature" Component_="Faixa_01.wav"/>
     <ROW Feature_="MainFeature" Component_="Faixa_01.wav_1"/>
     <ROW Feature_="MainFeature" Component_="Faixa_01.wav_2"/>
@@ -6386,20 +6300,6 @@
     <ROW Feature_="MainFeature" Component_="Eigen3Config.cmake"/>
     <ROW Feature_="MainFeature" Component_="roots.pem"/>
     <ROW Feature_="MainFeature" Component_="ares_cancel.3"/>
-    <ROW Feature_="MainFeature" Component_="concrt140.dll"/>
-    <ROW Feature_="MainFeature" Component_="msvcp140.dll"/>
-    <ROW Feature_="MainFeature" Component_="msvcp140_1.dll"/>
-    <ROW Feature_="MainFeature" Component_="msvcp140_2.dll"/>
-    <ROW Feature_="MainFeature" Component_="msvcp140_atomic_wait.dll"/>
-    <ROW Feature_="MainFeature" Component_="msvcp140_codecvt_ids.dll"/>
-    <ROW Feature_="MainFeature" Component_="vabase.dll"/>
-    <ROW Feature_="MainFeature" Component_="vanet.dll"/>
-    <ROW Feature_="MainFeature" Component_="VANetCSWrapper.dll"/>
-    <ROW Feature_="MainFeature" Component_="vcruntime140.dll"/>
-    <ROW Feature_="MainFeature" Component_="vcruntime140_1.dll"/>
-    <ROW Feature_="MainFeature" Component_="vista_aspects.dll"/>
-    <ROW Feature_="MainFeature" Component_="vista_base.dll"/>
-    <ROW Feature_="MainFeature" Component_="vista_inter_proc_comm.dll"/>
     <ROW Feature_="MainFeature" Component_="concrt140.dll_1"/>
     <ROW Feature_="MainFeature" Component_="fftw3f.dll"/>
     <ROW Feature_="MainFeature" Component_="IHTAProfiler.dll"/>
@@ -6469,7 +6369,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="UninstallperSONA" Directory_="perSONA_Dir" Name="UNINST~1|Uninstall perSONA" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
     <ROW Shortcut="UninstallperSONA_1" Directory_="SHORTCUTDIR" Name="UNINST~1|Uninstall perSONA" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
-    <ROW Shortcut="perSONALITE" Directory_="DesktopFolder" Name="PERSON~1.6-B|perSONA v2.8.6-BETA" Component_="AI_PROPPATH_FILENAME_PERBUILD_perSONA.exe" Target="[#perSONA.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
+    <ROW Shortcut="perSONALITE" Directory_="DesktopFolder" Name="PERSON~1.6-B|perSONA_Teste v2.8.6-BETA" Component_="AI_PROPPATH_FILENAME_PERBUILD_perSONA.exe" Target="[#perSONA.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
     <ROW Shortcut="run_VAServer" Directory_="DesktopFolder" Name="VA(PER~1|VA (perSONA)" Component_="run_VAServer.bat" Target="[#run_VAServer.bat]" Hotkey="0" Icon_="run_VAServer_1.exe" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">

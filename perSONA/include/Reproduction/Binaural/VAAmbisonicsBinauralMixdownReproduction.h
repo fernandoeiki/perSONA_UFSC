@@ -18,7 +18,7 @@
 
 #include "../VAAudioReproduction.h"
 #include "../VAAudioReproductionRegistry.h"
-#include "../../VACoreImpl.h"
+#include "../../core/core.h"
 #include "Eigen\dense"
 #include "Eigen\SVD"
 #include "Eigen\Jacobi"
@@ -28,6 +28,7 @@
 class ITADatasource;
 class ITAStreamPatchbay;
 class CMixdownStreamFilter;
+class CVADirectivityDAFFHRIR;
 
 class CVAAmbisonicsBinauralMixdownReproduction : public IVAAudioReproduction
 {
@@ -65,6 +66,8 @@ private:
 	const CVAHardwareOutput* m_pVirtualOutput;
 
 	int m_iListenerID;
+
+	const CVADirectivityDAFFHRIR* m_pDefaultHRIR;
 
 	ITASampleFrame m_sfHRIRTemp;
 	CMixdownStreamFilter* m_pdsStreamFilter;

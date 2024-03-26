@@ -419,9 +419,6 @@
     <None Include="bin\VAMatlab.mexw64">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="CMake\dateConfig.cmake" />
-    <None Include="CMake\dateConfigVersion.cmake" />
-    <None Include="CMake\dateTargets.cmake" />
     <None Include="conf\VACore.experimental.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -3964,20 +3961,6 @@
     <Content Include="VABase.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="VACS_v2022a\concrt140.dll" />
-    <Content Include="VACS_v2022a\msvcp140.dll" />
-    <Content Include="VACS_v2022a\msvcp140_1.dll" />
-    <Content Include="VACS_v2022a\msvcp140_2.dll" />
-    <Content Include="VACS_v2022a\msvcp140_atomic_wait.dll" />
-    <Content Include="VACS_v2022a\msvcp140_codecvt_ids.dll" />
-    <Content Include="VACS_v2022a\vabase.dll" />
-    <Content Include="VACS_v2022a\vanet.dll" />
-    <Content Include="VACS_v2022a\VANetCSWrapper.dll" />
-    <Content Include="VACS_v2022a\vcruntime140.dll" />
-    <Content Include="VACS_v2022a\vcruntime140_1.dll" />
-    <Content Include="VACS_v2022a\vista_aspects.dll" />
-    <Content Include="VACS_v2022a\vista_base.dll" />
-    <Content Include="VACS_v2022a\vista_inter_proc_comm.dll" />
     <Content Include="VANet.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

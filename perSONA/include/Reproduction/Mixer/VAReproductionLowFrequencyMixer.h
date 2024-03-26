@@ -32,13 +32,13 @@ public:
 	void SetInputDatasource( ITADatasource* pDatasource);
 	ITADatasource* GetOutputDatasource();
 	int GetNumInputChannels() const;
-	inline void UpdateScene( CVASceneState* pNewState ) {};
+	inline void UpdateScene( CVASceneState* ) {};
 	void HandleProcessStream( ITADatasourceRealization* pSender, const ITAStreamInfo* pStreamInfo );
 	void HandlePostIncrementBlockPointer(ITADatasourceRealization* pSender );
 
 private:
 	ITADatasource* m_pdsInputDataSource;
-	ITADatasourceRealization* m_pdsOutputDataSource;
+	ITADatasourceRealization* m_pdsMixingTable;
 	CVAAudioReproductionInitParams m_oParams;
 	std::vector< int > m_viMixingChannels; // Logical mixing channel numbers, so first channel = 1 and so on
 };

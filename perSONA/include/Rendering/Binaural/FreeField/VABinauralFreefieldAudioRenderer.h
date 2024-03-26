@@ -26,7 +26,7 @@
 #include "../../VAAudioRendererRegistry.h"
 #include "../../../Scene/VAScene.h"
 #include "../../../VASourceListenerMetrics.h"
-#include "../../../VACoreImpl.h"
+#include "../../../core/core.h"
 
 // ITA includes
 #include <ITABufferedAudioFileWriter.h>
@@ -220,7 +220,7 @@ protected:
 		bool bValidTrajectoryPresent;	//!< Estimation possible -> valid trajectory present
 
 		ITASampleFrame* psfOutput;			//!< Accumulated listener output signals
-		ITAAudiofileWriter* pListenerOutputAudioFileWriter;	//!< File writer used for dumping the listener signals
+		ITABufferedAudiofileWriter* pListenerOutputAudioFileWriter;	//!< File writer used for dumping the listener signals
 
 		inline void PreRequest()
 		{
@@ -261,7 +261,8 @@ protected:
 			props.eQuantization = ITAQuantization::ITA_FLOAT;
 			props.iChannels = 2;
 			props.iLength = 0;
-			pListenerOutputAudioFileWriter = ITABufferedAudiofileWriter::create( sOutput, props );
+			pListenerOutputAudioFileWriter = ITABufferedAudiofileWriter::create( props );
+			pListenerOutputAudioFileWriter->SetFilePath( sOutput );
 		};
 
 		inline void FinalizeDump()

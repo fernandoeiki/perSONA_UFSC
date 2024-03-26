@@ -28,15 +28,18 @@ extern "C"
 	// Network communication
 
 	VACS_API CUnmanagedVANetClient* NativeCreateNetClient();
+	VACS_API void NativeDisposeNetClient( CUnmanagedVANetClient* pClient );
+
 	VACS_API bool NativeConnectLocalNetClient( CUnmanagedVANetClient* pClient );
 	VACS_API bool NativeConnectNetClient( CUnmanagedVANetClient*, const char* pcServerIP, int iPort );
 	VACS_API bool NativeGetNetClientConnected( CUnmanagedVANetClient* pClient );
 	VACS_API bool NativeDisconnectNetClient( CUnmanagedVANetClient* pClient );
-	VACS_API void NativeDisposeNetClient( CUnmanagedVANetClient* pClient );
-	VACS_API int NativeGetState( CUnmanagedVANetClient* pClient );
+
 	VACS_API void NativeInitialize( CUnmanagedVANetClient* pClient );
-	VACS_API bool NativeAddSearchPath( CUnmanagedVANetClient* pClient, const char* pcSearchPath );
 	VACS_API void NativeFinalize( CUnmanagedVANetClient* pClient );
+
+	VACS_API int NativeGetState( CUnmanagedVANetClient* pClient );
+	VACS_API bool NativeAddSearchPath( CUnmanagedVANetClient* pClient, const char* pcSearchPath );
 	VACS_API void NativeReset( CUnmanagedVANetClient* pClient );
 	VACS_API void NativeCallModule( CUnmanagedVANetClient*, const char* pcModuleID, const CVAStruct* oArgs, CVAStruct* oReturn );
 
@@ -218,8 +221,10 @@ extern "C"
 	VACS_API void NativeTextToSpeechPrepareText( CUnmanagedVANetClient*, const char* pcSignalSourceIdentifier, const char* pcTextIdentifier, const char* pcText );
 	VACS_API void NativeTextToSpeechPlaySpeech( CUnmanagedVANetClient*, const char* pcSignalSourceIdentifier, const char* pcTextIdentifier );
 
-	VACS_API int NativeUpdateGenericPath( CUnmanagedVANetClient * pClient, const char* pcRendererID, int iSourceID, int iReceiverID, int iChannel, double dDelaySeconds, int iNumSamples, double* vdSampleBuffer );
-	VACS_API int NativeUpdateGenericPathFromFile( CUnmanagedVANetClient * pClient, const char* pcRendererID, int iSourceID, int iReceiverID, const char* pcFilePath );
+	VACS_API void NativeUpdateGenericPath( CUnmanagedVANetClient * pClient, const char* pcRendererID, int iSourceID, int iReceiverID, int iChannel, float fDelaySeconds, int iNumSamples, float* vfSampleBuffer );
+	VACS_API void NativeUpdateGenericPathFromFile( CUnmanagedVANetClient * pClient, const char* pcRendererID, int iSourceID, int iReceiverID, const char* pcFilePath );
+
+	VACS_API void NativeAmbientMixerRendererPlaySampleFromFile( CUnmanagedVANetClient * pClient, const char* pcRendererID, const char* pcFilePath );
 }
 
 #endif // INCLUDE_WATCHER_VA_CS_WRAPPER

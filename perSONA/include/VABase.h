@@ -22,7 +22,7 @@
 #include <vector>
 #include <cmath>
 
-// L_w = L_p + 10 * log10( 1m / 1m ) dB re 1pW + 10 * log10 ( 4 * pi ) dB re 1pW; P = 10^( L_w / 10 ) * 1pW
+// L_w = L_p + 20 * log10( 1m / 1m ) dB re 1pW + 10 * log10 ( 4 * pi ) dB re 1pW; P = 10^( L_w / 10 ) * 1pW
 static const double g_dSoundPower_94dB_SPL_1m = 0.0316227766f; //!< [W] Sound power that results in 94 dB SPL re 20uPa @ 1m for spherical spreading
 static const double g_dSoundPower_128dB_SPL_1m = 31.6227766017f; //!< [W] Sound power that results in 124 dB SPL re 20uPa @ 1m for spherical spreading
 
@@ -214,6 +214,22 @@ inline VABASE_API VAVec3 operator*( const VAVec3& oVec, const double dScalar )
 	vScaledVector.x *= dScalar;
 	vScaledVector.y *= dScalar;
 	vScaledVector.z *= dScalar;
+	return vScaledVector;
+};
+
+//!< Scalar division operator for vectors
+/**
+* @param[in] oVec Vector
+* @param[in] dScalar Scalar
+*
+* @return Scaled vector
+*/
+inline VABASE_API VAVec3 operator/(const VAVec3& oVec, const double dScalar)
+{
+	VAVec3 vScaledVector = oVec;
+	vScaledVector.x /= dScalar;
+	vScaledVector.y /= dScalar;
+	vScaledVector.z /= dScalar;
 	return vScaledVector;
 };
 

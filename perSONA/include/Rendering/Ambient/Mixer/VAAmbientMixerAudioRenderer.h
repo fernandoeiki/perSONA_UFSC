@@ -23,13 +23,21 @@
 
 // ITA includes
 #include <ITADataSourceRealization.h>
+#include <ITASoundSampler.h>
+#include <ITAStreamInfo.h>
+
+// STL
+#include <atomic>
+
 
 //! Ambient Mixer Audio Renderer
 /**
-  * The mixer for ambient sources routes all sound sources with 
-  * a signal that are not explicitly used by another renderer to
-  * the listenr output. It applies the gains in the chain but does
-  * not consider any auralization modes.
+  * The mixer for ambient sound either routes all sound sources with 
+  * a signal (that are not explicitly used by another renderer) to
+  * the output. It applies the gains in the chain but does
+  * not consider any auralization modes. It also provides an ambient
+  * sound sampler to load multi-track samples and control the playback
+  * via the parameter setter method.
   *
   */
 class CVAAmbientMixerAudioRenderer : public IVAAudioRenderer, ITADatasourceRealizationEventHandler
@@ -41,17 +49,33 @@ public:
 	void Reset();
 	inline void LoadScene( const std::string& ) {};
 	void UpdateScene( CVASceneState* );
+
 	inline void UpdateGlobalAuralizationMode( int ) {};
-	void HandleProcessStream( ITADatasourceRealization*, const ITAStreamInfo* );
-	inline void HandlePostIncrementBlockPointer( ITADatasourceRealization* ) {};
+
+	void SetParameters( const CVAStruct& );
+	CVAStruct GetParameters( const CVAStruct& ) const;
+
 	ITADatasource* GetOutputDatasource();
 
+	void HandleProcessStream( ITADatasourceRealization*, const ITAStreamInfo* );
+	inline void HandlePostIncrementBlockPointer( ITADatasourceRealization* ) {};
+
+	CVAStruct GetInfo() const;
+
 private:
-	ITADatasourceRealization* m_pDataSource;
 	const CVAAudioRendererInitParams m_oParams; //!< Create a const copy of the init params
+
+	ITADatasourceRealization* m_pDataSource; //!< Data source of the ambient mixer
+	ITASoundSampler* m_pSampler; //!< Multi-channel multi-track ambient sound sampler
+	ITAStreamInfo oSamplerStreamInfo; //!< Stream info
+
+	bool m_bSamplerEnabled; //!< Flag for activated sampler in config
+	bool m_bSignalSourceMixingEnabled; //!< Flag for activated signal mixing in config
+
 	CVASceneState* m_pNewSceneState;
 	CVASceneState* m_pCurSceneState;
-	ITAAtomicBool m_bIndicateReset, m_bResetAck;
+	std::atomic< bool > m_bIndicateReset, m_bResetAck;
+
 	inline CVAAmbientMixerAudioRenderer operator=( const CVAAmbientMixerAudioRenderer & ) { VA_EXCEPT_NOT_IMPLEMENTED; };
 };
 

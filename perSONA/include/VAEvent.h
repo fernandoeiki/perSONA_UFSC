@@ -100,7 +100,9 @@ public:
 	static const uint64_t SOUND_SOURCE_REAL_WORLD_POSE_CHANGED = VA_BIT64( 41 );
 	static const uint64_t SOUND_RECEIVER_REAL_WORLD_POSE_CHANGED = VA_BIT64( 42 );
 
-	// Next free slot: 43
+	static const uint64_t SHOTDOWN_REQUEST = VA_BIT64( 43 );
+
+	// Next free slot: 44
 
 	//!< Selector mask for signal source related events
 	static const uint64_t SIGNALSOURCE_EVENT = SIGNALSOURCE_CREATED |

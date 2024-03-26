@@ -28,7 +28,7 @@
 #include "../../../Motion/VASharedMotionModel.h"
 #include "../../../Scene/VAScene.h"
 #include "../../../VASourceListenerMetrics.h"
-#include "../../../VACoreImpl.h"
+#include "../../../core/core.h"
 
 // ITA includes
 #include <ITADataSourceRealization.h>

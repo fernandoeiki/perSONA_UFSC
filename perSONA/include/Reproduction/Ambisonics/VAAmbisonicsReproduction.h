@@ -18,7 +18,7 @@
 
 #include "../VAAudioReproduction.h"
 #include "../VAAudioReproductionRegistry.h"
-#include "../../VACoreImpl.h"
+#include "../../core/core.h"
 #include <ITASampleFrame.h>
 #include <ITANumericUtils.h>
 #include <ITAConstants.h>

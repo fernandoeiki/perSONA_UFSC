@@ -54,7 +54,7 @@ void ConvertViewUpToQuaternion( const VAVec3& vView, const VAVec3& vUp, VAQuat& 
 double GetAzimuthOnTarget_DEG( const VAVec3& vOriginPos, const VAVec3& vView, const VAVec3& vUp, const VAVec3& vTargetPos );
 
 //! Get elevation angle from a reference coordinate system defined by origin and orientation to a target position
-double GetElevationOnTarget_DEG( const VAVec3& vOriginPos, const VAVec3& vView, const VAVec3& vUp, const VAVec3& vTargetPos );
+double GetElevationOnTarget_DEG( const VAVec3& vOriginPos, const VAVec3& vUp, const VAVec3& vTargetPos );
 
 //! Ersetzt Backslashes (bzw. PATH_SEPARATOR) durch doppelte Backslashes (bzw. PATH_SEPARATOR)
 std::string correctPathForLUA( const std::string& sPath );

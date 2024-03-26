@@ -27,7 +27,7 @@
 #include "../../VAAudioRendererRegistry.h"
 #include "../../../Scene/VAScene.h"
 #include "../../../VASourceListenerMetrics.h"
-#include "../../../VACoreImpl.h"
+#include "../../../core/core.h"
 
 // ITA includes
 #include <ITABufferedAudioFileWriter.h>
@@ -212,7 +212,7 @@ protected:
 		bool bValidTrajectoryPresent;	//!< Estimation possible -> valid trajectory present
 
 		ITASampleFrame* psfOutput;			//!< Accumulated listener output signals
-		ITAAudiofileWriter* pListenerOutputAudioFileWriter;	//!< File writer used for dumping the listener signals
+		ITABufferedAudiofileWriter* pListenerOutputAudioFileWriter;	//!< File writer used for dumping the listener signals
 
 		void PreRequest()
 		{

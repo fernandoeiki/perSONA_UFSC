@@ -23,7 +23,7 @@
 #include "../../../Scene/VAScene.h"
 #include <VA.h>
 #include <VAObjectPool.h>
-#include"../../../VACoreImpl.h"
+#include"../../../core/core.h"
 
 // ITA includes
 #include <ITASampleFrame.h>
