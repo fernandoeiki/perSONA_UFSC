@@ -258,7 +258,7 @@ namespace perSONA
         {
             if(test.SceeneLogic == "SpeechConstant")
             {                
-                if (false)
+               /* if (false)
                 {
                     vA = vAInterface.getVa();
                     vA.Reset();
@@ -286,7 +286,7 @@ namespace perSONA
                         string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
                     vAInterface.createAcousticScene(speechFile, test.NoiseFile);
                     rt = 0;
-                }
+                }*/
 
                 vAInterface.createSpeechScene(currentFile);
 
@@ -607,6 +607,27 @@ namespace perSONA
                 caminhoArquivo = Path.Combine(diretorioAreaTrabalho, $"{baseFileName}_{sequencial}{extension}");
                 sequencial++;
             } while (System.IO.File.Exists(caminhoArquivo));
+        }
+
+        private void finishTest_Click(object sender, EventArgs e)
+        {         
+            int selectedIndex = filenameList.SelectedIndex;
+
+            List<string> itensAbaixo = new List<string>();
+
+            for (int i = selectedIndex + 1; i < filenameList.Items.Count; i++)
+            {
+                itensAbaixo.Add(filenameList.Items[i].ToString());
+            }
+
+            string[] vetorItensAbaixo = itensAbaixo.ToArray();
+
+            foreach (string item in vetorItensAbaixo)
+            {
+                Console.WriteLine(item);
+            }
+
+            vAInterface.saveTest(vetorItensAbaixo, test.PatientName);
         }
     }
 }

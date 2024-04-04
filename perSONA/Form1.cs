@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Presentation;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -1077,6 +1078,29 @@ namespace perSONA
                 File.WriteAllLines(string.Format("{0}/logs/testlog-{1}.txt",
                                     Properties.Settings.Default.RESULTS_FOLDER,
                                     DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")), logText);
+            }
+        }
+
+        public void saveTest(string[] missingSentences, string patientName) 
+        {
+            string pasteName = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished",patientName);
+            string testFilePath = Path.Combine(pasteName, DateTime.Now.ToString("yyyy-MM-dd") + ".json");
+
+            try
+            {
+                if (!Directory.Exists(pasteName))
+                {
+                    Directory.CreateDirectory(pasteName);
+                }
+
+                string json = JsonConvert.SerializeObject(missingSentences);
+
+                // Salvar o JSON no arquivo
+                File.WriteAllText(testFilePath, json);
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
