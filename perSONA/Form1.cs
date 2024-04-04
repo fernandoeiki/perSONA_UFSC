@@ -1083,24 +1083,39 @@ namespace perSONA
 
         public void saveTest(string[] missingSentences, string patientName) 
         {
-            string pasteName = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished",patientName);
-            string testFilePath = Path.Combine(pasteName, DateTime.Now.ToString("yyyy-MM-dd") + ".json");
+            string pasteName = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished");
+            string baseFileName = patientName + "_" + DateTime.Now.ToString("yyyy-MM-dd");
+            string testFilePath = Path.Combine(pasteName,patientName + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".json");
 
             try
             {
+                if (!Directory.Exists(Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished")))
+                {
+                    Directory.CreateDirectory(Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished"));
+                }
+
                 if (!Directory.Exists(pasteName))
                 {
                     Directory.CreateDirectory(pasteName);
                 }
 
+                int fileNumber = 1;
+                string numberedFileName = baseFileName;
+
+                // Verifica se o arquivo já existe
+                while (File.Exists(testFilePath))
+                {
+                    numberedFileName = $"{baseFileName}_{fileNumber}";
+                    testFilePath = Path.Combine(pasteName, numberedFileName + ".json");
+                    fileNumber++;
+                }
+
                 string json = JsonConvert.SerializeObject(missingSentences);
 
-                // Salvar o JSON no arquivo
                 File.WriteAllText(testFilePath, json);
             }
             catch (Exception ex)
             {
-
             }
         }
 

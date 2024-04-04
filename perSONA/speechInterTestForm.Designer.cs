@@ -56,6 +56,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.finishTest = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,7 +72,6 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.finishTest = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -466,6 +466,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(228, 376);
             this.tableLayoutPanel1.TabIndex = 26;
             // 
+            // finishTest
+            // 
+            this.finishTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.finishTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.finishTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.finishTest.ForeColor = System.Drawing.Color.White;
+            this.finishTest.Location = new System.Drawing.Point(5, 330);
+            this.finishTest.Margin = new System.Windows.Forms.Padding(5);
+            this.finishTest.Name = "finishTest";
+            this.finishTest.Size = new System.Drawing.Size(218, 40);
+            this.finishTest.TabIndex = 12;
+            this.finishTest.Text = "Interromper teste";
+            this.finishTest.UseVisualStyleBackColor = false;
+            this.finishTest.Click += new System.EventHandler(this.finishTest_Click);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -720,23 +736,6 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(1321, 814);
             this.tableLayoutPanel7.TabIndex = 32;
-            // 
-            // finishTest
-            // 
-            this.finishTest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.finishTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.finishTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.finishTest.ForeColor = System.Drawing.Color.White;
-            this.finishTest.Location = new System.Drawing.Point(5, 330);
-            this.finishTest.Margin = new System.Windows.Forms.Padding(5);
-            this.finishTest.Name = "finishTest";
-            this.finishTest.Size = new System.Drawing.Size(218, 41);
-            this.finishTest.TabIndex = 12;
-            this.finishTest.Text = "Finalizar teste";
-            this.finishTest.UseVisualStyleBackColor = false;
-            this.finishTest.Click += new System.EventHandler(this.finishTest_Click);
             // 
             // speechIterTestForm
             // 
