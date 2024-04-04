@@ -99,6 +99,66 @@ namespace perSONA
 
             iteractiveResponseTime = new List<string> { };
             iteractiveResponsePercentage = new List<string> { };
+
+            if (test.SceeneLogic == "SpeechConstant")
+            {
+                vA = vAInterface.getVa();
+                vA.Reset();
+                int receiverId = vA.CreateSoundReceiver("Subject");
+
+                double xSides = 0;
+                double zFront = 0;
+                double yHeight = 1.7;
+
+                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
+                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
+                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
+
+                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
+                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
+                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
+                                         xSides, zFront, yHeight, receiverId));
+
+                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
+                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
+
+                string speechFile = currentFile;
+                vAInterface.concatText(speechFile);
+                vAInterface.concatText(
+                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+
+            }
+
+            else
+            {
+                vA = vAInterface.getVa();
+                vA.Reset();
+                int receiverId = vA.CreateSoundReceiver("Subject");
+
+                double xSides = 0;
+                double zFront = 0;
+                double yHeight = 1.7;
+
+                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
+                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
+                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
+
+                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
+                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
+                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
+                                         xSides, zFront, yHeight, receiverId));
+
+                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
+                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
+
+                string speechFile = currentFile;
+                vAInterface.concatText(speechFile);
+                vAInterface.concatText(
+                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+               
+            }
         }
 
         private void AllCorrect_Click(object sender, EventArgs e)
@@ -133,31 +193,12 @@ namespace perSONA
         {
             if(test.SceeneLogic == "SpeechConstant")
             {
-                vA = vAInterface.getVa();
-                vA.Reset();
-                int receiverId = vA.CreateSoundReceiver("Subject");
-          
-                double xSides = 0;
-                double zFront = 0;
-                double yHeight = 1.7;
-
-                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                         xSides, zFront, yHeight, receiverId));
-
-                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
 
                 string speechFile = currentFile;
                 vAInterface.concatText(speechFile);
                 vAInterface.concatText(
-                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+                 string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                vAInterface.createSpeechScene(speechFile);
                 vAInterface.playSceneSpeechFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
 
                 TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
@@ -175,31 +216,12 @@ namespace perSONA
 
             else
             {
-                vA = vAInterface.getVa();
-                vA.Reset();
-                int receiverId = vA.CreateSoundReceiver("Subject");
-
-                double xSides = 0;
-                double zFront = 0;
-                double yHeight = 1.7;
-
-                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                         xSides, zFront, yHeight, receiverId));
-
-                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
 
                 string speechFile = currentFile;
                 vAInterface.concatText(speechFile);
                 vAInterface.concatText(
                     string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+                vAInterface.createSpeechScene(speechFile);
                 vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR, signalToNoiseArray[0]);
 
                 TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   

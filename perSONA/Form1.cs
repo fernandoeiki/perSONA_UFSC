@@ -778,7 +778,8 @@ namespace perSONA
         public void createSpeechScene(string speechFile)
         {
             speechSound = vA.CreateSignalSourceBufferFromFile(speechFile);
-            speechSource = vA.CreateSoundSource("Speech");
+            //speechSource = vA.CreateSoundSource("Speech");
+            vA.SetSoundSourceSignalSource(speechSource, speechSound);
 
             int humanDirectivity = vA.CreateDirectivityFromFile("data/Singer.v17.ms.daff");
             vA.SetSoundSourceDirectivity(speechSource, humanDirectivity);
@@ -786,7 +787,8 @@ namespace perSONA
             concatText(string.Format("\r\nCreated Source Signals: {0} with file: {1}",
                                      speechSource, Path.GetFileName(speechFile)));
         }
-
+        
+     
         public void createNoiseScene(string noiseFile)
         {
             noiseSound = vA.CreateSignalSourceBufferFromFile(noiseFile);
