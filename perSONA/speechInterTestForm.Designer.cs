@@ -142,7 +142,7 @@
             this.label1.Location = new System.Drawing.Point(5, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 32);
+            this.label1.Size = new System.Drawing.Size(218, 32);
             this.label1.TabIndex = 13;
             this.label1.Text = "SNR:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,7 +156,7 @@
             this.label2.Location = new System.Drawing.Point(5, 64);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 32);
+            this.label2.Size = new System.Drawing.Size(218, 32);
             this.label2.TabIndex = 15;
             this.label2.Text = "Sequência de acerto";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -170,7 +170,7 @@
             this.label3.Location = new System.Drawing.Point(5, 128);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 32);
+            this.label3.Size = new System.Drawing.Size(218, 32);
             this.label3.TabIndex = 17;
             this.label3.Text = "Sentença atual";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -270,7 +270,7 @@
             this.label7.Location = new System.Drawing.Point(5, 192);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(199, 32);
+            this.label7.Size = new System.Drawing.Size(218, 32);
             this.label7.TabIndex = 21;
             this.label7.Text = "Tempo de resposta";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -303,7 +303,7 @@
             this.currentTryal.Location = new System.Drawing.Point(5, 229);
             this.currentTryal.Margin = new System.Windows.Forms.Padding(5);
             this.currentTryal.Name = "currentTryal";
-            this.currentTryal.Size = new System.Drawing.Size(199, 23);
+            this.currentTryal.Size = new System.Drawing.Size(218, 23);
             this.currentTryal.TabIndex = 22;
             // 
             // streakText
@@ -315,7 +315,7 @@
             this.streakText.Location = new System.Drawing.Point(5, 101);
             this.streakText.Margin = new System.Windows.Forms.Padding(5);
             this.streakText.Name = "streakText";
-            this.streakText.Size = new System.Drawing.Size(199, 23);
+            this.streakText.Size = new System.Drawing.Size(218, 23);
             this.streakText.TabIndex = 16;
             // 
             // computedAudioText
@@ -327,7 +327,7 @@
             this.computedAudioText.Location = new System.Drawing.Point(5, 165);
             this.computedAudioText.Margin = new System.Windows.Forms.Padding(5);
             this.computedAudioText.Name = "computedAudioText";
-            this.computedAudioText.Size = new System.Drawing.Size(199, 23);
+            this.computedAudioText.Size = new System.Drawing.Size(218, 23);
             this.computedAudioText.TabIndex = 18;
             // 
             // filenameList
@@ -371,7 +371,7 @@
             this.textBox3.Location = new System.Drawing.Point(5, 37);
             this.textBox3.Margin = new System.Windows.Forms.Padding(5);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 23);
+            this.textBox3.Size = new System.Drawing.Size(218, 23);
             this.textBox3.TabIndex = 14;
             // 
             // timer1
@@ -549,7 +549,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(209, 257);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(228, 257);
             this.tableLayoutPanel8.TabIndex = 28;
             // 
             // label12

@@ -52,6 +52,10 @@
             this.azbioTest = new System.Windows.Forms.ComboBox();
             this.azbioSentences = new System.Windows.Forms.ListBox();
             this.numSentences = new System.Windows.Forms.Label();
+            this.continueTest = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.continueTestBox = new System.Windows.Forms.ComboBox();
+            this.continueSentences = new System.Windows.Forms.ListBox();
             this.simulacaodeFala = new System.Windows.Forms.GroupBox();
             this.simulaFala = new System.Windows.Forms.RadioButton();
             this.simulaFalaeRuido = new System.Windows.Forms.RadioButton();
@@ -85,10 +89,6 @@
             this.sceneLogic = new System.Windows.Forms.GroupBox();
             this.noiseLogic = new System.Windows.Forms.RadioButton();
             this.speechLogic = new System.Windows.Forms.RadioButton();
-            this.continueTest = new System.Windows.Forms.TabPage();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.continueTestBox = new System.Windows.Forms.ComboBox();
-            this.continueSentences = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -99,6 +99,8 @@
             this.azbioTab.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetencesCount)).BeginInit();
+            this.continueTest.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.simulacaodeFala.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -115,8 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericRule)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.sceneLogic.SuspendLayout();
-            this.continueTest.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -453,6 +453,58 @@
             this.numSentences.TabIndex = 8;
             this.numSentences.Text = "Número de Sentenças";
             this.numSentences.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // continueTest
+            // 
+            this.continueTest.Controls.Add(this.groupBox11);
+            this.continueTest.Location = new System.Drawing.Point(4, 26);
+            this.continueTest.Name = "continueTest";
+            this.continueTest.Padding = new System.Windows.Forms.Padding(3);
+            this.continueTest.Size = new System.Drawing.Size(614, 254);
+            this.continueTest.TabIndex = 2;
+            this.continueTest.Text = "Retomar teste";
+            this.continueTest.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.continueTestBox);
+            this.groupBox11.Controls.Add(this.continueSentences);
+            this.groupBox11.Location = new System.Drawing.Point(2, 2);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(610, 251);
+            this.groupBox11.TabIndex = 16;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Teste";
+            // 
+            // continueTestBox
+            // 
+            this.continueTestBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.continueTestBox.FormattingEnabled = true;
+            this.continueTestBox.Location = new System.Drawing.Point(6, 24);
+            this.continueTestBox.Name = "continueTestBox";
+            this.continueTestBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.continueTestBox.Size = new System.Drawing.Size(602, 25);
+            this.continueTestBox.TabIndex = 12;
+            this.continueTestBox.SelectedIndexChanged += new System.EventHandler(this.continueTestBox_SelectedIndexChanged_1);
+            // 
+            // continueSentences
+            // 
+            this.continueSentences.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.continueSentences.FormattingEnabled = true;
+            this.continueSentences.ItemHeight = 17;
+            this.continueSentences.Location = new System.Drawing.Point(6, 63);
+            this.continueSentences.Margin = new System.Windows.Forms.Padding(5);
+            this.continueSentences.Name = "continueSentences";
+            this.continueSentences.ScrollAlwaysVisible = true;
+            this.continueSentences.Size = new System.Drawing.Size(602, 174);
+            this.continueSentences.TabIndex = 7;
             // 
             // simulacaodeFala
             // 
@@ -1046,58 +1098,6 @@
             this.speechLogic.UseVisualStyleBackColor = false;
             this.speechLogic.CheckedChanged += new System.EventHandler(this.speechLogic_CheckedChanged);
             // 
-            // continueTest
-            // 
-            this.continueTest.Controls.Add(this.groupBox11);
-            this.continueTest.Location = new System.Drawing.Point(4, 26);
-            this.continueTest.Name = "continueTest";
-            this.continueTest.Padding = new System.Windows.Forms.Padding(3);
-            this.continueTest.Size = new System.Drawing.Size(614, 254);
-            this.continueTest.TabIndex = 2;
-            this.continueTest.Text = "Retomar teste";
-            this.continueTest.UseVisualStyleBackColor = true;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox11.Controls.Add(this.continueTestBox);
-            this.groupBox11.Controls.Add(this.continueSentences);
-            this.groupBox11.Location = new System.Drawing.Point(2, 2);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(610, 251);
-            this.groupBox11.TabIndex = 16;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Teste";
-            // 
-            // continueTestBox
-            // 
-            this.continueTestBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.continueTestBox.FormattingEnabled = true;
-            this.continueTestBox.Location = new System.Drawing.Point(6, 24);
-            this.continueTestBox.Name = "continueTestBox";
-            this.continueTestBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.continueTestBox.Size = new System.Drawing.Size(602, 25);
-            this.continueTestBox.TabIndex = 12;
-            this.continueTestBox.SelectedIndexChanged += new System.EventHandler(this.continueTestBox_SelectedIndexChanged_1);
-            // 
-            // continueSentences
-            // 
-            this.continueSentences.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.continueSentences.FormattingEnabled = true;
-            this.continueSentences.ItemHeight = 17;
-            this.continueSentences.Location = new System.Drawing.Point(6, 63);
-            this.continueSentences.Margin = new System.Windows.Forms.Padding(5);
-            this.continueSentences.Name = "continueSentences";
-            this.continueSentences.ScrollAlwaysVisible = true;
-            this.continueSentences.Size = new System.Drawing.Size(602, 174);
-            this.continueSentences.TabIndex = 7;
-            // 
             // testSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1125,6 +1125,8 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSetencesCount)).EndInit();
+            this.continueTest.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.simulacaodeFala.ResumeLayout(false);
             this.simulacaodeFala.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1145,8 +1147,6 @@
             this.groupBox6.ResumeLayout(false);
             this.sceneLogic.ResumeLayout(false);
             this.sceneLogic.PerformLayout();
-            this.continueTest.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

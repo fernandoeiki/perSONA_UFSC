@@ -88,6 +88,43 @@ namespace perSONA
                 azbioTest.Items.Add(azbioFiles[i]);
             }
             azbioTest.SelectedItem = azbioTest.Items[0];
+
+            //Código para sessão de retomar teste 
+
+            string folderPath = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished");
+            continueTestBox.Items.Clear();
+            continueSentences.Items.Clear();
+
+            try
+            {
+                // Verifique se a pasta existe
+                if (Directory.Exists(folderPath))
+                {
+                    // Obtenha todos os arquivos com a extensão .json na pasta
+                    string[] arquivosJson = Directory.GetFiles(folderPath, "*.json");
+
+                    // Adicione os nomes dos arquivos ao ComboBox
+                    foreach (string arquivo in arquivosJson)
+                    {
+                        continueTestBox.Items.Add(Path.GetFileName(arquivo));
+                    }
+                    if (continueTestBox.Items.Count > 0)
+                    {
+                        // Selecionar automaticamente o primeiro item
+                        continueTestBox.SelectedIndex = 0;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("A pasta não existe.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}");
+            }
+
+
         }
 
 
@@ -495,43 +532,10 @@ namespace perSONA
                 testOption = "azbio";
             }
             else if (selectedTab == "continueTest") 
-            {
-                string folderPath = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished");
+            {               
                 Console.WriteLine(selectedTab);
                 testOption = "continueTest";
-                continueTestBox.Items.Clear();
-                continueSentences.Items.Clear();
-
-                try
-                {
-                    // Verifique se a pasta existe
-                    if (Directory.Exists(folderPath))
-                    {
-                        // Obtenha todos os arquivos com a extensão .json na pasta
-                        string[] arquivosJson = Directory.GetFiles(folderPath, "*.json");
-
-                        // Adicione os nomes dos arquivos ao ComboBox
-                        foreach (string arquivo in arquivosJson)
-                        {
-                            continueTestBox.Items.Add(Path.GetFileName(arquivo));
-                        }
-                        if (continueTestBox.Items.Count > 0)
-                        {
-                            // Selecionar automaticamente o primeiro item
-                            continueTestBox.SelectedIndex = 0;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("A pasta não existe.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ocorreu um erro: {ex.Message}");
-                }
-
-
+                
             }
         }
 

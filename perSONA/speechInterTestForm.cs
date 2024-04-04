@@ -112,7 +112,7 @@ namespace perSONA
 
                 caminhoArquivoList = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), test.PatientName + ".txt");
 
-                try
+               /* try
                 {
                     using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivoList))
                     {
@@ -126,7 +126,7 @@ namespace perSONA
                 catch (Exception ex)
                 {
                     Console.WriteLine("Não foi possível salvar a lista de sentenças");
-                }
+                }*/
 
             }
             else if (test.TestOption == "continueTest") 
@@ -470,7 +470,7 @@ namespace perSONA
             allCountWords += SpeechTestFormWords.Item2;
             double PORCENTAGEMDEACERTOTOTAL = 100.0 * allCountCorrectWords / allCountWords;
 
-            if (test.TestOption == "azbio")
+            if (test.TestOption == "azbio" || test.TestOption == "continueTest")
             {
                 
 
@@ -535,7 +535,7 @@ namespace perSONA
                 iteractiveResponseTime.Add(responseTime);
                 iteractiveResponsePercentage.Add(responsePercentage);
                 textBox3.Text = string.Format("{0}", actualSNR);
-                if (test.TestOption == "azbio") { }
+                if (test.TestOption == "azbio" || test.TestOption == "continueTest") { }
                 else
                 {
                     updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
@@ -616,7 +616,7 @@ namespace perSONA
 
             List<string> itensAbaixo = new List<string>();
 
-            for (int i = selectedIndex + 1; i < filenameList.Items.Count; i++)
+            for (int i = selectedIndex; i < filenameList.Items.Count; i++)
             {
                 itensAbaixo.Add(filenameList.Items[i].ToString());
             }
