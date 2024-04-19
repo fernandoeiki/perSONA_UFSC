@@ -18,6 +18,7 @@ namespace perSONA
         void stopScene(bool speechON, bool noiseON);
         void allSoundPlayersPlayScene(double radius, int numberOfSoundPlayers, string speechFile);
         void addCompletedTest(speechPerceptionTest test);
+        void saveTest(string[] missingSentences, string patientName);
         string getDatabaseFolder();
         string getDatabaseFiles(string Location);
         void createAcousticScene(string speechFile, string noiseFile);

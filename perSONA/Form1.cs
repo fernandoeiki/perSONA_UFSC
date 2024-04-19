@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Presentation;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -695,7 +696,7 @@ namespace perSONA
                 vA.SetSignalSourceBufferLooping(noiseSound, true);
                 vA.SetSignalSourceBufferPlaybackAction(noiseSound, "play");
             }
-        }
+        }    
 
         public void stopScene(bool speechON, bool noiseON)
         {
@@ -853,7 +854,7 @@ namespace perSONA
         public void createSpeechScene(string speechFile)
         {
             speechSound = vA.CreateSignalSourceBufferFromFile(speechFile);
-            speechSource = vA.CreateSoundSource("Speech");
+            vA.SetSoundSourceSignalSource(speechSource, speechSound);
 
             int humanDirectivity = vA.CreateDirectivityFromFile("data/Singer.v17.ms.daff");
             vA.SetSoundSourceDirectivity(speechSource, humanDirectivity);
@@ -1077,6 +1078,44 @@ namespace perSONA
                 File.WriteAllLines(string.Format("{0}/logs/testlog-{1}.txt",
                                     Properties.Settings.Default.RESULTS_FOLDER,
                                     DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")), logText);
+            }
+        }
+
+        public void saveTest(string[] missingSentences, string patientName) 
+        {
+            string pasteName = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished");
+            string baseFileName = patientName + "_" + DateTime.Now.ToString("yyyy-MM-dd");
+            string testFilePath = Path.Combine(pasteName,patientName + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".json");
+
+            try
+            {
+                if (!Directory.Exists(Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished")))
+                {
+                    Directory.CreateDirectory(Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished"));
+                }
+
+                if (!Directory.Exists(pasteName))
+                {
+                    Directory.CreateDirectory(pasteName);
+                }
+
+                int fileNumber = 1;
+                string numberedFileName = baseFileName;
+
+                // Verifica se o arquivo já existe
+                while (File.Exists(testFilePath))
+                {
+                    numberedFileName = $"{baseFileName}_{fileNumber}";
+                    testFilePath = Path.Combine(pasteName, numberedFileName + ".json");
+                    fileNumber++;
+                }
+
+                string json = JsonConvert.SerializeObject(missingSentences);
+
+                File.WriteAllText(testFilePath, json);
+            }
+            catch (Exception ex)
+            {
             }
         }
 

@@ -14,6 +14,7 @@ using ZedGraph;
 using TagLib;
 using System.Windows.Media;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Forms.VisualStyles;
 
 namespace perSONA
 {
@@ -22,10 +23,13 @@ namespace perSONA
         private readonly speechPerceptionTest test;
         private readonly IvAInterface vAInterface;
 
+        public string namePatient;
+
         public string[] speechFiles;
         public string currentFile;
         string[] audioList2;
         string caminhoArquivo;
+        string caminhoArquivoList;
 
         public bool currentStreak = false;
 
@@ -38,6 +42,7 @@ namespace perSONA
         private int allCountCorrectWords;
         private int allCountWords;
         private int RightSentences = 0;
+        private int rt = 0;
         
 
         List<string> iteractiveResponseTime;
@@ -84,18 +89,17 @@ namespace perSONA
 
                 string[] firstGroup = speechFiles.Take((int)test.azbionum).ToArray();
                 //string[] remainingFiles = speechFiles.Skip(500).ToArray();
-                
-               // string[] repeatedSentences = firstGroup.Take(13).ToArray();
 
-               // string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).ToArray();
-               //finalAudioList = remainingFiles.Concat(repeatedSentences).ToArray();
-               //finalAudioList = finalAudioList.OrderBy(x => random.Next()).ToArray();
+                // string[] repeatedSentences = firstGroup.Take(13).ToArray();
 
-               // audioList2 = finalAudioList;
+                // string[] finalAudioList = remainingFiles.OrderBy(x => random.Next()).ToArray();
+                //finalAudioList = remainingFiles.Concat(repeatedSentences).ToArray();
+                //finalAudioList = finalAudioList.OrderBy(x => random.Next()).ToArray();
+
+                // audioList2 = finalAudioList;
 
                 speechFiles = firstGroup;
 
-                //Console.WriteLine("---"+audioList2.Length+"----"+remainingFiles.Length+"-------"+repeatedSentences.Length);
 
                 filenameList.DataSource = speechFiles;
                 filenameList.SelectedIndex = 0;
@@ -106,6 +110,54 @@ namespace perSONA
                 vAInterface.fillWords(currentFile, testWordsList);
                 getDirectoryAzbio();
 
+                caminhoArquivoList = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), test.PatientName + ".txt");
+
+               /* try
+                {
+                    using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivoList))
+                    {
+                        writer.WriteLine(test.PatientName);
+                        foreach (string file in speechFiles)
+                        {
+                            writer.WriteLine(file);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Não foi possível salvar a lista de sentenças");
+                }*/
+
+            }
+            else if (test.TestOption == "continueTest") 
+            {
+                speechFiles = test.ContinueFiles;
+                filenameList.DataSource = speechFiles;
+                filenameList.SelectedIndex = 0;
+
+                currentFile = System.IO.Path.Combine(test.SpeechFolder, filenameList.GetItemText(filenameList.SelectedItem));
+
+                //detailsBox.AppendText(currentFile);
+                vAInterface.fillWords(currentFile, testWordsList);
+                getDirectoryAzbio();
+
+                caminhoArquivoList = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), test.PatientName + ".txt");
+
+                try
+                {
+                    using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivoList))
+                    {
+                        writer.WriteLine(test.PatientName);
+                        foreach (string file in speechFiles)
+                        {
+                            writer.WriteLine(file);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Não foi possível salvar a lista de sentenças");
+                }
             }
             else
             {
@@ -141,6 +193,67 @@ namespace perSONA
 
             iteractiveResponseTime = new List<string> { };
             iteractiveResponsePercentage = new List<string> { };
+
+           
+                if (test.SceeneLogic == "SpeechConstant")
+                {
+                    vA = vAInterface.getVa();
+                    vA.Reset();
+                    int receiverId = vA.CreateSoundReceiver("Subject");
+
+                    double xSides = 0;
+                    double zFront = 0;
+                    double yHeight = 1.7;
+
+                    VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
+                    VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
+                    VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
+
+                    vA.SetSoundReceiverPosition(receiverId, receiverPosition);
+                    vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
+                    vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
+                                             xSides, zFront, yHeight, receiverId));
+
+                    int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
+                    vA.SetSoundReceiverDirectivity(receiverId, hrirId);
+
+                    string speechFile = currentFile;
+                    vAInterface.concatText(speechFile);
+                    vAInterface.concatText(
+                        string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                    vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+
+                }
+
+                else
+                {
+                    vA = vAInterface.getVa();
+                    vA.Reset();
+                    int receiverId = vA.CreateSoundReceiver("Subject");
+
+                    double xSides = 0;
+                    double zFront = 0;
+                    double yHeight = 1.7;
+
+                    VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
+                    VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
+                    VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
+
+                    vA.SetSoundReceiverPosition(receiverId, receiverPosition);
+                    vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
+                    vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
+                                             xSides, zFront, yHeight, receiverId));
+
+                    int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
+                    vA.SetSoundReceiverDirectivity(receiverId, hrirId);
+
+                    string speechFile = currentFile;
+                    vAInterface.concatText(speechFile);
+                    vAInterface.concatText(
+                        string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
+                    vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+                }
+            
         }
 
         private void AllCorrect_Click(object sender, EventArgs e)
@@ -174,34 +287,11 @@ namespace perSONA
         private void playCurrentScene_Click(object sender, EventArgs e)
         {
             if(test.SceeneLogic == "SpeechConstant")
-            {
-                vA = vAInterface.getVa();
-                vA.Reset();
-                int receiverId = vA.CreateSoundReceiver("Subject");
+            {                
 
-                double xSides = 0;
-                double zFront = 0;
-                double yHeight = 1.7;
+                vAInterface.createSpeechScene(currentFile);
 
-                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                         xSides, zFront, yHeight, receiverId));
-
-                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
-
-                string speechFile = currentFile;
-                vAInterface.concatText(speechFile);
-                vAInterface.concatText(
-                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
-
-                if (test.TestOption == "azbio")
+                if (test.TestOption == "azbio" || test.TestOption == "continueTest")
                 {
                     vAInterface.playSceneAzbio(test.RadiusSpeech, test.AngleSpeech, actualSNR);
                 }
@@ -220,35 +310,12 @@ namespace perSONA
                     Thread.Sleep(msecduration); //sleep file duration
                     vAInterface.stopScene(true, true);
                 });
+                rt++;
             }
 
             else
             {
-                vA = vAInterface.getVa();
-                vA.Reset();
-                int receiverId = vA.CreateSoundReceiver("Subject");
-
-                double xSides = 0;
-                double zFront = 0;
-                double yHeight = 1.7;
-
-                VAVec3 receiverPosition = new VAVec3(xSides, yHeight, zFront);
-                VAVec3 receiverOrientationV = new VAVec3(0, 0, -1);
-                VAVec3 receiverOrientationU = new VAVec3(0, 1, 0);
-
-                vA.SetSoundReceiverPosition(receiverId, receiverPosition);
-                vA.SetSoundReceiverOrientationVU(receiverId, receiverOrientationV, receiverOrientationU);
-                vAInterface.concatText(string.Format("Receiver: {3} at position: {0},{1},{2}, looking forward ",
-                                         xSides, zFront, yHeight, receiverId));
-
-                int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
-                vA.SetSoundReceiverDirectivity(receiverId, hrirId);
-
-                string speechFile = currentFile;
-                vAInterface.concatText(speechFile);
-                vAInterface.concatText(
-                    string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
-                vAInterface.createAcousticScene(speechFile, test.NoiseFile);
+                vAInterface.createSpeechScene(currentFile);
                 vAInterface.playSceneNoiseFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
 
                 TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
@@ -403,7 +470,7 @@ namespace perSONA
             allCountWords += SpeechTestFormWords.Item2;
             double PORCENTAGEMDEACERTOTOTAL = 100.0 * allCountCorrectWords / allCountWords;
 
-            if (test.TestOption == "azbio")
+            if (test.TestOption == "azbio" || test.TestOption == "continueTest")
             {
                 
 
@@ -468,7 +535,7 @@ namespace perSONA
                 iteractiveResponseTime.Add(responseTime);
                 iteractiveResponsePercentage.Add(responsePercentage);
                 textBox3.Text = string.Format("{0}", actualSNR);
-                if (test.TestOption == "azbio") { }
+                if (test.TestOption == "azbio" || test.TestOption == "continueTest") { }
                 else
                 {
                     updateIterationGraph(zedGraphControl1.GraphPane, signalToNoiseArray);
@@ -541,6 +608,66 @@ namespace perSONA
                 caminhoArquivo = Path.Combine(diretorioAreaTrabalho, $"{baseFileName}_{sequencial}{extension}");
                 sequencial++;
             } while (System.IO.File.Exists(caminhoArquivo));
+        }
+
+        private void finishTest_Click(object sender, EventArgs e)
+        {         
+            int selectedIndex = filenameList.SelectedIndex;
+
+            List<string> itensAbaixo = new List<string>();
+
+            for (int i = selectedIndex; i < filenameList.Items.Count; i++)
+            {
+                itensAbaixo.Add(filenameList.Items[i].ToString());
+            }
+
+            string[] vetorItensAbaixo = itensAbaixo.ToArray();
+
+            foreach (string item in vetorItensAbaixo)
+            {
+                Console.WriteLine(item);
+            }
+
+            vAInterface.saveTest(vetorItensAbaixo, test.PatientName);
+
+            actualSNR = getNextSNR(actualSNR, test.SignalToNoiseStep);
+
+
+
+            string responseTime = currentTryal.Text;
+            vAInterface.concatText(string.Format("{0} - response time: {1}", string.Join(",", testWordsList.Items.Cast<string>()), responseTime));
+
+
+            Tuple<int, int> SpeechTestFormWords = updatePercentage();
+            allCountCorrectWords += SpeechTestFormWords.Item1;
+            allCountWords += SpeechTestFormWords.Item2;
+            double PORCENTAGEMDEACERTOTOTAL = 100.0 * allCountCorrectWords / allCountWords;
+
+            test.FinalPercentage = Math.Round(PORCENTAGEMDEACERTOTOTAL, 2);
+            test.IterativeSNR = signalToNoiseArray;
+
+            //detailsBox.AppendText("/r/n Finished list");
+            test.TotalDuration = continuousTimerText.Text;
+            test.IterativeDuration = iteractiveResponseTime.ToArray();
+            test.IterativePercentage = iteractiveResponsePercentage.ToArray();
+            test.rightSenteces = RightSentences;
+
+            vAInterface.concatText(string.Format("Elapsed time: {0}", test.TotalDuration));
+
+            double meanSRT = Math.Round(vAInterface.getMeanSRT(test.IterativeSNR), 2);
+
+            string completedTestMessage = string.Format(
+                "Avaliação finalizada. SNR de convergência: {0} dB, MédiaSTR: {3} dB, Porcentagem de acertos: {4}%, Número de iterações: {1}, duração total: {2}, sentenças acertadas: {5}",
+                actualSNR, signalToNoiseArray.Length, test.TotalDuration, meanSRT, test.FinalPercentage, test.rightSenteces);
+
+            string message = completedTestMessage;
+            const string caption = "Fim da avaliação";
+            var result = MessageBox.Show(message, caption,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            vAInterface.addCompletedTest(test);
+
+            this.Close();
         }
     }
 }

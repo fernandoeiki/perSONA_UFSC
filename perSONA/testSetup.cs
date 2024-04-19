@@ -13,6 +13,9 @@ using VA;
 using ZedGraph;
 using TagLib;
 using System.Windows.Controls;
+using com.itextpdf.text.pdf;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace perSONA
 {
@@ -85,6 +88,43 @@ namespace perSONA
                 azbioTest.Items.Add(azbioFiles[i]);
             }
             azbioTest.SelectedItem = azbioTest.Items[0];
+
+            //Código para sessão de retomar teste 
+
+            string folderPath = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished");
+            continueTestBox.Items.Clear();
+            continueSentences.Items.Clear();
+
+            try
+            {
+                // Verifique se a pasta existe
+                if (Directory.Exists(folderPath))
+                {
+                    // Obtenha todos os arquivos com a extensão .json na pasta
+                    string[] arquivosJson = Directory.GetFiles(folderPath, "*.json");
+
+                    // Adicione os nomes dos arquivos ao ComboBox
+                    foreach (string arquivo in arquivosJson)
+                    {
+                        continueTestBox.Items.Add(Path.GetFileName(arquivo));
+                    }
+                    if (continueTestBox.Items.Count > 0)
+                    {
+                        // Selecionar automaticamente o primeiro item
+                        continueTestBox.SelectedIndex = 0;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("A pasta não existe.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}");
+            }
+
+
         }
 
 
@@ -107,12 +147,12 @@ namespace perSONA
             double acceptanceRule = (double)numericRule.Value;
             double signalToNoiseStep = (double)stepSnr.Value;
             double AzbionumSentences = (double)numSetencesCount.Value;
-            
+
             if (testOption == "azbio")
             {
                 string Location = Path.Combine(azbio, azbioTest.GetItemText(azbioTest.SelectedItem));
                 speechFolder = vAInterface.getDatabaseFiles(Location);
-                
+
                 speechPerceptionTest speechTest = new speechPerceptionTest(
                                                     angleSpeech, radiusSpeech,
                                                     angleNoise, radiusNoise,
@@ -129,6 +169,42 @@ namespace perSONA
                     new speechIterTestForm(speechTest, vAInterface).Show();
                 }
                 this.Close();
+            }
+            else if (testOption == "continueTest")
+            {
+                string Location = Path.Combine(azbio, azbioTest.GetItemText(azbioTest.SelectedItem));              
+                string[] continuefiles = new string[continueSentences.Items.Count];
+
+                try
+                {
+                    for (int i = 0; i < continueSentences.Items.Count; i++)
+                    {
+                        continuefiles[i] = continueSentences.Items[i].ToString();
+                    }
+
+                    speechFolder = vAInterface.getDatabaseFiles(Location);
+                    speechPerceptionTest speechTest = new speechPerceptionTest(
+                                                        angleSpeech, radiusSpeech,
+                                                        angleNoise, radiusNoise,
+                                                        speechFolder, noiseFile,
+                                                        textBox1.Text, snr,
+                                                        presentingLogic,
+                                                        acceptanceRule / 100, signalToNoiseStep,
+                                                        subjects[0], subjects[1], sceeneLogic, TestOption, AzbionumSentences,
+                                                        continuefiles);
+                    string testString = speechTest.ToString();
+                    vAInterface.concatText(testString);
+
+                    if (Application.OpenForms["speechIterTestForm"] == null)
+                    {
+                        new speechIterTestForm(speechTest, vAInterface).Show();
+                    }
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
             else
             {
@@ -454,8 +530,18 @@ namespace perSONA
             {
                 Console.WriteLine(selectedTab);
                 testOption = "azbio";
-            }      
+            }
+            else if (selectedTab == "continueTest") 
+            {               
+                Console.WriteLine(selectedTab);
+                testOption = "continueTest";
+                
+            }
         }
+
+
+
+
 
         private void groupBox7_Enter(object sender, EventArgs e)
         {
@@ -465,6 +551,39 @@ namespace perSONA
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void continueTestBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string pasta = Path.Combine(Properties.Settings.Default.RESULTS_FOLDER, "nonFinished"); ;
+            string nomeArquivoSelecionado = continueTestBox.SelectedItem.ToString();
+            string caminhoArquivo = Path.Combine(pasta, nomeArquivoSelecionado);
+            Console.WriteLine(caminhoArquivo);
+            try
+            {
+                // Verifique se o arquivo existe
+                if (System.IO.File.Exists(caminhoArquivo))
+                {
+                    string json = System.IO.File.ReadAllText(caminhoArquivo);
+
+                    JArray arrayNomesArquivos = JArray.Parse(json);
+
+                    continueSentences.Items.Clear();
+
+                    foreach (var nomeArquivo in arrayNomesArquivos)
+                    {
+                        continueSentences.Items.Add(nomeArquivo.ToString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O arquivo selecionado não existe.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao ler o arquivo: {ex.Message}");
+            }
         }
     }
 }

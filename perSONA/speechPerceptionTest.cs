@@ -34,6 +34,7 @@ namespace perSONA
         public string[] IterativePercentage { get; set; } = { };
         public string TestOption { get; set; }
         public double azbionum { get; set; }
+        public string[] ContinueFiles { get; set; }
 
         public override string ToString()
         {
@@ -103,11 +104,12 @@ namespace perSONA
         public speechPerceptionTest(
                             double angleSpeech, double radiusSpeech,
                             double angleNoise, double radiusNoise,
-                            string speechFolder, string noiseFile,
+                            string speechFolder, string noiseFile, 
                             string label, double snr,
                             double[] presentingLogic,
                             double acceptanceRule, double signalToNoiseStep,
-                            string applicator, string patientName, string sceeneLogic, string testOption, double azbionumsentences)
+                            string applicator, string patientName, string sceeneLogic, string testOption, double azbionumsentences,
+                            string[] continueSentences = null)
         {
             Applicator = applicator;
             PatientName = patientName;
@@ -126,6 +128,7 @@ namespace perSONA
             TestOption = testOption;
             TestStart = DateTime.Now;
             azbionum = azbionumsentences;
+            ContinueFiles = continueSentences;
         }
 
     }
