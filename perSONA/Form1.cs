@@ -49,7 +49,7 @@ namespace perSONA
 
             resizeScreen();
 
-            string message = "O perSONA modificou o volume do seu computador para 100% e poderá fazer futuras alterações";
+            string message = "O perSONA modificou o volume do seu computador para 75% e poderá fazer futuras alterações";
             const string caption = "Acesso ao volume";
             var result = MessageBox.Show(message, caption,
                     MessageBoxButtons.OK,
@@ -485,6 +485,10 @@ namespace perSONA
             double powerNoise = powerSpeechFixed / linRatio;
             double powerSpeech = powerSpeechFixed;
 
+            if (snr >= 40)
+            {
+                powerNoise = 0;
+            }
 
             vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
             vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));

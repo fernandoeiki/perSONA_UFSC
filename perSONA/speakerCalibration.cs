@@ -186,7 +186,7 @@ namespace perSONA
             int hrirId = vA.CreateDirectivityFromFile("data/ITA_Artificial_Head_5x5_44kHz_128.v17.ir.daff");
             vA.SetSoundReceiverDirectivity(receiverId, hrirId);
 
-            string speechFile = "data/Sounds/CalibrationNoise.wav";
+            string speechFile = "data/Sounds/CalibrationNoise_1kHz_-4dBFS.wav";
             vAInterface.concatText(speechFile);
             vAInterface.concatText(string.Format("Calibration sound angle: {0}", (90 + (i * 180))));
 

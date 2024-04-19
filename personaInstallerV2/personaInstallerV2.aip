@@ -21,10 +21,10 @@
     <ROW Property="ARPPRODUCTICON" Value="icone_perSONA.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="LVA-UFSC"/>
-    <ROW Property="ProductCode" Value="1033:{244E0382-8414-453B-A4E4-4A14B36DD7CE} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{2D0A9E15-2F50-422E-8028-D3B59F68CB2F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="perSONA-BETA"/>
-    <ROW Property="ProductVersion" Value="2.8.6" Options="32"/>
+    <ROW Property="ProductVersion" Value="2.8.6.1" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{2E351919-0754-48EA-9BCC-7450A9453229}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -189,7 +189,7 @@
     <ROW Directory="Lista4_5_Dir" Directory_Parent="RASP_Infantil_1_Dir" DefaultDir="LISTA4~1|Lista 4"/>
     <ROW Directory="Lista5_1_Dir" Directory_Parent="RASP_F_1_Dir" DefaultDir="Lista5"/>
     <ROW Directory="Lista5_4_Dir" Directory_Parent="RASP_M_1_Dir" DefaultDir="Lista5"/>
-    <ROW Directory="Lista5_5_Dir" Directory_Parent="RASP_Infantil_1_Dir" DefaultDir="LISTA5~1|Lista 5"/>
+    <ROW Directory="Lista5_Dir" Directory_Parent="RASP_Infantil_1_Dir" DefaultDir="LISTA5~1|Lista 5"/>
     <ROW Directory="Lista6_1_Dir" Directory_Parent="RASP_F_1_Dir" DefaultDir="Lista6"/>
     <ROW Directory="Lista6_3_Dir" Directory_Parent="RASP_M_1_Dir" DefaultDir="Lista6"/>
     <ROW Directory="Lista7_1_Dir" Directory_Parent="RASP_F_1_Dir" DefaultDir="Lista7"/>
@@ -198,11 +198,6 @@
     <ROW Directory="Lista8_3_Dir" Directory_Parent="RASP_M_1_Dir" DefaultDir="Lista8"/>
     <ROW Directory="Lista9_1_Dir" Directory_Parent="RASP_F_1_Dir" DefaultDir="Lista9"/>
     <ROW Directory="Lista9_3_Dir" Directory_Parent="RASP_M_1_Dir" DefaultDir="Lista9"/>
-    <ROW Directory="Lista_1_Dir" Directory_Parent="RASP_infantil_fala_mono_Dir" DefaultDir="Lista_1"/>
-    <ROW Directory="Lista_2_Dir" Directory_Parent="RASP_infantil_fala_mono_Dir" DefaultDir="Lista_2"/>
-    <ROW Directory="Lista_3_Dir" Directory_Parent="RASP_infantil_fala_mono_Dir" DefaultDir="Lista_3"/>
-    <ROW Directory="Lista_4_Dir" Directory_Parent="RASP_infantil_fala_mono_Dir" DefaultDir="Lista_4"/>
-    <ROW Directory="Lista_5_Dir" Directory_Parent="RASP_infantil_fala_mono_Dir" DefaultDir="Lista_5"/>
     <ROW Directory="M0001_3_Dir" Directory_Parent="Alcaim1_M_1_Dir" DefaultDir="M0001"/>
     <ROW Directory="M0002_2_Dir" Directory_Parent="Alcaim1_M_1_Dir" DefaultDir="M0002"/>
     <ROW Directory="M0003_2_Dir" Directory_Parent="Alcaim1_M_1_Dir" DefaultDir="M0003"/>
@@ -251,7 +246,6 @@
     <ROW Directory="RASP_F_1_Dir" Directory_Parent="Speech_Dir" DefaultDir="RASP_F"/>
     <ROW Directory="RASP_Infantil_1_Dir" Directory_Parent="Speech_Dir" DefaultDir="RASP_I~1|RASP_Infantil"/>
     <ROW Directory="RASP_M_1_Dir" Directory_Parent="Speech_Dir" DefaultDir="RASP_M"/>
-    <ROW Directory="RASP_infantil_fala_mono_Dir" Directory_Parent="Speech_Dir" DefaultDir="RASP_I~2|RASP_infantil_fala_mono"/>
     <ROW Directory="Raven_Dir" Directory_Parent="RoomAcoustics_1_Dir" DefaultDir="Raven"/>
     <ROW Directory="Release_1_Dir" Directory_Parent="x64_1_Dir" DefaultDir="Release"/>
     <ROW Directory="Rendering_Dir" Directory_Parent="include_Dir" DefaultDir="RENDER~1|Rendering"/>
@@ -593,14 +587,14 @@
     <ROW Component="FM1L7S01_filt_RMS_24dB.wav_1" ComponentId="{65D97BCA-F437-40EC-8658-8F4B4572D162}" Directory_="Lista7_3_Dir" Attributes="0" KeyPath="FM1L7S01_filt_RMS_24dB.wav_1" Type="0"/>
     <ROW Component="FM1L8S01_filt_RMS_24dB.wav_1" ComponentId="{B9892C2D-7A09-4A1B-BC6A-F6BC73F8C864}" Directory_="Lista8_3_Dir" Attributes="0" KeyPath="FM1L8S01_filt_RMS_24dB.wav_1" Type="0"/>
     <ROW Component="FM1L9S01_filt_RMS_24dB.wav_1" ComponentId="{510A587E-2762-44E1-9D70-B2E65F79DED5}" Directory_="Lista9_3_Dir" Attributes="0" KeyPath="FM1L9S01_filt_RMS_24dB.wav_1" Type="0"/>
-    <ROW Component="Faixa_01.wav" ComponentId="{501317BD-9E12-4FD0-9199-9323153766BB}" Directory_="Lista_1_Dir" Attributes="0" KeyPath="Faixa_01.wav" Type="0"/>
-    <ROW Component="Faixa_01.wav_1" ComponentId="{25BD1287-3569-4194-8F04-5ABE4E9774B7}" Directory_="Lista_2_Dir" Attributes="0" KeyPath="Faixa_01.wav_1" Type="0"/>
-    <ROW Component="Faixa_01.wav_2" ComponentId="{E23402CA-1C96-4E5A-83D1-FB759C33C6EC}" Directory_="Lista_3_Dir" Attributes="0" KeyPath="Faixa_01.wav_2" Type="0"/>
-    <ROW Component="Faixa_01.wav_3" ComponentId="{4B2DF162-A7D2-43EE-8950-C4C7EBEC6C38}" Directory_="Lista_4_Dir" Attributes="0" KeyPath="Faixa_01.wav_3" Type="0"/>
-    <ROW Component="Faixa_01.wav_4" ComponentId="{26AE937C-55C7-4843-953D-9BB79F785177}" Directory_="Lista_5_Dir" Attributes="0" KeyPath="Faixa_01.wav_4" Type="0"/>
     <ROW Component="Findcares.cmake" ComponentId="{BE53C161-0E7F-40EA-8359-0AC9891CABFF}" Directory_="modules_Dir" Attributes="0" KeyPath="Findcares.cmake" Type="0"/>
     <ROW Component="GeneralBlockPanelKernel.h" ComponentId="{110497AC-5697-4BA2-B1C5-C461B0485B57}" Directory_="products_Dir" Attributes="0" KeyPath="GeneralBlockPanelKernel.h_1" Type="0"/>
     <ROW Component="Geometry_SIMD.h" ComponentId="{C33A14F9-1918-4FE3-9170-C6CD38309761}" Directory_="arch_1_Dir" Attributes="0" KeyPath="Geometry_SIMD.h" Type="0"/>
+    <ROW Component="IFFL1S01.wav" ComponentId="{0461484E-AE4D-4201-A71C-EE4E0D0C6805}" Directory_="Lista1_5_Dir" Attributes="0" KeyPath="IFFL1S01.wav" Type="0"/>
+    <ROW Component="IFFL2S01.wav" ComponentId="{5A8BFBB5-E445-4831-9C58-3B1C54731404}" Directory_="Lista2_5_Dir" Attributes="0" KeyPath="IFFL2S01.wav" Type="0"/>
+    <ROW Component="IFFL3S01.wav" ComponentId="{1DA6EA3B-0113-48D6-A20D-EB739F6AFA53}" Directory_="Lista3_5_Dir" Attributes="0" KeyPath="IFFL3S01.wav" Type="0"/>
+    <ROW Component="IFFL4S01.wav" ComponentId="{8030090A-0789-4286-A934-5E113C9E3C22}" Directory_="Lista4_5_Dir" Attributes="0" KeyPath="IFFL4S01.wav" Type="0"/>
+    <ROW Component="IFFL5S01.wav" ComponentId="{F52C0D86-656B-4B49-9490-C05EDEBC443C}" Directory_="Lista5_Dir" Attributes="0" KeyPath="IFFL5S01.wav" Type="0"/>
     <ROW Component="IHTAProfiler.dll" ComponentId="{10D936FD-C836-4A3B-AFC6-3336A229772C}" Directory_="bin_Dir" Attributes="256" KeyPath="IHTAProfiler.dll"/>
     <ROW Component="IHTAProfiler.lib" ComponentId="{56911029-BBCE-44CC-9C3B-3F83C69CE09E}" Directory_="IHTAProfiler_1_Dir" Attributes="0" KeyPath="IHTAProfiler.lib" Type="0"/>
     <ROW Component="IHTAProfilerConfig.cmake" ComponentId="{66F60DE1-14C5-44A5-A656-C4F0AB05265B}" Directory_="IHTAProfiler_Dir" Attributes="0" KeyPath="IHTAProfilerConfig.cmake" Type="0"/>
@@ -1046,11 +1040,6 @@
     <ROW Component="vista_toolsConfig.cmake" ComponentId="{F77CBB34-D9D5-46F0-B669-61D4E22DCD10}" Directory_="vista_tools_Dir" Attributes="0" KeyPath="vista_toolsConfig.cmake" Type="0"/>
     <ROW Component="wav" ComponentId="{9AA2EFEE-8158-4EAA-B076-9AF1270400CE}" Directory_="data_Dir" Attributes="0" KeyPath="wav" Type="0"/>
     <ROW Component="wav_1" ComponentId="{5EEBDD51-244A-4E5C-A916-BF40518D1681}" Directory_="Audiometry_Dir" Attributes="0" KeyPath="wav_2" Type="0"/>
-    <ROW Component="wav_10" ComponentId="{690EC98C-2107-42D9-8955-186AFC74EF88}" Directory_="Lista2_5_Dir" Attributes="0" KeyPath="wav_146" Type="0"/>
-    <ROW Component="wav_11" ComponentId="{19400530-6641-49DF-8F23-D83353388692}" Directory_="Lista3_5_Dir" Attributes="0" KeyPath="wav_166" Type="0"/>
-    <ROW Component="wav_12" ComponentId="{B8F82075-009F-4E61-92B5-9080D2854B75}" Directory_="Lista4_5_Dir" Attributes="0" KeyPath="wav_186" Type="0"/>
-    <ROW Component="wav_13" ComponentId="{FD4F4C8C-ABE3-4D64-9BDE-223673ADAD11}" Directory_="Lista5_5_Dir" Attributes="0" KeyPath="wav_206" Type="0"/>
-    <ROW Component="wav_9" ComponentId="{51405F76-F9A5-42F2-B853-D836E34F7036}" Directory_="Lista1_5_Dir" Attributes="0" KeyPath="wav_126" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -2937,106 +2926,6 @@
     <ROW File="M0010008.WAV_2" Component_="M0010001.WAV_2" FileName="M0010008.WAV" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\Alcaim1_M\M0010\M0010008.WAV" SelfReg="false"/>
     <ROW File="M0010009.WAV_2" Component_="M0010001.WAV_2" FileName="M0010009.WAV" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\Alcaim1_M\M0010\M0010009.WAV" SelfReg="false"/>
     <ROW File="M0010010.WAV_2" Component_="M0010001.WAV_2" FileName="M0010010.WAV" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\Alcaim1_M\M0010\M0010010.WAV" SelfReg="false"/>
-    <ROW File="wav_126" Component_="wav_9" FileName="01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\01.wav" SelfReg="false"/>
-    <ROW File="wav_127" Component_="wav_9" FileName="02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\02.wav" SelfReg="false"/>
-    <ROW File="wav_128" Component_="wav_9" FileName="03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\03.wav" SelfReg="false"/>
-    <ROW File="wav_129" Component_="wav_9" FileName="04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\04.wav" SelfReg="false"/>
-    <ROW File="wav_130" Component_="wav_9" FileName="05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\05.wav" SelfReg="false"/>
-    <ROW File="wav_131" Component_="wav_9" FileName="06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\06.wav" SelfReg="false"/>
-    <ROW File="wav_132" Component_="wav_9" FileName="07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\07.wav" SelfReg="false"/>
-    <ROW File="wav_133" Component_="wav_9" FileName="08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\08.wav" SelfReg="false"/>
-    <ROW File="wav_134" Component_="wav_9" FileName="09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\09.wav" SelfReg="false"/>
-    <ROW File="wav_135" Component_="wav_9" FileName="10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\10.wav" SelfReg="false"/>
-    <ROW File="wav_136" Component_="wav_9" FileName="11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\11.wav" SelfReg="false"/>
-    <ROW File="wav_137" Component_="wav_9" FileName="12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\12.wav" SelfReg="false"/>
-    <ROW File="wav_138" Component_="wav_9" FileName="13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\13.wav" SelfReg="false"/>
-    <ROW File="wav_139" Component_="wav_9" FileName="14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\14.wav" SelfReg="false"/>
-    <ROW File="wav_140" Component_="wav_9" FileName="15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\15.wav" SelfReg="false"/>
-    <ROW File="wav_141" Component_="wav_9" FileName="16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\16.wav" SelfReg="false"/>
-    <ROW File="wav_142" Component_="wav_9" FileName="17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\17.wav" SelfReg="false"/>
-    <ROW File="wav_143" Component_="wav_9" FileName="18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\18.wav" SelfReg="false"/>
-    <ROW File="wav_144" Component_="wav_9" FileName="19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\19.wav" SelfReg="false"/>
-    <ROW File="wav_145" Component_="wav_9" FileName="20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\20.wav" SelfReg="false"/>
-    <ROW File="wav_146" Component_="wav_10" FileName="01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\01.wav" SelfReg="false"/>
-    <ROW File="wav_147" Component_="wav_10" FileName="02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\02.wav" SelfReg="false"/>
-    <ROW File="wav_148" Component_="wav_10" FileName="03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\03.wav" SelfReg="false"/>
-    <ROW File="wav_149" Component_="wav_10" FileName="04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\04.wav" SelfReg="false"/>
-    <ROW File="wav_150" Component_="wav_10" FileName="05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\05.wav" SelfReg="false"/>
-    <ROW File="wav_151" Component_="wav_10" FileName="06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\06.wav" SelfReg="false"/>
-    <ROW File="wav_152" Component_="wav_10" FileName="07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\07.wav" SelfReg="false"/>
-    <ROW File="wav_153" Component_="wav_10" FileName="08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\08.wav" SelfReg="false"/>
-    <ROW File="wav_154" Component_="wav_10" FileName="09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\09.wav" SelfReg="false"/>
-    <ROW File="wav_155" Component_="wav_10" FileName="10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\10.wav" SelfReg="false"/>
-    <ROW File="wav_156" Component_="wav_10" FileName="11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\11.wav" SelfReg="false"/>
-    <ROW File="wav_157" Component_="wav_10" FileName="12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\12.wav" SelfReg="false"/>
-    <ROW File="wav_158" Component_="wav_10" FileName="13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\13.wav" SelfReg="false"/>
-    <ROW File="wav_159" Component_="wav_10" FileName="14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\14.wav" SelfReg="false"/>
-    <ROW File="wav_160" Component_="wav_10" FileName="15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\15.wav" SelfReg="false"/>
-    <ROW File="wav_161" Component_="wav_10" FileName="16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\16.wav" SelfReg="false"/>
-    <ROW File="wav_162" Component_="wav_10" FileName="17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\17.wav" SelfReg="false"/>
-    <ROW File="wav_163" Component_="wav_10" FileName="18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\18.wav" SelfReg="false"/>
-    <ROW File="wav_164" Component_="wav_10" FileName="19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\19.wav" SelfReg="false"/>
-    <ROW File="wav_165" Component_="wav_10" FileName="20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\20.wav" SelfReg="false"/>
-    <ROW File="wav_166" Component_="wav_11" FileName="01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\01.wav" SelfReg="false"/>
-    <ROW File="wav_167" Component_="wav_11" FileName="02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\02.wav" SelfReg="false"/>
-    <ROW File="wav_168" Component_="wav_11" FileName="03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\03.wav" SelfReg="false"/>
-    <ROW File="wav_169" Component_="wav_11" FileName="04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\04.wav" SelfReg="false"/>
-    <ROW File="wav_170" Component_="wav_11" FileName="05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\05.wav" SelfReg="false"/>
-    <ROW File="wav_171" Component_="wav_11" FileName="06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\06.wav" SelfReg="false"/>
-    <ROW File="wav_172" Component_="wav_11" FileName="07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\07.wav" SelfReg="false"/>
-    <ROW File="wav_173" Component_="wav_11" FileName="08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\08.wav" SelfReg="false"/>
-    <ROW File="wav_174" Component_="wav_11" FileName="09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\09.wav" SelfReg="false"/>
-    <ROW File="wav_175" Component_="wav_11" FileName="10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\10.wav" SelfReg="false"/>
-    <ROW File="wav_176" Component_="wav_11" FileName="11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\11.wav" SelfReg="false"/>
-    <ROW File="wav_177" Component_="wav_11" FileName="12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\12.wav" SelfReg="false"/>
-    <ROW File="wav_178" Component_="wav_11" FileName="13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\13.wav" SelfReg="false"/>
-    <ROW File="wav_179" Component_="wav_11" FileName="14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\14.wav" SelfReg="false"/>
-    <ROW File="wav_180" Component_="wav_11" FileName="15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\15.wav" SelfReg="false"/>
-    <ROW File="wav_181" Component_="wav_11" FileName="16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\16.wav" SelfReg="false"/>
-    <ROW File="wav_182" Component_="wav_11" FileName="17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\17.wav" SelfReg="false"/>
-    <ROW File="wav_183" Component_="wav_11" FileName="18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\18.wav" SelfReg="false"/>
-    <ROW File="wav_184" Component_="wav_11" FileName="19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\19.wav" SelfReg="false"/>
-    <ROW File="wav_185" Component_="wav_11" FileName="20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\20.wav" SelfReg="false"/>
-    <ROW File="wav_186" Component_="wav_12" FileName="01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\01.wav" SelfReg="false"/>
-    <ROW File="wav_187" Component_="wav_12" FileName="02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\02.wav" SelfReg="false"/>
-    <ROW File="wav_188" Component_="wav_12" FileName="03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\03.wav" SelfReg="false"/>
-    <ROW File="wav_189" Component_="wav_12" FileName="04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\04.wav" SelfReg="false"/>
-    <ROW File="wav_190" Component_="wav_12" FileName="05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\05.wav" SelfReg="false"/>
-    <ROW File="wav_191" Component_="wav_12" FileName="06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\06.wav" SelfReg="false"/>
-    <ROW File="wav_192" Component_="wav_12" FileName="07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\07.wav" SelfReg="false"/>
-    <ROW File="wav_193" Component_="wav_12" FileName="08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\08.wav" SelfReg="false"/>
-    <ROW File="wav_194" Component_="wav_12" FileName="09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\09.wav" SelfReg="false"/>
-    <ROW File="wav_195" Component_="wav_12" FileName="10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\10.wav" SelfReg="false"/>
-    <ROW File="wav_196" Component_="wav_12" FileName="11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\11.wav" SelfReg="false"/>
-    <ROW File="wav_197" Component_="wav_12" FileName="12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\12.wav" SelfReg="false"/>
-    <ROW File="wav_198" Component_="wav_12" FileName="13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\13.wav" SelfReg="false"/>
-    <ROW File="wav_199" Component_="wav_12" FileName="14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\14.wav" SelfReg="false"/>
-    <ROW File="wav_200" Component_="wav_12" FileName="15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\15.wav" SelfReg="false"/>
-    <ROW File="wav_201" Component_="wav_12" FileName="16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\16.wav" SelfReg="false"/>
-    <ROW File="wav_202" Component_="wav_12" FileName="17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\17.wav" SelfReg="false"/>
-    <ROW File="wav_203" Component_="wav_12" FileName="18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\18.wav" SelfReg="false"/>
-    <ROW File="wav_204" Component_="wav_12" FileName="19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\19.wav" SelfReg="false"/>
-    <ROW File="wav_205" Component_="wav_12" FileName="20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\20.wav" SelfReg="false"/>
-    <ROW File="wav_206" Component_="wav_13" FileName="01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\01.wav" SelfReg="false"/>
-    <ROW File="wav_207" Component_="wav_13" FileName="02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\02.wav" SelfReg="false"/>
-    <ROW File="wav_208" Component_="wav_13" FileName="03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\03.wav" SelfReg="false"/>
-    <ROW File="wav_209" Component_="wav_13" FileName="04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\04.wav" SelfReg="false"/>
-    <ROW File="wav_210" Component_="wav_13" FileName="05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\05.wav" SelfReg="false"/>
-    <ROW File="wav_211" Component_="wav_13" FileName="06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\06.wav" SelfReg="false"/>
-    <ROW File="wav_212" Component_="wav_13" FileName="07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\07.wav" SelfReg="false"/>
-    <ROW File="wav_213" Component_="wav_13" FileName="08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\08.wav" SelfReg="false"/>
-    <ROW File="wav_214" Component_="wav_13" FileName="09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\09.wav" SelfReg="false"/>
-    <ROW File="wav_215" Component_="wav_13" FileName="10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\10.wav" SelfReg="false"/>
-    <ROW File="wav_216" Component_="wav_13" FileName="11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\11.wav" SelfReg="false"/>
-    <ROW File="wav_217" Component_="wav_13" FileName="12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\12.wav" SelfReg="false"/>
-    <ROW File="wav_218" Component_="wav_13" FileName="13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\13.wav" SelfReg="false"/>
-    <ROW File="wav_219" Component_="wav_13" FileName="14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\14.wav" SelfReg="false"/>
-    <ROW File="wav_220" Component_="wav_13" FileName="15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\15.wav" SelfReg="false"/>
-    <ROW File="wav_221" Component_="wav_13" FileName="16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\16.wav" SelfReg="false"/>
-    <ROW File="wav_222" Component_="wav_13" FileName="17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\17.wav" SelfReg="false"/>
-    <ROW File="wav_223" Component_="wav_13" FileName="18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\18.wav" SelfReg="false"/>
-    <ROW File="wav_224" Component_="wav_13" FileName="19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\19.wav" SelfReg="false"/>
-    <ROW File="wav_225" Component_="wav_13" FileName="20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\20.wav" SelfReg="false"/>
     <ROW File="Lista1A_frase1.wav_2" Component_="Lista1A_frase1.wav_2" FileName="LISTA1~1.WAV|Lista 1A_frase1.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\Training\Lista 1A\Lista 1A_frase1.wav" SelfReg="false"/>
     <ROW File="Lista1A_frase10.wav_2" Component_="Lista1A_frase1.wav_2" FileName="LISTA1~2.WAV|Lista 1A_frase10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\Training\Lista 1A\Lista 1A_frase10.wav" SelfReg="false"/>
     <ROW File="Lista1A_frase11.wav_2" Component_="Lista1A_frase1.wav_2" FileName="LISTA1~3.WAV|Lista 1A_frase11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\Training\Lista 1A\Lista 1A_frase11.wav" SelfReg="false"/>
@@ -3500,106 +3389,6 @@
     <ROW File="VASimulationFreeField.json" Component_="VACore.experimental.ini" FileName="VASIMU~2.JSO|VASimulationFreeField.json" Attributes="0" SourcePath="..\perSONA\conf\VASimulationFreeField.json" SelfReg="false"/>
     <ROW File="VASimulationRAVEN.json" Component_="VACore.experimental.ini" FileName="VASIMU~3.JSO|VASimulationRAVEN.json" Attributes="0" SourcePath="..\perSONA\conf\VASimulationRAVEN.json" SelfReg="false"/>
     <ROW File="VASimulationUrban.json" Component_="VACore.experimental.ini" FileName="VASIMU~4.JSO|VASimulationUrban.json" Attributes="0" SourcePath="..\perSONA\conf\VASimulationUrban.json" SelfReg="false"/>
-    <ROW File="Faixa_01.wav" Component_="Faixa_01.wav" FileName="Faixa_01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_01.wav" SelfReg="false"/>
-    <ROW File="Faixa_02.wav" Component_="Faixa_01.wav" FileName="Faixa_02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_02.wav" SelfReg="false"/>
-    <ROW File="Faixa_03.wav" Component_="Faixa_01.wav" FileName="Faixa_03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_03.wav" SelfReg="false"/>
-    <ROW File="Faixa_04.wav" Component_="Faixa_01.wav" FileName="Faixa_04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_04.wav" SelfReg="false"/>
-    <ROW File="Faixa_05.wav" Component_="Faixa_01.wav" FileName="Faixa_05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_05.wav" SelfReg="false"/>
-    <ROW File="Faixa_06.wav" Component_="Faixa_01.wav" FileName="Faixa_06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_06.wav" SelfReg="false"/>
-    <ROW File="Faixa_07.wav" Component_="Faixa_01.wav" FileName="Faixa_07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_07.wav" SelfReg="false"/>
-    <ROW File="Faixa_08.wav" Component_="Faixa_01.wav" FileName="Faixa_08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_08.wav" SelfReg="false"/>
-    <ROW File="Faixa_09.wav" Component_="Faixa_01.wav" FileName="Faixa_09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_09.wav" SelfReg="false"/>
-    <ROW File="Faixa_10.wav" Component_="Faixa_01.wav" FileName="Faixa_10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_10.wav" SelfReg="false"/>
-    <ROW File="Faixa_11.wav" Component_="Faixa_01.wav" FileName="Faixa_11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_11.wav" SelfReg="false"/>
-    <ROW File="Faixa_12.wav" Component_="Faixa_01.wav" FileName="Faixa_12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_12.wav" SelfReg="false"/>
-    <ROW File="Faixa_13.wav" Component_="Faixa_01.wav" FileName="Faixa_13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_13.wav" SelfReg="false"/>
-    <ROW File="Faixa_14.wav" Component_="Faixa_01.wav" FileName="Faixa_14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_14.wav" SelfReg="false"/>
-    <ROW File="Faixa_15.wav" Component_="Faixa_01.wav" FileName="Faixa_15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_15.wav" SelfReg="false"/>
-    <ROW File="Faixa_16.wav" Component_="Faixa_01.wav" FileName="Faixa_16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_16.wav" SelfReg="false"/>
-    <ROW File="Faixa_17.wav" Component_="Faixa_01.wav" FileName="Faixa_17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_17.wav" SelfReg="false"/>
-    <ROW File="Faixa_18.wav" Component_="Faixa_01.wav" FileName="Faixa_18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_18.wav" SelfReg="false"/>
-    <ROW File="Faixa_19.wav" Component_="Faixa_01.wav" FileName="Faixa_19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_19.wav" SelfReg="false"/>
-    <ROW File="Faixa_20.wav" Component_="Faixa_01.wav" FileName="Faixa_20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_1\Faixa_20.wav" SelfReg="false"/>
-    <ROW File="Faixa_01.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_01.wav" SelfReg="false"/>
-    <ROW File="Faixa_02.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_02.wav" SelfReg="false"/>
-    <ROW File="Faixa_03.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_03.wav" SelfReg="false"/>
-    <ROW File="Faixa_04.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_04.wav" SelfReg="false"/>
-    <ROW File="Faixa_05.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_05.wav" SelfReg="false"/>
-    <ROW File="Faixa_06.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_06.wav" SelfReg="false"/>
-    <ROW File="Faixa_07.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_07.wav" SelfReg="false"/>
-    <ROW File="Faixa_08.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_08.wav" SelfReg="false"/>
-    <ROW File="Faixa_09.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_09.wav" SelfReg="false"/>
-    <ROW File="Faixa_10.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_10.wav" SelfReg="false"/>
-    <ROW File="Faixa_11.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_11.wav" SelfReg="false"/>
-    <ROW File="Faixa_12.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_12.wav" SelfReg="false"/>
-    <ROW File="Faixa_13.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_13.wav" SelfReg="false"/>
-    <ROW File="Faixa_14.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_14.wav" SelfReg="false"/>
-    <ROW File="Faixa_15.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_15.wav" SelfReg="false"/>
-    <ROW File="Faixa_16.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_16.wav" SelfReg="false"/>
-    <ROW File="Faixa_17.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_17.wav" SelfReg="false"/>
-    <ROW File="Faixa_18.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_18.wav" SelfReg="false"/>
-    <ROW File="Faixa_19.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_19.wav" SelfReg="false"/>
-    <ROW File="Faixa_20.wav_1" Component_="Faixa_01.wav_1" FileName="Faixa_20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_2\Faixa_20.wav" SelfReg="false"/>
-    <ROW File="Faixa_01.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_01.wav" SelfReg="false"/>
-    <ROW File="Faixa_02.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_02.wav" SelfReg="false"/>
-    <ROW File="Faixa_03.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_03.wav" SelfReg="false"/>
-    <ROW File="Faixa_04.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_04.wav" SelfReg="false"/>
-    <ROW File="Faixa_05.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_05.wav" SelfReg="false"/>
-    <ROW File="Faixa_06.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_06.wav" SelfReg="false"/>
-    <ROW File="Faixa_07.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_07.wav" SelfReg="false"/>
-    <ROW File="Faixa_08.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_08.wav" SelfReg="false"/>
-    <ROW File="Faixa_09.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_09.wav" SelfReg="false"/>
-    <ROW File="Faixa_10.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_10.wav" SelfReg="false"/>
-    <ROW File="Faixa_11.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_11.wav" SelfReg="false"/>
-    <ROW File="Faixa_12.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_12.wav" SelfReg="false"/>
-    <ROW File="Faixa_13.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_13.wav" SelfReg="false"/>
-    <ROW File="Faixa_14.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_14.wav" SelfReg="false"/>
-    <ROW File="Faixa_15.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_15.wav" SelfReg="false"/>
-    <ROW File="Faixa_16.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_16.wav" SelfReg="false"/>
-    <ROW File="Faixa_17.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_17.wav" SelfReg="false"/>
-    <ROW File="Faixa_18.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_18.wav" SelfReg="false"/>
-    <ROW File="Faixa_19.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_19.wav" SelfReg="false"/>
-    <ROW File="Faixa_20.wav_2" Component_="Faixa_01.wav_2" FileName="Faixa_20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_3\Faixa_20.wav" SelfReg="false"/>
-    <ROW File="Faixa_01.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_01.wav" SelfReg="false"/>
-    <ROW File="Faixa_02.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_02.wav" SelfReg="false"/>
-    <ROW File="Faixa_03.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_03.wav" SelfReg="false"/>
-    <ROW File="Faixa_04.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_04.wav" SelfReg="false"/>
-    <ROW File="Faixa_05.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_05.wav" SelfReg="false"/>
-    <ROW File="Faixa_06.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_06.wav" SelfReg="false"/>
-    <ROW File="Faixa_07.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_07.wav" SelfReg="false"/>
-    <ROW File="Faixa_08.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_08.wav" SelfReg="false"/>
-    <ROW File="Faixa_09.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_09.wav" SelfReg="false"/>
-    <ROW File="Faixa_10.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_10.wav" SelfReg="false"/>
-    <ROW File="Faixa_11.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_11.wav" SelfReg="false"/>
-    <ROW File="Faixa_12.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_12.wav" SelfReg="false"/>
-    <ROW File="Faixa_13.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_13.wav" SelfReg="false"/>
-    <ROW File="Faixa_14.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_14.wav" SelfReg="false"/>
-    <ROW File="Faixa_15.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_15.wav" SelfReg="false"/>
-    <ROW File="Faixa_16.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_16.wav" SelfReg="false"/>
-    <ROW File="Faixa_17.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_17.wav" SelfReg="false"/>
-    <ROW File="Faixa_18.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_18.wav" SelfReg="false"/>
-    <ROW File="Faixa_19.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_19.wav" SelfReg="false"/>
-    <ROW File="Faixa_20.wav_3" Component_="Faixa_01.wav_3" FileName="Faixa_20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_4\Faixa_20.wav" SelfReg="false"/>
-    <ROW File="Faixa_01.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_01.wav" SelfReg="false"/>
-    <ROW File="Faixa_02.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_02.wav" SelfReg="false"/>
-    <ROW File="Faixa_03.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_03.wav" SelfReg="false"/>
-    <ROW File="Faixa_04.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_04.wav" SelfReg="false"/>
-    <ROW File="Faixa_05.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_05.wav" SelfReg="false"/>
-    <ROW File="Faixa_06.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_06.wav" SelfReg="false"/>
-    <ROW File="Faixa_07.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_07.wav" SelfReg="false"/>
-    <ROW File="Faixa_08.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_08.wav" SelfReg="false"/>
-    <ROW File="Faixa_09.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_09.wav" SelfReg="false"/>
-    <ROW File="Faixa_10.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_10.wav" SelfReg="false"/>
-    <ROW File="Faixa_11.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_11.wav" SelfReg="false"/>
-    <ROW File="Faixa_12.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_12.wav" SelfReg="false"/>
-    <ROW File="Faixa_13.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_13.wav" SelfReg="false"/>
-    <ROW File="Faixa_14.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_14.wav" SelfReg="false"/>
-    <ROW File="Faixa_15.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_15.wav" SelfReg="false"/>
-    <ROW File="Faixa_16.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_16.wav" SelfReg="false"/>
-    <ROW File="Faixa_17.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_17.wav" SelfReg="false"/>
-    <ROW File="Faixa_18.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_18.wav" SelfReg="false"/>
-    <ROW File="Faixa_19.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_19.wav" SelfReg="false"/>
-    <ROW File="Faixa_20.wav_4" Component_="Faixa_01.wav_4" FileName="Faixa_20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_infantil_fala_mono\Lista_5\Faixa_20.wav" SelfReg="false"/>
     <ROW File="luana.wav_1" Component_="Lista1A_frase1.wav_2" FileName="luana.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\Training\Lista 1A\luana.wav" SelfReg="false"/>
     <ROW File="ares.h" Component_="VA.h" FileName="ares.h" Attributes="0" SourcePath="..\perSONA\include\ares.h" SelfReg="false"/>
     <ROW File="ares_build.h" Component_="VA.h" FileName="ARES_B~1.H|ares_build.h" Attributes="0" SourcePath="..\perSONA\include\ares_build.h" SelfReg="false"/>
@@ -5643,6 +5432,106 @@
     <ROW File="vista_inter_proc_comm.dll_1" Component_="vista_inter_proc_comm.dll_1" FileName="VISTA_~3.DLL|vista_inter_proc_comm.dll" Attributes="0" SourcePath="..\perSONA\bin\x64\Release\bin\vista_inter_proc_comm.dll" SelfReg="false"/>
     <ROW File="vista_math.dll" Component_="vista_math.dll" FileName="VISTA_~4.DLL|vista_math.dll" Attributes="0" SourcePath="..\perSONA\bin\x64\Release\bin\vista_math.dll" SelfReg="false"/>
     <ROW File="vista_tools.dll" Component_="vista_tools.dll" FileName="VISTA_~5.DLL|vista_tools.dll" Attributes="0" SourcePath="..\perSONA\bin\x64\Release\bin\vista_tools.dll" SelfReg="false"/>
+    <ROW File="IFFL1S01.wav" Component_="IFFL1S01.wav" FileName="IFFL1S01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S01.wav" SelfReg="false"/>
+    <ROW File="IFFL1S02.wav" Component_="IFFL1S01.wav" FileName="IFFL1S02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S02.wav" SelfReg="false"/>
+    <ROW File="IFFL1S03.wav" Component_="IFFL1S01.wav" FileName="IFFL1S03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S03.wav" SelfReg="false"/>
+    <ROW File="IFFL1S04.wav" Component_="IFFL1S01.wav" FileName="IFFL1S04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S04.wav" SelfReg="false"/>
+    <ROW File="IFFL1S05.wav" Component_="IFFL1S01.wav" FileName="IFFL1S05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S05.wav" SelfReg="false"/>
+    <ROW File="IFFL1S06.wav" Component_="IFFL1S01.wav" FileName="IFFL1S06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S06.wav" SelfReg="false"/>
+    <ROW File="IFFL1S07.wav" Component_="IFFL1S01.wav" FileName="IFFL1S07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S07.wav" SelfReg="false"/>
+    <ROW File="IFFL1S08.wav" Component_="IFFL1S01.wav" FileName="IFFL1S08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S08.wav" SelfReg="false"/>
+    <ROW File="IFFL1S09.wav" Component_="IFFL1S01.wav" FileName="IFFL1S09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S09.wav" SelfReg="false"/>
+    <ROW File="IFFL1S10.wav" Component_="IFFL1S01.wav" FileName="IFFL1S10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S10.wav" SelfReg="false"/>
+    <ROW File="IFFL1S11.wav" Component_="IFFL1S01.wav" FileName="IFFL1S11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S11.wav" SelfReg="false"/>
+    <ROW File="IFFL1S12.wav" Component_="IFFL1S01.wav" FileName="IFFL1S12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S12.wav" SelfReg="false"/>
+    <ROW File="IFFL1S13.wav" Component_="IFFL1S01.wav" FileName="IFFL1S13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S13.wav" SelfReg="false"/>
+    <ROW File="IFFL1S14.wav" Component_="IFFL1S01.wav" FileName="IFFL1S14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S14.wav" SelfReg="false"/>
+    <ROW File="IFFL1S15.wav" Component_="IFFL1S01.wav" FileName="IFFL1S15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S15.wav" SelfReg="false"/>
+    <ROW File="IFFL1S16.wav" Component_="IFFL1S01.wav" FileName="IFFL1S16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S16.wav" SelfReg="false"/>
+    <ROW File="IFFL1S17.wav" Component_="IFFL1S01.wav" FileName="IFFL1S17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S17.wav" SelfReg="false"/>
+    <ROW File="IFFL1S18.wav" Component_="IFFL1S01.wav" FileName="IFFL1S18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S18.wav" SelfReg="false"/>
+    <ROW File="IFFL1S19.wav" Component_="IFFL1S01.wav" FileName="IFFL1S19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S19.wav" SelfReg="false"/>
+    <ROW File="IFFL1S20.wav" Component_="IFFL1S01.wav" FileName="IFFL1S20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 1\IFFL1S20.wav" SelfReg="false"/>
+    <ROW File="IFFL2S01.wav" Component_="IFFL2S01.wav" FileName="IFFL2S01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S01.wav" SelfReg="false"/>
+    <ROW File="IFFL2S02.wav" Component_="IFFL2S01.wav" FileName="IFFL2S02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S02.wav" SelfReg="false"/>
+    <ROW File="IFFL2S03.wav" Component_="IFFL2S01.wav" FileName="IFFL2S03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S03.wav" SelfReg="false"/>
+    <ROW File="IFFL2S04.wav" Component_="IFFL2S01.wav" FileName="IFFL2S04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S04.wav" SelfReg="false"/>
+    <ROW File="IFFL2S05.wav" Component_="IFFL2S01.wav" FileName="IFFL2S05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S05.wav" SelfReg="false"/>
+    <ROW File="IFFL2S06.wav" Component_="IFFL2S01.wav" FileName="IFFL2S06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S06.wav" SelfReg="false"/>
+    <ROW File="IFFL2S07.wav" Component_="IFFL2S01.wav" FileName="IFFL2S07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S07.wav" SelfReg="false"/>
+    <ROW File="IFFL2S08.wav" Component_="IFFL2S01.wav" FileName="IFFL2S08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S08.wav" SelfReg="false"/>
+    <ROW File="IFFL2S09.wav" Component_="IFFL2S01.wav" FileName="IFFL2S09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S09.wav" SelfReg="false"/>
+    <ROW File="IFFL2S10.wav" Component_="IFFL2S01.wav" FileName="IFFL2S10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S10.wav" SelfReg="false"/>
+    <ROW File="IFFL2S11.wav" Component_="IFFL2S01.wav" FileName="IFFL2S11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S11.wav" SelfReg="false"/>
+    <ROW File="IFFL2S12.wav" Component_="IFFL2S01.wav" FileName="IFFL2S12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S12.wav" SelfReg="false"/>
+    <ROW File="IFFL2S13.wav" Component_="IFFL2S01.wav" FileName="IFFL2S13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S13.wav" SelfReg="false"/>
+    <ROW File="IFFL2S14.wav" Component_="IFFL2S01.wav" FileName="IFFL2S14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S14.wav" SelfReg="false"/>
+    <ROW File="IFFL2S15.wav" Component_="IFFL2S01.wav" FileName="IFFL2S15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S15.wav" SelfReg="false"/>
+    <ROW File="IFFL2S16.wav" Component_="IFFL2S01.wav" FileName="IFFL2S16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S16.wav" SelfReg="false"/>
+    <ROW File="IFFL2S17.wav" Component_="IFFL2S01.wav" FileName="IFFL2S17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S17.wav" SelfReg="false"/>
+    <ROW File="IFFL2S18.wav" Component_="IFFL2S01.wav" FileName="IFFL2S18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S18.wav" SelfReg="false"/>
+    <ROW File="IFFL2S19.wav" Component_="IFFL2S01.wav" FileName="IFFL2S19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S19.wav" SelfReg="false"/>
+    <ROW File="IFFL2S20.wav" Component_="IFFL2S01.wav" FileName="IFFL2S20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 2\IFFL2S20.wav" SelfReg="false"/>
+    <ROW File="IFFL3S01.wav" Component_="IFFL3S01.wav" FileName="IFFL3S01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S01.wav" SelfReg="false"/>
+    <ROW File="IFFL3S02.wav" Component_="IFFL3S01.wav" FileName="IFFL3S02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S02.wav" SelfReg="false"/>
+    <ROW File="IFFL3S03.wav" Component_="IFFL3S01.wav" FileName="IFFL3S03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S03.wav" SelfReg="false"/>
+    <ROW File="IFFL3S04.wav" Component_="IFFL3S01.wav" FileName="IFFL3S04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S04.wav" SelfReg="false"/>
+    <ROW File="IFFL3S05.wav" Component_="IFFL3S01.wav" FileName="IFFL3S05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S05.wav" SelfReg="false"/>
+    <ROW File="IFFL3S06.wav" Component_="IFFL3S01.wav" FileName="IFFL3S06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S06.wav" SelfReg="false"/>
+    <ROW File="IFFL3S07.wav" Component_="IFFL3S01.wav" FileName="IFFL3S07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S07.wav" SelfReg="false"/>
+    <ROW File="IFFL3S08.wav" Component_="IFFL3S01.wav" FileName="IFFL3S08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S08.wav" SelfReg="false"/>
+    <ROW File="IFFL3S09.wav" Component_="IFFL3S01.wav" FileName="IFFL3S09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S09.wav" SelfReg="false"/>
+    <ROW File="IFFL3S10.wav" Component_="IFFL3S01.wav" FileName="IFFL3S10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S10.wav" SelfReg="false"/>
+    <ROW File="IFFL3S11.wav" Component_="IFFL3S01.wav" FileName="IFFL3S11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S11.wav" SelfReg="false"/>
+    <ROW File="IFFL3S12.wav" Component_="IFFL3S01.wav" FileName="IFFL3S12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S12.wav" SelfReg="false"/>
+    <ROW File="IFFL3S13.wav" Component_="IFFL3S01.wav" FileName="IFFL3S13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S13.wav" SelfReg="false"/>
+    <ROW File="IFFL3S14.wav" Component_="IFFL3S01.wav" FileName="IFFL3S14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S14.wav" SelfReg="false"/>
+    <ROW File="IFFL3S15.wav" Component_="IFFL3S01.wav" FileName="IFFL3S15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S15.wav" SelfReg="false"/>
+    <ROW File="IFFL3S16.wav" Component_="IFFL3S01.wav" FileName="IFFL3S16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S16.wav" SelfReg="false"/>
+    <ROW File="IFFL3S17.wav" Component_="IFFL3S01.wav" FileName="IFFL3S17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S17.wav" SelfReg="false"/>
+    <ROW File="IFFL3S18.wav" Component_="IFFL3S01.wav" FileName="IFFL3S18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S18.wav" SelfReg="false"/>
+    <ROW File="IFFL3S19.wav" Component_="IFFL3S01.wav" FileName="IFFL3S19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S19.wav" SelfReg="false"/>
+    <ROW File="IFFL3S20.wav" Component_="IFFL3S01.wav" FileName="IFFL3S20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 3\IFFL3S20.wav" SelfReg="false"/>
+    <ROW File="IFFL4S01.wav" Component_="IFFL4S01.wav" FileName="IFFL4S01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S01.wav" SelfReg="false"/>
+    <ROW File="IFFL4S02.wav" Component_="IFFL4S01.wav" FileName="IFFL4S02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S02.wav" SelfReg="false"/>
+    <ROW File="IFFL4S03.wav" Component_="IFFL4S01.wav" FileName="IFFL4S03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S03.wav" SelfReg="false"/>
+    <ROW File="IFFL4S04.wav" Component_="IFFL4S01.wav" FileName="IFFL4S04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S04.wav" SelfReg="false"/>
+    <ROW File="IFFL4S05.wav" Component_="IFFL4S01.wav" FileName="IFFL4S05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S05.wav" SelfReg="false"/>
+    <ROW File="IFFL4S06.wav" Component_="IFFL4S01.wav" FileName="IFFL4S06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S06.wav" SelfReg="false"/>
+    <ROW File="IFFL4S07.wav" Component_="IFFL4S01.wav" FileName="IFFL4S07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S07.wav" SelfReg="false"/>
+    <ROW File="IFFL4S08.wav" Component_="IFFL4S01.wav" FileName="IFFL4S08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S08.wav" SelfReg="false"/>
+    <ROW File="IFFL4S09.wav" Component_="IFFL4S01.wav" FileName="IFFL4S09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S09.wav" SelfReg="false"/>
+    <ROW File="IFFL4S10.wav" Component_="IFFL4S01.wav" FileName="IFFL4S10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S10.wav" SelfReg="false"/>
+    <ROW File="IFFL4S11.wav" Component_="IFFL4S01.wav" FileName="IFFL4S11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S11.wav" SelfReg="false"/>
+    <ROW File="IFFL4S12.wav" Component_="IFFL4S01.wav" FileName="IFFL4S12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S12.wav" SelfReg="false"/>
+    <ROW File="IFFL4S13.wav" Component_="IFFL4S01.wav" FileName="IFFL4S13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S13.wav" SelfReg="false"/>
+    <ROW File="IFFL4S14.wav" Component_="IFFL4S01.wav" FileName="IFFL4S14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S14.wav" SelfReg="false"/>
+    <ROW File="IFFL4S15.wav" Component_="IFFL4S01.wav" FileName="IFFL4S15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S15.wav" SelfReg="false"/>
+    <ROW File="IFFL4S16.wav" Component_="IFFL4S01.wav" FileName="IFFL4S16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S16.wav" SelfReg="false"/>
+    <ROW File="IFFL4S17.wav" Component_="IFFL4S01.wav" FileName="IFFL4S17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S17.wav" SelfReg="false"/>
+    <ROW File="IFFL4S18.wav" Component_="IFFL4S01.wav" FileName="IFFL4S18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S18.wav" SelfReg="false"/>
+    <ROW File="IFFL4S19.wav" Component_="IFFL4S01.wav" FileName="IFFL4S19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S19.wav" SelfReg="false"/>
+    <ROW File="IFFL4S20.wav" Component_="IFFL4S01.wav" FileName="IFFL4S20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 4\IFFL4S20.wav" SelfReg="false"/>
+    <ROW File="IFFL5S01.wav" Component_="IFFL5S01.wav" FileName="IFFL5S01.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S01.wav" SelfReg="false"/>
+    <ROW File="IFFL5S02.wav" Component_="IFFL5S01.wav" FileName="IFFL5S02.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S02.wav" SelfReg="false"/>
+    <ROW File="IFFL5S03.wav" Component_="IFFL5S01.wav" FileName="IFFL5S03.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S03.wav" SelfReg="false"/>
+    <ROW File="IFFL5S04.wav" Component_="IFFL5S01.wav" FileName="IFFL5S04.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S04.wav" SelfReg="false"/>
+    <ROW File="IFFL5S05.wav" Component_="IFFL5S01.wav" FileName="IFFL5S05.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S05.wav" SelfReg="false"/>
+    <ROW File="IFFL5S06.wav" Component_="IFFL5S01.wav" FileName="IFFL5S06.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S06.wav" SelfReg="false"/>
+    <ROW File="IFFL5S07.wav" Component_="IFFL5S01.wav" FileName="IFFL5S07.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S07.wav" SelfReg="false"/>
+    <ROW File="IFFL5S08.wav" Component_="IFFL5S01.wav" FileName="IFFL5S08.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S08.wav" SelfReg="false"/>
+    <ROW File="IFFL5S09.wav" Component_="IFFL5S01.wav" FileName="IFFL5S09.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S09.wav" SelfReg="false"/>
+    <ROW File="IFFL5S10.wav" Component_="IFFL5S01.wav" FileName="IFFL5S10.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S10.wav" SelfReg="false"/>
+    <ROW File="IFFL5S11.wav" Component_="IFFL5S01.wav" FileName="IFFL5S11.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S11.wav" SelfReg="false"/>
+    <ROW File="IFFL5S12.wav" Component_="IFFL5S01.wav" FileName="IFFL5S12.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S12.wav" SelfReg="false"/>
+    <ROW File="IFFL5S13.wav" Component_="IFFL5S01.wav" FileName="IFFL5S13.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S13.wav" SelfReg="false"/>
+    <ROW File="IFFL5S14.wav" Component_="IFFL5S01.wav" FileName="IFFL5S14.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S14.wav" SelfReg="false"/>
+    <ROW File="IFFL5S15.wav" Component_="IFFL5S01.wav" FileName="IFFL5S15.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S15.wav" SelfReg="false"/>
+    <ROW File="IFFL5S16.wav" Component_="IFFL5S01.wav" FileName="IFFL5S16.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S16.wav" SelfReg="false"/>
+    <ROW File="IFFL5S17.wav" Component_="IFFL5S01.wav" FileName="IFFL5S17.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S17.wav" SelfReg="false"/>
+    <ROW File="IFFL5S18.wav" Component_="IFFL5S01.wav" FileName="IFFL5S18.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S18.wav" SelfReg="false"/>
+    <ROW File="IFFL5S19.wav" Component_="IFFL5S01.wav" FileName="IFFL5S19.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S19.wav" SelfReg="false"/>
+    <ROW File="IFFL5S20.wav" Component_="IFFL5S01.wav" FileName="IFFL5S20.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Lista 5\IFFL5S20.wav" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_ZedGraph.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_ZedGraph.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_ZedGraph.dll]" Type="2" Content="0"/>
@@ -5656,7 +5545,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="perSONA-Installer-BETA-Teste1" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="perSONA-Installer-BETA" Languages="en" InstallationType="4" UseLargeSchema="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -6003,11 +5892,6 @@
     <ROW Feature_="MainFeature" Component_="M0008001.WAV_2"/>
     <ROW Feature_="MainFeature" Component_="M0009001.WAV_2"/>
     <ROW Feature_="MainFeature" Component_="M0010001.WAV_2"/>
-    <ROW Feature_="MainFeature" Component_="wav_9"/>
-    <ROW Feature_="MainFeature" Component_="wav_10"/>
-    <ROW Feature_="MainFeature" Component_="wav_11"/>
-    <ROW Feature_="MainFeature" Component_="wav_12"/>
-    <ROW Feature_="MainFeature" Component_="wav_13"/>
     <ROW Feature_="MainFeature" Component_="Lista1A_frase1.wav_2"/>
     <ROW Feature_="MainFeature" Component_="lista.gif_2"/>
     <ROW Feature_="MainFeature" Component_="perSONA.exe_4"/>
@@ -6032,11 +5916,6 @@
     <ROW Feature_="MainFeature" Component_="FM1L7S01_filt_RMS_24dB.wav_1"/>
     <ROW Feature_="MainFeature" Component_="FM1L8S01_filt_RMS_24dB.wav_1"/>
     <ROW Feature_="MainFeature" Component_="FM1L9S01_filt_RMS_24dB.wav_1"/>
-    <ROW Feature_="MainFeature" Component_="Faixa_01.wav"/>
-    <ROW Feature_="MainFeature" Component_="Faixa_01.wav_1"/>
-    <ROW Feature_="MainFeature" Component_="Faixa_01.wav_2"/>
-    <ROW Feature_="MainFeature" Component_="Faixa_01.wav_3"/>
-    <ROW Feature_="MainFeature" Component_="Faixa_01.wav_4"/>
     <ROW Feature_="MainFeature" Component_="asio.cpp"/>
     <ROW Feature_="MainFeature" Component_="date.h"/>
     <ROW Feature_="MainFeature" Component_="Bessel.h"/>
@@ -6328,6 +6207,11 @@
     <ROW Feature_="MainFeature" Component_="vista_inter_proc_comm.dll_1"/>
     <ROW Feature_="MainFeature" Component_="vista_math.dll"/>
     <ROW Feature_="MainFeature" Component_="vista_tools.dll"/>
+    <ROW Feature_="MainFeature" Component_="IFFL1S01.wav"/>
+    <ROW Feature_="MainFeature" Component_="IFFL2S01.wav"/>
+    <ROW Feature_="MainFeature" Component_="IFFL3S01.wav"/>
+    <ROW Feature_="MainFeature" Component_="IFFL4S01.wav"/>
+    <ROW Feature_="MainFeature" Component_="IFFL5S01.wav"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="SystemFoldermsiexec.exe" SourcePath="&lt;AI_RES&gt;uninstall.ico" Index="0"/>
