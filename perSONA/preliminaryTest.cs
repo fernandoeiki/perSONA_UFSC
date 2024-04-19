@@ -25,6 +25,7 @@ namespace perSONA
         {
             InitializeComponent();
             this.vAInterface = vAInterface;
+            this.FormClosing += preliminaryTest_FormClosing;
 
             if (Properties.Settings.Default.REPRODUCTION_MODE == "Earphone")
             {
@@ -94,6 +95,7 @@ namespace perSONA
                 volumeLabel.Text = string.Format("Volume: {0} %", Properties.Settings.Default.SPEAKER_VOLUME);
                 Properties.Settings.Default.Save();
             }
+
         }
 
         private void calibrate_Click(object sender, EventArgs e)
@@ -119,6 +121,14 @@ namespace perSONA
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             Close();
+        }
+
+        private void preliminaryTest_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                vAInterface.stopScene(true, true);
+            }
         }
     }
 }
