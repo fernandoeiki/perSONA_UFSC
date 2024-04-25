@@ -390,9 +390,8 @@
             // 
             // numSetencesCount
             // 
-            this.numSetencesCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numSetencesCount.Location = new System.Drawing.Point(6, 220);
+            this.numSetencesCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numSetencesCount.Location = new System.Drawing.Point(7, 195);
             this.numSetencesCount.Margin = new System.Windows.Forms.Padding(5);
             this.numSetencesCount.Maximum = new decimal(new int[] {
             1000,
@@ -409,7 +408,7 @@
             this.numSetencesCount.TabIndex = 1;
             this.numSetencesCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numSetencesCount.Value = new decimal(new int[] {
-            250,
+            987,
             0,
             0,
             0});
@@ -429,8 +428,7 @@
             // 
             // azbioSentences
             // 
-            this.azbioSentences.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.azbioSentences.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.azbioSentences.FormattingEnabled = true;
             this.azbioSentences.ItemHeight = 17;
@@ -438,15 +436,14 @@
             this.azbioSentences.Margin = new System.Windows.Forms.Padding(5);
             this.azbioSentences.Name = "azbioSentences";
             this.azbioSentences.ScrollAlwaysVisible = true;
-            this.azbioSentences.Size = new System.Drawing.Size(602, 106);
+            this.azbioSentences.Size = new System.Drawing.Size(602, 89);
             this.azbioSentences.TabIndex = 7;
             // 
             // numSentences
             // 
-            this.numSentences.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numSentences.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.numSentences.AutoSize = true;
-            this.numSentences.Location = new System.Drawing.Point(232, 184);
+            this.numSentences.Location = new System.Drawing.Point(232, 167);
             this.numSentences.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.numSentences.Name = "numSentences";
             this.numSentences.Size = new System.Drawing.Size(149, 17);

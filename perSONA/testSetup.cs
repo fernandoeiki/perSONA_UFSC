@@ -116,7 +116,7 @@ namespace perSONA
                 }
                 else
                 {
-                    MessageBox.Show("A pasta não existe.");
+
                 }
             }
             catch (Exception ex)
@@ -432,10 +432,12 @@ namespace perSONA
             if (PCResolutionHeight>768) 
             {
                 speechSentences.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left);
+
             }
             else
             {
                 speechSentences.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left);
+                azbioSentences.Size = new System.Drawing.Size(602, 55);
             }
            
 

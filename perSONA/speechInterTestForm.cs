@@ -15,6 +15,7 @@ using TagLib;
 using System.Windows.Media;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms.VisualStyles;
+using DocumentFormat.OpenXml.Bibliography;
 
 namespace perSONA
 {
@@ -42,6 +43,7 @@ namespace perSONA
         private int allCountCorrectWords;
         private int allCountWords;
         private int RightSentences = 0;
+        private int WrongSentences = 0;
         private int rt = 0;
         
 
@@ -458,12 +460,14 @@ namespace perSONA
             string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords))); 
             vAInterface.concatText(string.Format("{0} - response time: {1}", string.Join(",", testWordsList.Items.Cast<string>()), responseTime));
 
-
-            if (percentage > 50) 
+            if (percentage == 100)
             {
                 RightSentences++;
             }
-
+            else
+            {
+                WrongSentences++;
+            }
 
             Tuple<int, int> SpeechTestFormWords = updatePercentage();
             allCountCorrectWords += SpeechTestFormWords.Item1;
@@ -472,47 +476,8 @@ namespace perSONA
 
             if (test.TestOption == "azbio" || test.TestOption == "continueTest")
             {
-                
-
-                string AzBioLista = filenameList.Text;
-                string AzBioSentence = "";
-                string palavrasErradas = "";
-
-                foreach (object item in testWordsList.Items)
-                {
-                    AzBioSentence += item.ToString() + " ";
-                    
-                    if (testWordsList.SelectedItems.Contains(item))
-                    { }
-                    else
-                    {
-                        palavrasErradas += item.ToString() + " ";
-                    }
-                }
-
-                if (percentage == 100)
-                {
-                    try
-                    {
-                        using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
-                        {
-                            writer.WriteLine(AzBioLista + " - " + AzBioSentence + "- ok");
-                        }
-                    }
-                    catch (Exception ex)
-                    { }
-                }
-                else 
-                {
-                    using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
-                    {
-                        writer.WriteLine(AzBioLista + " - " + AzBioSentence + "- palavras erradas: " + palavrasErradas);
-                    }
-                }
+                saveSentencesAzbio(percentage);               
             }
-
-
-
 
 
             if (filenameList.SelectedIndex + 1 < filenameList.Items.Count)
@@ -573,6 +538,50 @@ namespace perSONA
             tryalStartTime = DateTime.Now;
         }
 
+        public void saveSentencesAzbio(double percentage) 
+        {
+            string AzBioLista = filenameList.Text;
+            string AzBioSentence = "";
+            string palavrasErradas = "";
+            string dataAtual = DateTime.Now.ToString("yyyy-MM-dd");
+
+            foreach (object item in testWordsList.Items)
+            {
+                AzBioSentence += item.ToString() + " ";
+
+                if (testWordsList.SelectedItems.Contains(item))
+                { }
+                else
+                {
+                    palavrasErradas += item.ToString() + "|";
+                }
+            }
+
+            
+            if (percentage == 100)
+            {
+                string linha = $"{test.PatientName}|{dataAtual}|{AzBioLista}| {AzBioSentence}| Sentença_Correta";
+                try
+                {
+                    using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
+                    {
+                        writer.WriteLine(linha);
+                    }
+                }
+                catch (Exception ex)
+                { }
+            }
+            else
+            {
+                string linha = $"{test.PatientName}|{dataAtual}|{AzBioLista}| {AzBioSentence}| Palavras_erradas| {palavrasErradas}";
+
+                using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
+                {
+                    writer.WriteLine(linha);
+                }
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.continuousTimerText.Text = string.Format("{0:hh\\:mm\\:ss}", DateTime.Now - test.TestStart);
@@ -598,14 +607,16 @@ namespace perSONA
         private void getDirectoryAzbio()
         {
             string diretorioAreaTrabalho = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string pastaAzBioTests = Path.Combine(diretorioAreaTrabalho, "AzBio_tests");
+            Directory.CreateDirectory(pastaAzBioTests);
             string baseFileName = "AzBioTest";
             string extension = ".txt";
-
+            string AzbioPatient = test.PatientName;
             int sequencial = 1;
 
             do
             {
-                caminhoArquivo = Path.Combine(diretorioAreaTrabalho, $"{baseFileName}_{sequencial}{extension}");
+                caminhoArquivo = Path.Combine(pastaAzBioTests, $"{baseFileName}_{AzbioPatient}_{sequencial}_{extension}");
                 sequencial++;
             } while (System.IO.File.Exists(caminhoArquivo));
         }
@@ -666,6 +677,18 @@ namespace perSONA
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
             vAInterface.addCompletedTest(test);
+
+            string linha = $"sentenças_corretas|{RightSentences}|sentenças_erradas|{WrongSentences}|tempo_total_de_teste|{test.TotalDuration}"; 
+
+            try
+            {
+                using (System.IO.StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
+                {
+                    writer.WriteLine(linha);
+                }
+            }
+            catch (Exception ex)
+            { }
 
             this.Close();
         }
