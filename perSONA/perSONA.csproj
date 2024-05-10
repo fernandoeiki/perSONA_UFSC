@@ -1296,7 +1296,9 @@
     <Content Include="data\Sounds\BandPassLimitedWhiteNoise.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\Sounds\CalibrationNoise.wav" />
+    <Content Include="data\Sounds\CalibrationNoise.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="data\Sounds\Calibration_white_noise_-10dbFS.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -2199,306 +2201,6 @@
     <Content Include="data\Sounds\Speech\RASP_F\Lista9\FF1L9S20_filt_RMS__fala_-20dB.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S01_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S02_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S03_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S04_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S05_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S06_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S07_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S08_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S09_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S10_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S11_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S12_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S13_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S14_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S15_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S16_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S17_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S18_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S19_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S20_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S01_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S02_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S03_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S04_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S05_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S06_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S07_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S08_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S09_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S10_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S11_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S12_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S13_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S14_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S15_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S16_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S17_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S18_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S19_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S20_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S01_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S02_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S03_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S04_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S05_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S06_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S07_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S08_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S09_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S10_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S11_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S12_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S13_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S14_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S15_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S16_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S17_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S18_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S19_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S20_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S01_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S02_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S03_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S04_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S05_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S06_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S07_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S08_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S09_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S10_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S11_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S12_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S13_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S14_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S15_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S16_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S17_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S18_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S19_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S20_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S01_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S02_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S03_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S04_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S05_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S06_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S07_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S08_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S09_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S10_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S11_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S12_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S13_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S14_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S15_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S16_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S17_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S18_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S19_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S20_modificado_Ajuste_RMS__fala_-20dB.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS01_mod_RMS_fala_-20dB.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -2506,6 +2208,306 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS03_mod_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S01_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S02_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S03_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S04_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S05_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S06_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S07_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S08_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S09_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S10_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S11_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S12_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S13_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S14_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S15_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S16_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S17_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S18_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S19_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista1\IFFL1S20_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S01_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S02_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S03_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S04_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S05_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S06_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S07_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S08_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S09_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S10_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S11_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S12_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S13_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S14_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S15_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S16_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S17_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S18_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S19_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista2\IFFL2S20_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S01_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S02_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S03_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S04_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S05_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S06_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S07_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S08_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S09_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S10_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S11_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S12_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S13_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S14_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S15_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S16_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S17_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S18_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S19_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista3\IFFL3S20_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S01_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S02_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S03_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S04_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S05_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S06_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S07_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S08_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S09_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S10_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S11_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S12_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S13_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S14_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S15_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S16_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S17_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S18_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S19_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista4\IFFL4S20_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S01_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S02_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S03_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S04_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S05_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S06_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S07_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S08_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S09_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S10_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S11_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S12_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S13_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S14_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S15_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S16_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S17_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S18_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S19_filt_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S20_filt_RMS_fala_-20dB.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\Sounds\Speech\RASP_M\Lista10\FM1L10S01_filt_RMS__fala_-20dB.wav">
