@@ -21,10 +21,10 @@
     <ROW Property="ARPPRODUCTICON" Value="icone_perSONA.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="LVA-UFSC"/>
-    <ROW Property="ProductCode" Value="1033:{1C3F187E-8CFA-4EC6-A5FA-533F3A048FFD} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{FED688D3-8735-4FE7-B079-1A1ADD6A668E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="perSONA-BETA"/>
-    <ROW Property="ProductVersion" Value="2.8.6.2" Options="32"/>
+    <ROW Property="ProductVersion" Value="2.8.7" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{2E351919-0754-48EA-9BCC-7450A9453229}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -108,6 +108,7 @@
     <ROW Directory="F0009_2_Dir" Directory_Parent="Alcaim1_F_1_Dir" DefaultDir="F0009"/>
     <ROW Directory="F0010_2_Dir" Directory_Parent="Alcaim1_F_1_Dir" DefaultDir="F0010"/>
     <ROW Directory="FFT_Dir" Directory_Parent="src_2_Dir" DefaultDir="FFT"/>
+    <ROW Directory="Faixastreino_Dir" Directory_Parent="RASP_Infantil_Dir" DefaultDir="FAIXAS~1|Faixas treino"/>
     <ROW Directory="Filtering_Dir" Directory_Parent="include_Dir" DefaultDir="FILTER~1|Filtering"/>
     <ROW Directory="FreeField_1_Dir" Directory_Parent="OutdoorAcoustics_Dir" DefaultDir="FREEFI~1|FreeField"/>
     <ROW Directory="FreeField_2_Dir" Directory_Parent="Prototyping_Dir" DefaultDir="FREEFI~1|FreeField"/>
@@ -595,6 +596,7 @@
     <ROW Component="IFFL3S01_modificado_Ajuste_RMS__fala_20dB.wav" ComponentId="{324054D0-2224-4088-BD3A-E36F4FD40368}" Directory_="Lista3_1_Dir" Attributes="0" KeyPath="IFFL3S01_modificado_Ajuste_RMS__fala_20dB.wav" Type="0"/>
     <ROW Component="IFFL4S01_modificado_Ajuste_RMS__fala_20dB.wav" ComponentId="{DD1CAED2-033B-483C-A4E3-BC4AD80E76CF}" Directory_="Lista4_1_Dir" Attributes="0" KeyPath="IFFL4S01_modificado_Ajuste_RMS__fala_20dB.wav" Type="0"/>
     <ROW Component="IFFL5S01_modificado_Ajuste_RMS__fala_20dB.wav" ComponentId="{69C7262C-FC2E-44BB-8A63-A9E74DB4DB70}" Directory_="Lista5_1_Dir" Attributes="0" KeyPath="IFFL5S01_modificado_Ajuste_RMS__fala_20dB.wav" Type="0"/>
+    <ROW Component="IFFLTS01_mod_RMS_fala_20dB.wav" ComponentId="{5FC6ED2B-FD7F-452D-AB34-24B5CB46AA13}" Directory_="Faixastreino_Dir" Attributes="0" KeyPath="IFFLTS01_mod_RMS_fala_20dB.wav" Type="0"/>
     <ROW Component="IHTAProfiler.dll" ComponentId="{10D936FD-C836-4A3B-AFC6-3336A229772C}" Directory_="bin_Dir" Attributes="256" KeyPath="IHTAProfiler.dll"/>
     <ROW Component="IHTAProfiler.lib" ComponentId="{56911029-BBCE-44CC-9C3B-3F83C69CE09E}" Directory_="IHTAProfiler_1_Dir" Attributes="0" KeyPath="IHTAProfiler.lib" Type="0"/>
     <ROW Component="IHTAProfilerConfig.cmake" ComponentId="{66F60DE1-14C5-44A5-A656-C4F0AB05265B}" Directory_="IHTAProfiler_Dir" Attributes="0" KeyPath="IHTAProfilerConfig.cmake" Type="0"/>
@@ -5533,6 +5535,9 @@
     <ROW File="FM1L9S18_filt_RMS__fala_20dB.wav" Component_="FM1L9S01_filt_RMS__fala_20dB.wav" FileName="FM1L9~18.WAV|FM1L9S18_filt_RMS__fala_-20dB.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_M\Lista9\FM1L9S18_filt_RMS__fala_-20dB.wav" SelfReg="false"/>
     <ROW File="FM1L9S19_filt_RMS__fala_20dB.wav" Component_="FM1L9S01_filt_RMS__fala_20dB.wav" FileName="FM1L9~19.WAV|FM1L9S19_filt_RMS__fala_-20dB.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_M\Lista9\FM1L9S19_filt_RMS__fala_-20dB.wav" SelfReg="false"/>
     <ROW File="FM1L9S20_filt_RMS__fala_20dB.wav" Component_="FM1L9S01_filt_RMS__fala_20dB.wav" FileName="FM1L9~20.WAV|FM1L9S20_filt_RMS__fala_-20dB.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_M\Lista9\FM1L9S20_filt_RMS__fala_-20dB.wav" SelfReg="false"/>
+    <ROW File="IFFLTS01_mod_RMS_fala_20dB.wav" Component_="IFFLTS01_mod_RMS_fala_20dB.wav" FileName="IFFLTS~1.WAV|IFFLTS01_mod_RMS_fala_-20dB.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS01_mod_RMS_fala_-20dB.wav" SelfReg="false"/>
+    <ROW File="IFFLTS02_mod_RMS_fala_20dB.wav" Component_="IFFLTS01_mod_RMS_fala_20dB.wav" FileName="IFFLTS~2.WAV|IFFLTS02_mod_RMS_fala_-20dB.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS02_mod_RMS_fala_-20dB.wav" SelfReg="false"/>
+    <ROW File="IFFLTS03_mod_RMS_fala_20dB.wav" Component_="IFFLTS01_mod_RMS_fala_20dB.wav" FileName="IFFLTS~3.WAV|IFFLTS03_mod_RMS_fala_-20dB.wav" Attributes="0" SourcePath="..\perSONA\data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS03_mod_RMS_fala_-20dB.wav" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_ZedGraph.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_ZedGraph.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_ZedGraph.dll]" Type="2" Content="0"/>
@@ -6213,6 +6218,7 @@
     <ROW Feature_="MainFeature" Component_="FM1L7S01_filt_RMS__fala_20dB.wav"/>
     <ROW Feature_="MainFeature" Component_="FM1L8S01_filt_RMS__fala_20dB.wav"/>
     <ROW Feature_="MainFeature" Component_="FM1L9S01_filt_RMS__fala_20dB.wav"/>
+    <ROW Feature_="MainFeature" Component_="IFFLTS01_mod_RMS_fala_20dB.wav"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="SystemFoldermsiexec.exe" SourcePath="&lt;AI_RES&gt;uninstall.ico" Index="0"/>
@@ -6254,7 +6260,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="UninstallperSONA" Directory_="perSONA_Dir" Name="UNINST~1|Uninstall perSONA" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
     <ROW Shortcut="UninstallperSONA_1" Directory_="SHORTCUTDIR" Name="UNINST~1|Uninstall perSONA" Component_="SHORTCUTDIR" Target="[SystemFolder]msiexec.exe" Arguments="/x [ProductCode]" Hotkey="0" Icon_="SystemFoldermsiexec.exe" IconIndex="0" ShowCmd="1"/>
-    <ROW Shortcut="perSONALITE" Directory_="DesktopFolder" Name="PERSON~1.2-B|perSONA_Teste v2.8.6.2-BETA" Component_="AI_PROPPATH_FILENAME_PERBUILD_perSONA.exe" Target="[#perSONA.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
+    <ROW Shortcut="perSONALITE" Directory_="DesktopFolder" Name="PERSON~1.7-B|perSONA_Teste v2.8.7-BETA" Component_="AI_PROPPATH_FILENAME_PERBUILD_perSONA.exe" Target="[#perSONA.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
     <ROW Shortcut="run_VAServer" Directory_="DesktopFolder" Name="VA(PER~1|VA (perSONA)" Component_="run_VAServer.bat" Target="[#run_VAServer.bat]" Hotkey="0" Icon_="run_VAServer_1.exe" IconIndex="0" ShowCmd="1" WkDir="perSONA_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">

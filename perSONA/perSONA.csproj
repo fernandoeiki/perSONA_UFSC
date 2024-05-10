@@ -1297,6 +1297,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\Sounds\CalibrationNoise.wav" />
+    <Content Include="data\Sounds\Calibration_white_noise_-10dbFS.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="data\Sounds\Choice.wav" />
     <Content Include="data\Sounds\L001s04r.wav" />
     <Content Include="data\Sounds\Noise\12 %286 Homens e 6 Mulheres%29 Individual Audacity OK.wav">
@@ -2494,6 +2497,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\Sounds\Speech\RASP_Infantil\Lista5\IFFL5S20_modificado_Ajuste_RMS__fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS01_mod_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS02_mod_RMS_fala_-20dB.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Sounds\Speech\RASP_Infantil\Faixas treino\IFFLTS03_mod_RMS_fala_-20dB.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\Sounds\Speech\RASP_M\Lista10\FM1L10S01_filt_RMS__fala_-20dB.wav">

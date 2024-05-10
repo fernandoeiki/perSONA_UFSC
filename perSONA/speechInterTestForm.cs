@@ -12,6 +12,7 @@ using System.IO;
 using VA;
 using ZedGraph;
 using TagLib;
+using System.Windows.Ink;
 
 namespace perSONA
 {
@@ -200,6 +201,7 @@ namespace perSONA
                  string.Format("Angle speech: {0}, Angle noise: {1}", test.AngleSpeech, test.AngleNoise));
                 vAInterface.createSpeechScene(speechFile);
                 vAInterface.playSceneSpeechFixed(test.RadiusSpeech, test.AngleSpeech, actualSNR);
+                Console.WriteLine(Convert.ToString(test.RadiusSpeech), Convert.ToString(test.AngleSpeech));
 
                 TagLib.File file = TagLib.File.Create(currentFile); //Take file at taglibe format   
                 var duration = file.Properties.Duration;            //Take duration
@@ -211,6 +213,7 @@ namespace perSONA
                 {
                     Thread.Sleep(msecduration); //sleep file duration
                     vAInterface.stopScene(true, true);
+                    Console.WriteLine(Convert.ToString(test.RadiusSpeech) + "AAAAAA" + Convert.ToString(test.AngleSpeech));
                 });
             }
 
