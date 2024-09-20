@@ -39,7 +39,7 @@ namespace perSONA
         {
             CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
             defaultPlaybackDevice.Mute(false);
-            defaultPlaybackDevice.Volume = 100;
+            defaultPlaybackDevice.Volume = 75;
 
             int selected_index = selectReproduction.SelectedIndex;
 

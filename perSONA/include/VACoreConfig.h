@@ -39,10 +39,12 @@ public:
 	std::vector< std::string > vsSearchPaths; //!< Search paths (existing directories only)
 	
 	bool bRecordDeviceInputEnabled; //!< Switch to store entire device input stream record to hard drive
-	std::string sRecordDeviceInputFilePath;	//!< File path where to store the input stream record to hard drive
+	std::string sRecordDeviceInputFileName;	//!< File path where to store the input stream record to hard drive
+	std::string sRecordDeviceInputBaseFolder;	//!< File base path of stream record
 
 	bool bRecordDeviceOutputEnabled;  //!< Switch to store entire device output stream record to hard drive
-	std::string sRecordFinalOutputFilePath;	//!< File path where to store the output stream record to hard drive
+	std::string sRecordDeviceOutputFileName;	//!< File path where to store the output stream record to hard drive
+	std::string sRecordDeviceOutputBaseFolder;	//!< File base path of stream record
 
 	int iTriggerUpdateMilliseconds;
 
@@ -51,6 +53,8 @@ public:
 	double dDefaultAmplitudeCalibration; //!< Defines the conversion between physical pressure and digital or electrical amplitudes ( usually 1.0 -> 94 dB SPL re 20uPa @ 1m )
 	double dDefaultDistance; //!< Definse the default distance when spherical spreading is deactivated (auralization mode)
 	double dDefaultMinimumDistance; //!< Defines the minimum distance that should be kept from a sound source (point source can get infinitely loud)
+
+	bool bRemoteShutdownAllowed; //!< Flag for accepting or rejecting client remote shutdown via module call (non-networked finalize still works)
 
 	//! Initialize the configuration with a struct
 	/**

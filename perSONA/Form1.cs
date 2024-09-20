@@ -49,7 +49,7 @@ namespace perSONA
 
             resizeScreen();
 
-            string message = "O perSONA modificou o volume do seu computador para 100% e poderá fazer futuras alterações";
+            string message = "O perSONA modificou o volume do seu computador para 75% e poderá fazer futuras alterações";
             const string caption = "Acesso ao volume";
             var result = MessageBox.Show(message, caption,
                     MessageBoxButtons.OK,
@@ -410,7 +410,7 @@ namespace perSONA
 
             double powerSpeech = 0.25 * normalizationFactor;
             //A linha acima serve para 
-            double linRatio = Math.Pow(10.0, (snr / 10.0));
+            double linRatio = Math.Pow(10.0, (snr / 20.0));
             //double linRatio = Math.Pow(10.0, (snr / 20.0));
             // 29/08/23: mudamos de volta para double linRatio = Math.Pow(10.0, (snr /20.0));
             //A linha acima é utilizada para realizar o cálculo do valor do SNR atual que será utilizado na reprodução do som
@@ -435,7 +435,7 @@ namespace perSONA
             concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
             concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
 
-                powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+                powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
                 //13/07/2023 foi alterado para 
                 //powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
                 //powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
@@ -485,6 +485,10 @@ namespace perSONA
             double powerNoise = powerSpeechFixed / linRatio;
             double powerSpeech = powerSpeechFixed;
 
+            if (snr >= 40)
+            {
+                powerNoise = 0;
+            }
 
             vA.SetSoundSourcePosition(speechSource, new VAVec3(xSides, yHeight, zFront));
             vA.SetSoundSourcePosition(noiseSource, new VAVec3(0, 1.7, radius));
@@ -500,7 +504,7 @@ namespace perSONA
             concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
             concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
 
-                    powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+                    powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
                     //13/07/2023 foi alterado para 20 * Math.Log10(linRatio)
                     //powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
 
@@ -566,7 +570,7 @@ namespace perSONA
             concatText("Selected Speech: " + Path.Combine(speechFolder, listBox2.GetItemText(listBox2.SelectedItem)));
             concatText(string.Format("linear ratio: {2} ({3} dB), speech power: {0}, noise power: {1} - Volume: {4} %",
 
-             powerSpeech, powerNoise, linRatio, 10 * Math.Log10(linRatio), normalizationFactor * 100.0));
+             powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
             // 29/08/2023 foi alterado para 10 * Math.Log10(linRatio)
             //powerSpeech, powerNoise, linRatio, 20 * Math.Log10(linRatio), normalizationFactor * 100.0));
 
@@ -778,7 +782,8 @@ namespace perSONA
         public void createSpeechScene(string speechFile)
         {
             speechSound = vA.CreateSignalSourceBufferFromFile(speechFile);
-            speechSource = vA.CreateSoundSource("Speech");
+            //speechSource = vA.CreateSoundSource("Speech");
+            vA.SetSoundSourceSignalSource(speechSource, speechSound);
 
             int humanDirectivity = vA.CreateDirectivityFromFile("data/Singer.v17.ms.daff");
             vA.SetSoundSourceDirectivity(speechSource, humanDirectivity);
@@ -786,7 +791,8 @@ namespace perSONA
             concatText(string.Format("\r\nCreated Source Signals: {0} with file: {1}",
                                      speechSource, Path.GetFileName(speechFile)));
         }
-
+        
+     
         public void createNoiseScene(string noiseFile)
         {
             noiseSound = vA.CreateSignalSourceBufferFromFile(noiseFile);

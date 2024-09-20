@@ -582,10 +582,10 @@
             this.speechDistance.TabIndex = 0;
             this.speechDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.speechDistance.Value = new decimal(new int[] {
-            15,
+            1,
             0,
             0,
-            65536});
+            0});
             this.speechDistance.ValueChanged += new System.EventHandler(this.speechDistance_ValueChanged);
             // 
             // groupBox2
@@ -754,10 +754,10 @@
             this.noiseDistance.TabIndex = 0;
             this.noiseDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.noiseDistance.Value = new decimal(new int[] {
-            15,
+            1,
             0,
             0,
-            65536});
+            0});
             this.noiseDistance.ValueChanged += new System.EventHandler(this.noiseDistance_ValueChanged);
             // 
             // groupBox5

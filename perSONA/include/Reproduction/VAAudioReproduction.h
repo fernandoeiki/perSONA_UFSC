@@ -36,8 +36,10 @@ public:
 	bool bOutputDetectorEnabled;
 	bool bRecordInputEnabled;
 	bool bRecordOutputEnabled;
-	std::string sRecordInputInputFilePath;
-	std::string sRecordOutputInputFilePath;
+	std::string sRecordInputFileName;
+	std::string sRecordInputBaseFolder;
+	std::string sRecordOutputFileName;
+	std::string sRecordOutputBaseFolder;
 };
 
 /**

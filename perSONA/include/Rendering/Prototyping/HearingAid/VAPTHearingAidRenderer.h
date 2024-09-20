@@ -24,7 +24,7 @@
 #include "../../VAAudioRendererRegistry.h"
 #include "../../../Scene/VAScene.h"
 #include <VA.h>
-#include "../../../VACoreImpl.h"
+#include "../../../core/core.h"
 #include <VAObject.h>
 #include <VAObjectPool.h>
 #include "../../../VASourceListenerMetrics.h"
@@ -58,7 +58,7 @@ class CVAPTHASoundPathFactory;
   * The prototype hearing aid audio renderer implements sound propagation for
   * virtual hearing aids, based on the concept of binaural synthesis.
   *
-  * It accounts for 
+  * It accounts for
   *		- multichannel receiver directivity (HARTF), n-channel filters possible
   *		- source directivity
   *		- medium propagation delay
@@ -68,7 +68,7 @@ class CVAPTHASoundPathFactory;
   *		- Doppler shifts (source and listener movement in medium of finite speed of sound)
   *
   */
-class CVAPTHearingAidRenderer : public IVAAudioRenderer, public ITADatasourceRealization, public CVAObject 
+class CVAPTHearingAidRenderer : public IVAAudioRenderer, public ITADatasourceRealization, public CVAObject
 {
 public:
 	CVAPTHearingAidRenderer( const CVAAudioRendererInitParams& oParams );
@@ -81,13 +81,13 @@ public:
 	  * scene. This call should be blocking until reset is done.
 	  */
 	void Reset();
-	
+
 	//! Load a user requested scene
 	/**
 	  * This method loads a scene, usually a file path to geometry data.
 	  */
 	inline void LoadScene( const std::string& ) {};
-	
+
 	//! Handle a scene state change
 	/**
 	  * This method updates the internal representation of the VA Scene
@@ -104,7 +104,7 @@ public:
 	  * of the sound path entities
 	  */
 	void UpdateGlobalAuralizationMode( int iGlobalAuralizationMode );
-	
+
 	//! Render output sample blocks
 	/**
 	  * This method renders the sound propagation based on the binaural approach
@@ -121,13 +121,13 @@ public:
 
 	CVAStruct CallObject( const CVAStruct& oArgs );
 
-	void onStartDumpListeners(const std::string& sFilenameFormat);
+	void onStartDumpListeners( const std::string& sFilenameFormat );
 	void onStopDumpListeners();
 
 protected:
 
 	//! Internal source representation
-	class Source : public CVAPoolObject 
+	class Source : public CVAPoolObject
 	{
 	public:
 		class Config
@@ -176,8 +176,8 @@ protected:
 		};
 
 		double GetCreationTimestamp() const
-		{ 
-			return m_dCreationTimeStamp; 
+		{
+			return m_dCreationTimeStamp;
 		};
 
 	private:
@@ -186,7 +186,7 @@ protected:
 
 
 	//! Internal listener representation
-	class Listener : public CVAPoolObject 
+	class Listener : public CVAPoolObject
 	{
 	public:
 		class Config
@@ -202,7 +202,7 @@ protected:
 		};
 
 		Listener( CVACoreImpl* pCore, const Config& oConf )
-		: m_pCore( pCore ), m_oConf( oConf )
+			: m_pCore( pCore ), m_oConf( oConf )
 		{};
 
 		CVACoreImpl* m_pCore;
@@ -216,10 +216,10 @@ protected:
 		VAVec3 vPredUp;					//!< Estimated Orientation (Up-Vektor)
 
 		ITASampleFrame* psfOutput;			//!< Accumulated listener output signals
-		ITAAudiofileWriter* pListenerOutputAudioFileWriter;	//!< File writer used for dumping the listener signals
-		
-		void PreRequest() 
-		{	
+		ITABufferedAudiofileWriter* pListenerOutputAudioFileWriter;	//!< File writer used for dumping the listener signals
+
+		void PreRequest()
+		{
 			pData = nullptr;
 
 			CVABasicMotionModel::Config oListenerMotionConfig;
@@ -234,7 +234,7 @@ protected:
 			psfOutput = nullptr;
 		};
 
-		void PreRelease() 
+		void PreRelease()
 		{
 			delete pMotionModel;
 			pMotionModel = nullptr;
@@ -243,18 +243,19 @@ protected:
 			FinalizeDump();
 		};
 
-		void InitDump(const std::string& sFilename) {
-			std::string sOutput(sFilename);
-			sOutput = SubstituteMacro(sOutput, "ListenerName", pData->sName);
-			sOutput = SubstituteMacro(sOutput, "ListenerID", IntToString(pData->iID));
-			
+		void InitDump( const std::string& sFilename ) {
+			std::string sOutput( sFilename );
+			sOutput = SubstituteMacro( sOutput, "ListenerName", pData->sName );
+			sOutput = SubstituteMacro( sOutput, "ListenerID", IntToString( pData->iID ) );
+
 			ITAAudiofileProperties props;
 			props.dSampleRate = m_pCore->GetCoreConfig()->oAudioDriverConfig.dSampleRate;
 			props.eDomain = ITADomain::ITA_TIME_DOMAIN;
 			props.eQuantization = ITAQuantization::ITA_FLOAT;
 			props.iChannels = 2;
 			props.iLength = 0;
-			pListenerOutputAudioFileWriter = ITABufferedAudiofileWriter::create(sOutput, props);
+			pListenerOutputAudioFileWriter = ITABufferedAudiofileWriter::create( props );
+			pListenerOutputAudioFileWriter->SetFilePath( sOutput );
 		}
 
 		void FinalizeDump() {
@@ -273,7 +274,7 @@ private:
 	CVASceneState* m_pNewSceneState;
 
 	int m_iCurGlobalAuralizationMode;
-	
+
 	IVAObjectPool* m_pSoundPathPool;
 	CVAPTHASoundPathFactory* m_pSoundPathFactory;
 	std::list< CVAPTHASoundPath* > m_lSoundPaths;	//!< List of sound paths in user context (VACore calls)	
@@ -298,7 +299,7 @@ private:
 	//std::string m_sDumpListenersFilenameFormat;
 	double m_dDumpListenersGain;
 	ITAAtomicInt m_iDumpListenersFlag;
-	
+
 	int m_iHRIRFilterLength;				//!< Length of the HRIR filter DSP module
 
 	int m_iDefaultVDLSwitchingAlgorithm;
@@ -351,8 +352,8 @@ private:
 	void Init( const CVAStruct& oArgs );
 
 	void ManageSoundPaths( const CVASceneState* pCurScene,
-		                   const CVASceneState* pNewScene,
-						   const CVASceneStateDiff* pDiff );
+		const CVASceneState* pNewScene,
+		const CVASceneStateDiff* pDiff );
 	void UpdateSources();
 	CVAPTHearingAidRenderer::Listener* CreateListener( int iID, const CVAReceiverState* pListenerState );
 	void DeleteListener( int iID );
@@ -360,7 +361,7 @@ private:
 	void DeleteSource( int iID );
 	CVAPTHASoundPath* CreateSoundPath( Source* pSource, Listener* pListener );
 	void DeleteSoundPath( CVAPTHASoundPath* pPath );
-	
+
 	void UpdateTrajectories();
 	void UpdateSoundPaths();
 

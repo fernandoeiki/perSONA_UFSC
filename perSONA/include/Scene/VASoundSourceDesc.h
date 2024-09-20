@@ -14,23 +14,25 @@
 #ifndef IW_VACORE_SOUNDSOURCEDESC
 #define IW_VACORE_SOUNDSOURCEDESC
 
-#include <ITAAtomicPrimitives.h>
 #include <VAPoolObject.h>
 #include <VAAudioSignalSource.h>
 
-class ITASampleBuffer;
+#include <ITASampleBuffer.h>
 
-//! Diese Klasse beschreibt die statischen (unversionierten) Daten einer Schallquelle
+#include <atomic>
+
+
+//! This class describes a static unversioned sound source
 class CVASoundSourceDesc : public CVAPoolObject
 {
 public:
-	int iID;											//!< Schallquellen-ID
-	std::string sName;									//!< Angezeigter Name
-	ITAAtomicBool bMuted;								//!< Stummgeschaltet? (jst: Berechnungen sollen trotzdem durchgeführt werden? bActive dazu?)
-	ITAAtomicBool bEnabled;								//!< Enabled/disable from rendering
-	ITAAtomicBool bInitPositionOrientation;				//!< Wurde die Position/Orientierung initialisiert? (jst: really required?)
-	ITAAtomicPtr< IVAAudioSignalSource > pSignalSource;	//!< Zugeordnete Signalquelle
-	ITAAtomicPtr<ITASampleBuffer> pSignalSourceInputBuf;	//!< Puffer der Eingangsdaten der Signalquelle
+	int iID;											//!< Identifier
+	std::string sName;									//!< Verbose name (for debugging)
+	std::atomic< bool > bMuted;								//!< Muting switch (jst: Berechnungen sollen trotzdem durchgeführt werden? bActive dazu?)
+	std::atomic< bool > bEnabled;								//!< Enabled/disable from rendering
+	std::atomic< bool > bInitPositionOrientation;				//!< Flag to indicate if a pose has been set, which is required for spatialisation
+	IVAAudioSignalSource* pSignalSource;	//!< Assigned signal source pointer
+	std::atomic< const ITASampleBuffer* > pSignalSourceInputBuf;	//!< Puffer der Eingangsdaten der Signalquelle
 	float fSoundPower;
 	std::string sExplicitRendererID;					//!< Explicit renderer for this sound source (empty = all)
 	
@@ -40,8 +42,8 @@ public:
 		sName = "";
 		bMuted = false;
 		bInitPositionOrientation = false;
-		pSignalSource = nullptr;
 		pSignalSourceInputBuf = nullptr;
+		pSignalSource = nullptr;
 	}
 };
 

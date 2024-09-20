@@ -19,7 +19,7 @@
 #include "../VAAudioReproduction.h"
 #include "../VAAudioReproductionRegistry.h"
 #include "../../Scene/VAMotionState.h"
-#include "../../VACoreImpl.h"
+#include "../../core/core.h"
 #include <VAObject.h>
 
 #include <ITAHDFTSpectra.h>

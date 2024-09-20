@@ -37,7 +37,8 @@ public:
 	const CVAStruct* pConfig;				//!< Renderer configuration
 	std::vector< std::string > vsReproductions;	//!< Renderer outputs (e.g. Output:HP, Reproduction:CTC4)
 	bool bRecordOutputEnabled;				//!< Renderer output recording and storing flag
-	std::string sRecordOutputFilePath;		//!< Renderer output recording and storing file path
+	std::string sRecordOutputFileName;		//!< Renderer output recording and storing file (base) name
+	std::string sRecordOutputBaseFolder;	//!< Renderer output recording and storing folder name (absolute or relative, will be created if non-existent)
 	bool bOutputLevelMeterEnabled; 			//!< Renderer output level meter will be used (uses a little bit CPU resources)
 	bool bOfflineRendering;  				//!< Offline rendering indicator  (using a virtual audio device and external trigger)
 };
@@ -51,23 +52,11 @@ class IVAAudioRenderer
 public:
 	virtual inline ~IVAAudioRenderer() {};
 
-	virtual void Reset() = 0;
-
-	// --= Resource hooks =--
-
+	virtual void Reset() = 0;	
 	virtual void LoadScene( const std::string& sFileName ) = 0;
-
-	virtual inline void PostLoadDirectivity( const IVADirectivity* ) {};
-	virtual inline void PreFreeDirectivity( const IVADirectivity* ) {};
-
-	virtual inline void PostLoadHRIRDataset( const IVADirectivity* ) {};
-	virtual inline void PreFreeHRIRDataset( const IVADirectivity* ) {};
-
 	virtual void UpdateScene( CVASceneState* pNewSceneState ) = 0;
 
-	// @todo refactor.
 	virtual void UpdateGlobalAuralizationMode( int iGlobalAuralisationMode ) = 0;
-
 	virtual inline int GetAuralizationMode() const { return IVAInterface::VA_AURAMODE_ALL; };
 	virtual inline void SetAuralizationMode( const int ) {};
 
@@ -82,12 +71,13 @@ public:
 class IVAAudioRendererFactory
 {
 public:
+	//! Create a factory for audio renderers
 	virtual inline ~IVAAudioRendererFactory() {};
 
-	// Return the class name
+	//! Return the class name
 	virtual std::string GetClassIdentifier() const = 0;
 
-	// Factory method
+	//! Factory create method
 	virtual IVAAudioRenderer* Create( const CVAAudioRendererInitParams& oParams ) = 0;
 };
 
@@ -97,6 +87,7 @@ template< class TRenderer >
 class CVAAudioRendererDefaultFactory : public IVAAudioRendererFactory
 {
 public:
+	//! Default factory
 	inline CVAAudioRendererDefaultFactory( const std::string& sClassName )
 		: m_sClassIdentifier( sClassName )
 	{
