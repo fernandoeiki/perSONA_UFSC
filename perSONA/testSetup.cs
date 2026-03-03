@@ -230,7 +230,7 @@ namespace perSONA
         {
             if (left)
             {
-                return -90;
+                return -135;
             }
             else if (front)
             {
@@ -238,7 +238,7 @@ namespace perSONA
             }
             else
             {
-                return 90;
+                return 135;
             }
         }
 

@@ -38,6 +38,7 @@ namespace perSONA
 
         private double allCountCorrectWords;
         private double allCountWords;
+        Random random = new Random();
 
         List<string> iteractiveResponseTime;
         List<string> iteractiveResponsePercentage;
@@ -70,6 +71,7 @@ namespace perSONA
 
             string[] filePaths = System.IO.Directory.GetFiles(test.SpeechFolder, "*.wav");
             speechFiles = filePaths.Select(System.IO.Path.GetFileName).ToArray();
+            speechFiles = speechFiles.OrderBy(x => random.Next()).ToArray();
 
             filenameList.DataSource = speechFiles;
             filenameList.SelectedIndex = 0;
@@ -78,7 +80,7 @@ namespace perSONA
 
             //detailsBox.AppendText(currentFile);
             vAInterface.fillWords(currentFile, testWordsList);
-
+            
 
 
             updatePercentage();
