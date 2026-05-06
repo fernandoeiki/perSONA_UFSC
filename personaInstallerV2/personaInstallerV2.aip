@@ -21,10 +21,10 @@
     <ROW Property="ARPPRODUCTICON" Value="icone_perSONA.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="LVA-UFSC"/>
-    <ROW Property="ProductCode" Value="1033:{61B1F3DA-F3E6-4F99-9133-2C4C6C64157E} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{67DFC7CD-C0F2-451F-BBB1-CBC308A20FB4} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="perSONA-BETA"/>
-    <ROW Property="ProductVersion" Value="3.0" Options="32"/>
+    <ROW Property="ProductVersion" Value="3.2" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{2E351919-0754-48EA-9BCC-7450A9453229}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -5551,7 +5551,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="perSONA-Installer-BETA" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="perSONA-Installer-BETA-kauana" Languages="en" InstallationType="4" UseLargeSchema="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>

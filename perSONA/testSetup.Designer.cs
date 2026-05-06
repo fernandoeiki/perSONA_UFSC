@@ -77,6 +77,7 @@
             this.sceneLogic = new System.Windows.Forms.GroupBox();
             this.noiseLogic = new System.Windows.Forms.RadioButton();
             this.speechLogic = new System.Windows.Forms.RadioButton();
+            this.shuffleList = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -330,6 +331,7 @@
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.shuffleList);
             this.groupBox7.Controls.Add(this.speechFiles);
             this.groupBox7.Controls.Add(this.speechLists);
             this.groupBox7.Controls.Add(this.speechSentences);
@@ -351,7 +353,7 @@
             this.speechFiles.Location = new System.Drawing.Point(6, 24);
             this.speechFiles.Name = "speechFiles";
             this.speechFiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.speechFiles.Size = new System.Drawing.Size(415, 25);
+            this.speechFiles.Size = new System.Drawing.Size(222, 25);
             this.speechFiles.TabIndex = 12;
             this.speechFiles.SelectedIndexChanged += new System.EventHandler(this.speechFiles_SelectedIndexChanged);
             // 
@@ -908,6 +910,18 @@
             this.speechLogic.UseVisualStyleBackColor = false;
             this.speechLogic.CheckedChanged += new System.EventHandler(this.speechLogic_CheckedChanged);
             // 
+            // shuffleList
+            // 
+            this.shuffleList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.shuffleList.AutoSize = true;
+            this.shuffleList.Location = new System.Drawing.Point(275, 26);
+            this.shuffleList.Name = "shuffleList";
+            this.shuffleList.Size = new System.Drawing.Size(129, 21);
+            this.shuffleList.TabIndex = 13;
+            this.shuffleList.Text = "Ordem aleatória";
+            this.shuffleList.UseVisualStyleBackColor = true;
+            this.shuffleList.CheckedChanged += new System.EventHandler(this.shuffleList_CheckedChanged);
+            // 
             // testSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1002,5 +1016,6 @@
         private System.Windows.Forms.GroupBox sceneLogic;
         private System.Windows.Forms.RadioButton noiseLogic;
         private System.Windows.Forms.RadioButton speechLogic;
+        private System.Windows.Forms.CheckBox shuffleList;
     }
 }

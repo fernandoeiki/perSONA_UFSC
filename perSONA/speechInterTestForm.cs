@@ -32,6 +32,7 @@ namespace perSONA
         private double actualSNR;
         private bool blockClick = false;
         private bool blockChain = false;
+        string caminhoArquivo;
 
         double[] signalToNoiseArray;
         public double[] HCorrectSenteces;
@@ -61,6 +62,7 @@ namespace perSONA
 
             this.test = test;
             this.vAInterface = vAInterface;
+            CriarArquivoResultado();
 
             double[] radiusList = { test.RadiusSpeech, test.RadiusNoise };
             double[] angleList = { test.AngleSpeech, test.AngleNoise };
@@ -71,7 +73,12 @@ namespace perSONA
 
             string[] filePaths = System.IO.Directory.GetFiles(test.SpeechFolder, "*.wav");
             speechFiles = filePaths.Select(System.IO.Path.GetFileName).ToArray();
-            speechFiles = speechFiles.OrderBy(x => random.Next()).ToArray();
+
+            if (test.ShuffleSentences == true)
+            {
+                speechFiles = speechFiles.OrderBy(x => random.Next()).ToArray();
+            }
+            else {}
 
             filenameList.DataSource = speechFiles;
             filenameList.SelectedIndex = 0;
@@ -369,6 +376,48 @@ namespace perSONA
                 string responseTime = currentTryal.Text;
                 double answer = testWordsList.SelectedItems.Count;
                 double totalWords = testWordsList.Items.Count;
+
+                // ===== SALVAR PALAVRAS ACERTADAS / ERRADAS =====
+
+                string nomeLista = filenameList.Text;
+                string fraseCompleta = "";
+                string palavrasErradas = "";
+                string dataAtual = DateTime.Now.ToString("yyyy-MM-dd");
+                string tempoResposta = currentTryal.Text;
+
+                foreach (object item in testWordsList.Items)
+                {
+                    fraseCompleta += item.ToString() + " ";
+
+                    if (!testWordsList.SelectedItems.Contains(item))
+                    {
+                        palavrasErradas += item.ToString() + "|";
+                    }
+                }
+
+                string linha;
+
+                if (testWordsList.SelectedItems.Count == testWordsList.Items.Count)
+                {
+                    linha = $"{test.PatientName}|{dataAtual}|{nomeLista}|{fraseCompleta}|Sentenca_Correta|Tempo:{tempoResposta}|SNR:{actualSNR}";
+                }
+                else
+                {
+                    linha = $"{test.PatientName}|{dataAtual}|{nomeLista}|{fraseCompleta}|Palavras_erradas|{palavrasErradas}|Tempo:{tempoResposta}|SNR:{actualSNR}";
+                }
+
+                try
+                {
+                    using (StreamWriter writer = System.IO.File.AppendText(caminhoArquivo))
+                    {
+                        writer.WriteLine(linha);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao salvar: " + ex.Message);
+                }
+
                 string responsePercentage = string.Format("{0}%", Math.Round(100 * (answer / totalWords)));
                 vAInterface.concatText(string.Format("{0} - response time: {1}", string.Join(",", testWordsList.Items.Cast<string>()), responseTime));
 
@@ -443,6 +492,16 @@ namespace perSONA
                        Console.WriteLine(value);
                    }*/
             }
+        }
+
+        private void CriarArquivoResultado()
+        {
+            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string pastaResultados = Path.Combine(desktop, "Resultados_perSONA");
+            Directory.CreateDirectory(pastaResultados);
+
+            string nomeArquivo = $"Resultado_{test.PatientName}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+            caminhoArquivo = Path.Combine(pastaResultados, nomeArquivo);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

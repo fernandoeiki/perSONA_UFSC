@@ -91,6 +91,7 @@ namespace perSONA
             double signalToNoiseStep = (double)stepSnr.Value;
             string Location = Path.Combine(speechFolder, speechFiles.GetItemText(speechFiles.SelectedItem), speechLists.GetItemText(speechLists.SelectedItem));
             speechFolder = vAInterface.getDatabaseFiles(Location);
+            bool shuffleSentences = shuffleList.Checked;
 
             speechPerceptionTest speechTest = new speechPerceptionTest(
                                                     angleSpeech, radiusSpeech,
@@ -99,7 +100,7 @@ namespace perSONA
                                                     textBox1.Text, snr,
                                                     presentingLogic,
                                                     acceptanceRule / 100, signalToNoiseStep,
-                                                    subjects[0], subjects[1], sceeneLogic);
+                                                    subjects[0], subjects[1], sceeneLogic, shuffleSentences);
             string testString = speechTest.ToString();
             vAInterface.concatText(testString);
 
@@ -380,6 +381,11 @@ namespace perSONA
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void shuffleList_CheckedChanged(object sender, EventArgs e)
         {
 
         }
